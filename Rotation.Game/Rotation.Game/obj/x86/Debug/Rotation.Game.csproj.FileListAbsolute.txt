@@ -1,0 +1,6 @@
+c:\users\kevin holditch\documents\visual studio 2010\Projects\Rotation\Rotation\Rotation.Game\Rotation.Game\bin\x86\Debug\Rotation.Game.exe
+c:\users\kevin holditch\documents\visual studio 2010\Projects\Rotation\Rotation\Rotation.Game\Rotation.Game\bin\x86\Debug\Rotation.Game.pdb
+c:\users\kevin holditch\documents\visual studio 2010\Projects\Rotation\Rotation\Rotation.Game\Rotation.Game\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\kevin holditch\documents\visual studio 2010\Projects\Rotation\Rotation\Rotation.Game\Rotation.Game\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\kevin holditch\documents\visual studio 2010\Projects\Rotation\Rotation\Rotation.Game\Rotation.Game\obj\x86\Debug\Rotation.Game.exe
+c:\users\kevin holditch\documents\visual studio 2010\Projects\Rotation\Rotation\Rotation.Game\Rotation.Game\obj\x86\Debug\Rotation.Game.pdb

@@ -1,0 +1,5 @@
+<Modules>
+  <Module PersistentId="7589B472-C289-4B7B-B91C-FD6633116F3E" ModuleId="Rotation.Game" />
+  <Module PersistentId="A46CCEC7-4939-43FB-BF49-ADD3C5BF126C" ModuleId="Rotation.GameObjects" />
+  <Module PersistentId="D81D2A6D-37A7-4F57-B5F1-0AB716D5153B" ModuleId="Rotation.Tests" />
+</Modules>
