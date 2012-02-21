@@ -1,6 +1,0 @@
-c:\Users\Kevin Holditch\Documents\Visual Studio 2010\Projects\Rotation\Rotation\Rotation.GameObjects\bin\x86\Debug\Rotation.GameObjects.dll
-c:\Users\Kevin Holditch\Documents\Visual Studio 2010\Projects\Rotation\Rotation\Rotation.GameObjects\bin\x86\Debug\Rotation.GameObjects.pdb
-c:\Users\Kevin Holditch\Documents\Visual Studio 2010\Projects\Rotation\Rotation\Rotation.GameObjects\obj\x86\Debug\ResolveAssemblyReference.cache
-c:\Users\Kevin Holditch\Documents\Visual Studio 2010\Projects\Rotation\Rotation\Rotation.GameObjects\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-c:\Users\Kevin Holditch\Documents\Visual Studio 2010\Projects\Rotation\Rotation\Rotation.GameObjects\obj\x86\Debug\Rotation.GameObjects.dll
-c:\Users\Kevin Holditch\Documents\Visual Studio 2010\Projects\Rotation\Rotation\Rotation.GameObjects\obj\x86\Debug\Rotation.GameObjects.pdb
