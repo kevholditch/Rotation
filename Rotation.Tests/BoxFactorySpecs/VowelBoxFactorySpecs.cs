@@ -2,13 +2,11 @@
 using Rotation.GameObjects.Factories;
 using SubSpec;
 using Xunit;
-using Xunit.Sdk;
 
 namespace Rotation.Tests.BoxFactorySpecs
 {
 	public class VowelBoxFactorySpecs
-	{
-		[Specification]
+	{		
 		public void GenerateAVowelBox()
 		{
 			VowelBoxFactory _vowelBoxFactory = null;
