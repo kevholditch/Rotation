@@ -1,4 +1,4 @@
-namespace Rotation.GameObjects
+namespace Rotation.GameObjects.Boxes
 {
 	public class StandardBox : Box
 	{

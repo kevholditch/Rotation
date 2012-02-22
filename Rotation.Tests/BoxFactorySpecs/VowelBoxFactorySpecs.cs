@@ -1,4 +1,5 @@
 ﻿using Rotation.GameObjects;
+using Rotation.GameObjects.Boxes;
 using Rotation.GameObjects.Factories;
 using SubSpec;
 using Xunit;
@@ -7,6 +8,7 @@ namespace Rotation.Tests.BoxFactorySpecs
 {
 	public class VowelBoxFactorySpecs
 	{		
+		[Specification]
 		public void GenerateAVowelBox()
 		{
 			VowelBoxFactory _vowelBoxFactory = null;

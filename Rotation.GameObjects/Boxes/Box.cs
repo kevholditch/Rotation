@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Rotation.GameObjects
+﻿namespace Rotation.GameObjects.Boxes
 {
 	public abstract class Box
 	{

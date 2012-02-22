@@ -1,8 +1,8 @@
-﻿namespace Rotation.GameObjects
+﻿namespace Rotation.GameObjects.Boxes
 {
 	public class VowelBox : Box
 	{
-		public VowelBox(char letter) : base(letter)
+		internal VowelBox(char letter) : base(letter)
 		{
 		}
 

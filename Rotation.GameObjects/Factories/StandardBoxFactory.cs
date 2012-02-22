@@ -1,4 +1,6 @@
-﻿namespace Rotation.GameObjects.Factories
+﻿using Rotation.GameObjects.Boxes;
+
+namespace Rotation.GameObjects.Factories
 {
 	public class StandardBoxFactory : IBoxFactory
 	{

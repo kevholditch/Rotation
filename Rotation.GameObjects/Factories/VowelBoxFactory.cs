@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Rotation.GameObjects.Boxes;
 
 namespace Rotation.GameObjects.Factories
 {
@@ -17,7 +18,7 @@ namespace Rotation.GameObjects.Factories
 		{
 			var random = new Random((int)DateTime.Now.Ticks);
 
-			return new VowelBox(_vowels[random.Next(0, 4)]);
+			return new VowelBox(_vowels[random.Next(0, 5)]);
 		}
 	}
 }
