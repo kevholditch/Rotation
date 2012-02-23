@@ -5,6 +5,14 @@ namespace Rotation.GameObjects.Board
 {
 	public class Square 
 	{
+		
+		public Square(int index)
+		{
+			Index = index;
+		}
+
+		public int Index { get; set; }
+
 		private Tile _tile;
 
 		public void SetTile(Tile tile)

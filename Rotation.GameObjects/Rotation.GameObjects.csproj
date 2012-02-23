@@ -92,6 +92,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Board\Board.cs" />
     <Compile Include="Board\Square.cs" />
     <Compile Include="Drawing\IDrawable.cs" />
     <Compile Include="Letters\ILetterLookup.cs" />
