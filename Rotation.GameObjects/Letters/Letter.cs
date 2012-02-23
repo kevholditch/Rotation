@@ -1,4 +1,4 @@
-namespace Rotation.GameObjects.Boxes
+namespace Rotation.GameObjects.Letters
 {
 	public class Letter
 	{

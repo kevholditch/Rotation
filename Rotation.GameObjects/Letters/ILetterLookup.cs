@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Rotation.GameObjects.Boxes
+namespace Rotation.GameObjects.Letters
 {
 	public interface ILetterLookup
 	{

@@ -92,10 +92,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Board\Square.cs" />
+    <Compile Include="Drawing\IDrawable.cs" />
     <Compile Include="Letters\ILetterLookup.cs" />
     <Compile Include="Letters\Letter.cs" />
     <Compile Include="Letters\LetterLookup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tiles\StandardTile.cs" />
+    <Compile Include="Tiles\Tile.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Factories\" />

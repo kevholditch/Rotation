@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Rotation.GameObjects.Boxes;
+using Rotation.GameObjects.Letters;
 using SubSpec;
 using Xunit;
 

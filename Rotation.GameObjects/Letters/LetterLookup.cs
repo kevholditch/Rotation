@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Rotation.GameObjects.Boxes
+namespace Rotation.GameObjects.Letters
 {
 	public class LetterLookup : ILetterLookup
 	{
