@@ -17,10 +17,10 @@ namespace Rotation.Tests.LetterSpecs
 
 			"When I create a default instance of the letter lookup interface".Do(() => _letterLookup = new LetterLookup());
 
-			"Then I should have 26 letters".Observation(() => Assert.Equal(26, _letterLookup.Letters.Count()));
+			"Then I should have 26 letters".Observation(() => _letterLookup.Letters.Count().ShouldEqual(26));
 
 			"Then each letter should only exist once".Observation(
-				() => Assert.Equal(26, _letterLookup.Letters.GroupBy(l => l.Value).Count()));
+				() => _letterLookup.Letters.GroupBy(l => l.Value).Count().ShouldEqual(26));
 
 
 		}
