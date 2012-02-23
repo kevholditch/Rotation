@@ -93,6 +93,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Board\Board.cs" />
+    <Compile Include="Board\BoardFactory.cs" />
+    <Compile Include="Board\IBoardFactory.cs" />
+    <Compile Include="Board\Line.cs" />
     <Compile Include="Board\Square.cs" />
     <Compile Include="Drawing\IDrawable.cs" />
     <Compile Include="Letters\ILetterLookup.cs" />
