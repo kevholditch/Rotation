@@ -1,9 +1,19 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Rotation.GameObjects.Board
 {
 	public class BoardFactory : IBoardFactory
 	{
+		private readonly ILineIndexSequenceGenerator _sequenceGenerator;
+		private readonly IRowIndexSequenceGenerator _rowIndexSequenceGenerator;
+
+		public BoardFactory(IRowIndexSequenceGenerator rowIndexSequenceGenerator, ILineIndexSequenceGenerator sequenceGenerator)
+		{
+			_rowIndexSequenceGenerator = rowIndexSequenceGenerator;
+			_sequenceGenerator = sequenceGenerator;
+		}
+
 		public Board Create()
 		{
 			int boardSize = 9;
@@ -25,7 +35,7 @@ namespace Rotation.GameObjects.Board
 
 				rows.Add(new Line(currentRow));
 
-				if (lineSize < 9 && up)
+				if (lineSize < boardSize && up)
 				{
 					lineSize += 2;					
 				}
@@ -36,7 +46,30 @@ namespace Rotation.GameObjects.Board
 				}
 			}
 
-			return new Board(rows, rows);
+			var columns = new List<Line>();
+
+			for (int i = 0; i < boardSize; i++)
+			{
+				var currentColumn = new List<Square>();
+
+				var rowIndexes = _rowIndexSequenceGenerator.Create((boardSize - 1)/2, rows[i].Squares.Count).ToList();
+				var squareIndexes = _sequenceGenerator.Create(rows[i].Squares.Count).ToList();
+
+				for (int j = 0; j < rows[i].Squares.Count; j++)
+				{
+					int squareIndex = squareIndexes[j];
+
+					if (i > ((boardSize - 1) / 2))
+						squareIndex = (rows[rowIndexes[j]].Squares.Count - squareIndex) - 1;
+
+					currentColumn.Add(rows[rowIndexes[j]].Squares[squareIndex]);
+				}
+
+				columns.Add(new Line(currentColumn));
+
+			}
+
+			return new Board(rows, columns);
 		}
 	}
 }

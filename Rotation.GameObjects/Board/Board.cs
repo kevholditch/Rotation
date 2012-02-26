@@ -4,7 +4,7 @@ namespace Rotation.GameObjects.Board
 {
 	public class Board
 	{
-		public Board(List<Line> columns, List<Line> rows)
+		public Board(List<Line> rows, List<Line> columns)
 		{
 			Columns = columns;
 			Rows = rows;

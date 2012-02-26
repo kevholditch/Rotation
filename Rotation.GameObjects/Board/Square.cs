@@ -1,10 +1,18 @@
-﻿using Rotation.GameObjects.Letters;
+﻿using System;
+using Rotation.GameObjects.Letters;
 using Rotation.GameObjects.Tiles;
 
 namespace Rotation.GameObjects.Board
 {
 	public class Square 
-	{			
+	{
+
+		public Guid Guid { get; set; }
+
+		public Square()
+		{
+			Guid = Guid.NewGuid();
+		}
 
 		private Tile _tile;
 
