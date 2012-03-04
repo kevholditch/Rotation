@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Rotation.GameObjects.Board
@@ -12,7 +13,9 @@ namespace Rotation.GameObjects.Board
 		{
 			_rowIndexSequenceGenerator = rowIndexSequenceGenerator;
 			_sequenceGenerator = sequenceGenerator;
-		}
+		}		
+		
+
 
 		public Board Create()
 		{

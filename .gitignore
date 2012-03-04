@@ -3,3 +3,7 @@ bin/
 _ReSharper.Rotation/
 obj/
 *.pdb
+*.crunchproject.local.xml
+*.crunchsolution.local.xml
+*.ncrunchproject
+*.ncrunchsolution

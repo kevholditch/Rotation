@@ -22,7 +22,6 @@ namespace Rotation.Tests.LetterSpecs
 			"Then each letter should only exist once".Observation(
 				() => _letterLookup.Letters.GroupBy(l => l.Value).Count().ShouldEqual(26));
 
-
 		}
 	}
 }
