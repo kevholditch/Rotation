@@ -33,7 +33,7 @@ namespace Rotation.GameObjects.Board
 	
 				for (int j = 0; j < lineSize; j++)
 				{
-					currentRow.Add(new Square());	
+					currentRow.Add(new Square(j > 0 && j < lineSize - 1));	
 				}
 
 				rows.Add(new Line(currentRow));

@@ -93,13 +93,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Board\Board.cs" />
+    <Compile Include="Board\BoardExtensionMethods.cs" />
     <Compile Include="Board\BoardFactory.cs" />
+    <Compile Include="Board\IBoard.cs" />
     <Compile Include="Board\IBoardFactory.cs" />
     <Compile Include="Board\ILineIndexSequenceGenerator.cs" />
     <Compile Include="Board\Line.cs" />
     <Compile Include="Board\LineIndexSequenceGenerator.cs" />
     <Compile Include="Board\IRowIndexSequenceGenerator.cs" />
     <Compile Include="Board\RowIndexSequenceGenerator.cs" />
+    <Compile Include="Board\Selection\BoardSquareSelector.cs" />
+    <Compile Include="Board\Selection\IBoardSquareSelector.cs" />
     <Compile Include="Board\Square.cs" />
     <Compile Include="Drawing\IDrawable.cs" />
     <Compile Include="Letters\ILetterLookup.cs" />
@@ -109,9 +113,7 @@
     <Compile Include="Tiles\StandardTile.cs" />
     <Compile Include="Tiles\Tile.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Factories\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--

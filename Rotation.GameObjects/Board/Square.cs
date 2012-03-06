@@ -6,13 +6,15 @@ namespace Rotation.GameObjects.Board
 {
 	public class Square 
 	{
-
-		public Guid Guid { get; set; }
-
-		public Square()
+		public Square(bool isSelectable)
 		{
-			Guid = Guid.NewGuid();
+			IsSelectable = isSelectable;
+			IsSelected = false;
 		}
+
+		public bool IsSelected { get; set; }
+
+		public bool IsSelectable { get; private set; }
 
 		private Tile _tile;
 

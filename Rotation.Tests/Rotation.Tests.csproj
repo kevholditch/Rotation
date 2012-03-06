@@ -51,9 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssertExtensions.cs" />
-    <Compile Include="BoardSpecs\BoardCreation.cs" />
+    <Compile Include="BoardSpecs\BoardCreationSpecs.cs" />
     <Compile Include="BoardSpecs\LineIndexGeneratorSpecs.cs" />
     <Compile Include="BoardSpecs\RowIndexSequenceGeneratorSpecs.cs" />
+    <Compile Include="BoardSpecs\SelectionSpecs\SquareDeSelectionSpecs.cs" />
     <Compile Include="LetterSpecs\LetterLookupSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

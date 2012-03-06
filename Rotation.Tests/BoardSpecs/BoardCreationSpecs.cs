@@ -1,9 +1,10 @@
 ﻿using Rotation.GameObjects.Board;
 using SubSpec;
+using System.Linq;
 
 namespace Xunit.BoardSpecs
 {
-	public class BoardCreation
+	public class BoardCreationSpecs
 	{
 		private Board _board = null;
 		private BoardFactory _boardFactory = null;
@@ -115,6 +116,37 @@ namespace Xunit.BoardSpecs
 
 			"Then the last square in the 9th row should be the same as the last square in the 5th column".Observation(
 				() => _board.Rows[8].Squares[0].ShouldBeTheSameAs(_board.Columns[4].Squares[8]));
+		}
+
+		[Specification]
+		public void BoardFactorySetsCorrectSquaresAsSelectable()
+		{
+			"Given that I have a board factory".Context(
+				() => _boardFactory = new BoardFactory(new RowIndexSequenceGenerator(), new LineIndexSequenceGenerator()));
+
+			"When I create a new board".Do(() => _board = _boardFactory.Create());
+
+			"Then the first square in every row should not be selectable".Observation(() =>
+			                                                                          	{
+																							foreach (Line r in _board.Rows)
+																								r.Squares[0].IsSelectable.ShouldBeFalse();
+			                                                                          	});
+
+
+			"Then the last square in every row should not be selectable".Observation(() =>
+			                                                                         	{
+																							foreach(Line r in _board.Rows)
+																								r.Squares[r.Squares.Count-1].IsSelectable.ShouldBeFalse();
+			                                                                         	});
+
+			"Then each square that is not the first or last square in every row should be selectable".Observation(() =>
+			                                                                                         	{
+			                                                                                         		foreach (var r in _board.Rows)			                                                                                         		
+			                                                                                         			for (var i = 1; i < r.Squares.Count - 1; i++)			                                                                                         			
+			                                                                                         				r.Squares[i].IsSelectable.ShouldBeTrue();
+			                                                                                         						                                                                                         		
+			                                                                                         	});
+			
 		}
 	}
 }
