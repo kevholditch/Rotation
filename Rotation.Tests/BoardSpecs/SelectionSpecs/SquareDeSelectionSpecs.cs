@@ -17,14 +17,15 @@ namespace Xunit.BoardSpecs.SelectionSpecs
 		{
 			"Given that I have a board with 5 squares selected".Context(() =>
 			                                                            	{
-																				_boardFactory = new BoardFactory(new RowIndexSequenceGenerator(), new LineIndexSequenceGenerator());
+																				_boardFactory = new BoardFactory();
 			                                                            		_board = _boardFactory.Create();
+			                                                            		
+			                                                            		_board.Columns[1].Squares[0].IsSelected = true;
+																				_board.Columns[3].Squares[0].IsSelected = true;
+																				_board.Columns[5].Squares[0].IsSelected = true;
+																				_board.Rows[4].Squares[0].IsSelected = true;
+																				_board.Rows[8].Squares[0].IsSelected = true;
 
-			                                                            		_board[1, 0].IsSelected = true;
-			                                                            		_board[1, 1].IsSelected = true;
-			                                                            		_board[1, 2].IsSelected = true;
-			                                                            		_board[4, 0].IsSelected = true;
-			                                                            		_board[4, 2].IsSelected = true;
 
 																				_boardSquareSelector = new BoardSquareSelector();
 

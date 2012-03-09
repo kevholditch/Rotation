@@ -13,7 +13,7 @@ namespace Xunit.BoardSpecs
 		[Specification]
 		public void BoardFactoryCanCreateAStandardGrid()
 		{
-			"Given that I have a standard board factory".Context(() => _boardFactory = new BoardFactory(new RowIndexSequenceGenerator(),  new LineIndexSequenceGenerator()));
+			"Given that I have a standard board factory".Context(() => _boardFactory = new BoardFactory());
 
 			"When I create a board".Do(() => _board = _boardFactory.Create());
 
@@ -62,7 +62,7 @@ namespace Xunit.BoardSpecs
 		[Specification]
 		public void CheckThatTheRowsAndColumnsShareSquares()
 		{
-			"Given that I have a standard board factory".Context(() => _boardFactory = new BoardFactory(new RowIndexSequenceGenerator(), new LineIndexSequenceGenerator()));
+			"Given that I have a standard board factory".Context(() => _boardFactory = new BoardFactory());
 
 			"When I create a board".Do(() => _board = _boardFactory.Create());
 
@@ -122,7 +122,7 @@ namespace Xunit.BoardSpecs
 		public void BoardFactorySetsCorrectSquaresAsSelectable()
 		{
 			"Given that I have a board factory".Context(
-				() => _boardFactory = new BoardFactory(new RowIndexSequenceGenerator(), new LineIndexSequenceGenerator()));
+				() => _boardFactory = new BoardFactory());
 
 			"When I create a new board".Do(() => _board = _boardFactory.Create());
 

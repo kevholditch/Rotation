@@ -12,10 +12,5 @@ namespace Rotation.GameObjects.Board
 
 		public List<Line> Rows { get; private set; }		
 		public List<Line> Columns { get; private set; }
-
-		public Square this[int x, int y]
-		{
-			get { return Columns[x].Squares[y]; }
-		}
 	}
 }

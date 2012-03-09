@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Rotation.GameObjects.Board
@@ -9,10 +8,12 @@ namespace Rotation.GameObjects.Board
 		private readonly ILineIndexSequenceGenerator _sequenceGenerator;
 		private readonly IRowIndexSequenceGenerator _rowIndexSequenceGenerator;
 
-		public BoardFactory(IRowIndexSequenceGenerator rowIndexSequenceGenerator, ILineIndexSequenceGenerator sequenceGenerator)
+		public BoardFactory()
 		{
-			_rowIndexSequenceGenerator = rowIndexSequenceGenerator;
-			_sequenceGenerator = sequenceGenerator;
+			// hard coded to these implementations as the factory doesnt function without them
+			// so feels a bit false to inject them in
+			_rowIndexSequenceGenerator = new RowIndexSequenceGenerator();
+			_sequenceGenerator = new LineIndexSequenceGenerator();
 		}		
 		
 

@@ -6,6 +6,5 @@ namespace Rotation.GameObjects.Board
 	{
 		List<Line> Rows { get; }
 		List<Line> Columns { get; }
-		Square this[int x, int y] { get; }
 	}
 }

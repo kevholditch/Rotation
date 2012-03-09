@@ -2,7 +2,7 @@
 {
 	public interface IBoardSquareSelector
 	{		
-		IBoard Select(IBoard board, int x, int y);
-		IBoard DeSelectAll(IBoard board);
+		void SelectSquares(IBoard board, int x, int y);
+		void DeSelectAll(IBoard board);
 	}
 }
