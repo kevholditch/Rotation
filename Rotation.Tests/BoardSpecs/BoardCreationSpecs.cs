@@ -6,147 +6,210 @@ namespace Xunit.BoardSpecs
 {
 	public class BoardCreationSpecs
 	{
-		private Board _board = null;
-		private BoardFactory _boardFactory = null;
+		
 
 
 		[Specification]
-		public void BoardFactoryCanCreateAStandardGrid()
+		public void BoardFactoryShouldCreate9By9Board()
 		{
-			"Given that I have a standard board factory".Context(() => _boardFactory = new BoardFactory());
+			Board board = null;
+			BoardFactory boardFactory = null;
 
-			"When I create a board".Do(() => _board = _boardFactory.Create());
+			"Given that I have a standard board factory".Context(() => boardFactory = new BoardFactory());
 
-			"Then the board should have 9 rows".Observation(() => _board.Rows.Count.ShouldEqual(9));
+			"When I create a board".Do(() => board = boardFactory.Create());
 
-			"Then the board should have 9 columns".Observation(() => _board.Columns.Count.ShouldEqual(9));
+			"Then the board should have 9 rows".Observation(() => board.Rows.Count.ShouldEqual(9));
 
-			"Then row 1 should have 1 square".Observation(() => _board.Rows[0].Squares.Count.ShouldEqual(1));
-
-			"Then row 2 should have 3 squares".Observation(() => _board.Rows[1].Squares.Count.ShouldEqual(3));
-
-			"Then row 3 should have 5 squares".Observation(() => _board.Rows[2].Squares.Count.ShouldEqual(5));
-
-			"Then row 4 should have 7 squares".Observation(() => _board.Rows[3].Squares.Count.ShouldEqual(7));
-
-			"Then row 5 should have 9 squares".Observation(() => _board.Rows[4].Squares.Count.ShouldEqual(9));
-
-			"Then row 6 should have 7 squares".Observation(() => _board.Rows[5].Squares.Count.ShouldEqual(7));
-
-			"Then row 7 should have 5 squares".Observation(() => _board.Rows[6].Squares.Count.ShouldEqual(5));
-
-			"Then row 8 should have 3 squares".Observation(() => _board.Rows[7].Squares.Count.ShouldEqual(3));
-
-			"Then row 9 should have 1 squares".Observation(() => _board.Rows[8].Squares.Count.ShouldEqual(1));			
-
-			"Then column 1 should have 1 square".Observation(() => _board.Columns[0].Squares.Count.ShouldEqual(1));
-
-			"Then column 2 should have 3 squares".Observation(() => _board.Columns[1].Squares.Count.ShouldEqual(3));
-
-			"Then column 3 should have 5 squares".Observation(() => _board.Columns[2].Squares.Count.ShouldEqual(5));
-
-			"Then column 4 should have 7 squares".Observation(() => _board.Columns[3].Squares.Count.ShouldEqual(7));
-
-			"Then column 5 should have 9 squares".Observation(() => _board.Columns[4].Squares.Count.ShouldEqual(9));
-
-			"Then column 6 should have 7 squares".Observation(() => _board.Columns[5].Squares.Count.ShouldEqual(7));
-
-			"Then column 7 should have 5 squares".Observation(() => _board.Columns[6].Squares.Count.ShouldEqual(5));
-
-			"Then column 8 should have 3 squares".Observation(() => _board.Columns[7].Squares.Count.ShouldEqual(3));
-
-			"Then column 9 should have 1 squares".Observation(() => _board.Columns[8].Squares.Count.ShouldEqual(1));
-
+			"Then the board should have 9 columns".Observation(() => board.Columns.Count.ShouldEqual(9));			
 		}
 
 		[Specification]
-		public void CheckThatTheRowsAndColumnsShareSquares()
+		public void BoardFactoryShouldHaveSelectableSquaresInTheCorrectPositions()
 		{
-			"Given that I have a standard board factory".Context(() => _boardFactory = new BoardFactory());
+			Board board = null;
+			BoardFactory boardFactory = null;
 
-			"When I create a board".Do(() => _board = _boardFactory.Create());
+			"Given that I have a standard board factory".Context(() => boardFactory = new BoardFactory());
 
-			"Then the 1st square in the 1st row should be the same as the 1st square in the 5th column".Observation(
-				() => _board.Rows[0].Squares[0].ShouldBeTheSameAs(_board.Columns[4].Squares[0]));
+			"When I create a board".Do(() => board = boardFactory.Create());
 
-			"Then the 1st square in the 2nd row should be the same as the 1st square in the 4th column".Observation(
-				() => _board.Rows[1].Squares[0].ShouldBeTheSameAs(_board.Columns[3].Squares[0]));
+			"Then row 0 should have one selectable square".Observation(
+				() => board.Rows[0].Squares.Count(sq => sq.IsSelectable).ShouldEqual(1));
 
-			"Then the 1st square in the 3rd row should be the same as the 1st square in the 3rd column".Observation(
-				() => _board.Rows[2].Squares[0].ShouldBeTheSameAs(_board.Columns[2].Squares[0]));
+			"Then the square at index 4 on row 0 should be selectable".Observation(
+				() => board.Rows[0].Squares[4].IsSelectable.ShouldBeTrue());
 
-			"Then the 1st square in the 4th row should be the same as the 1st square in the 2nd column".Observation(
-				() => _board.Rows[3].Squares[0].ShouldBeTheSameAs(_board.Columns[1].Squares[0]));
+			"Then row 1 should have 3 selectable squares".Observation(
+				() => board.Rows[1].Squares.Count(sq => sq.IsSelectable).ShouldEqual(3));
 
-			"Then the 1st square in the 5th row should be the same as the 1st square in the 1st column".Observation(
-				() => _board.Rows[4].Squares[0].ShouldBeTheSameAs(_board.Columns[0].Squares[0]));
+			"Then the square at index 3 on row 1 should be selectable".Observation(
+				() => board.Rows[1].Squares[3].IsSelectable.ShouldBeTrue());
 
-			"Then the 1st square in the 6th row should be the same as the 3rd square in the 2nd column".Observation(
-				() => _board.Rows[5].Squares[0].ShouldBeTheSameAs(_board.Columns[1].Squares[2]));
+			"Then the square at index 4 on row 1 should be selectable".Observation(
+				() => board.Rows[1].Squares[3].IsSelectable.ShouldBeTrue());
 
-			"Then the 1st square in the 7th row should be the same as the 5th square in the 3rd column".Observation(
-				() => _board.Rows[6].Squares[0].ShouldBeTheSameAs(_board.Columns[2].Squares[4]));
+			"Then the square at index 5 on row 1 should be selectable".Observation(
+				() => board.Rows[1].Squares[3].IsSelectable.ShouldBeTrue());
 
-			"Then the 1st square in the 8th row should be the same as the 7th square in the 4th column".Observation(
-				() => _board.Rows[7].Squares[0].ShouldBeTheSameAs(_board.Columns[3].Squares[6]));
+			"Then row 2 should have 5 selectable squares".Observation(
+				() => board.Rows[2].Squares.Count(sq => sq.IsSelectable).ShouldEqual(5));
 
-			"Then the 1st square in the 9th row should be the same as the 9th square in the 5th column".Observation(
-				() => _board.Rows[8].Squares[0].ShouldBeTheSameAs(_board.Columns[4].Squares[8]));
+			"Then the square at index 2 on row 2 should be selectable".Observation(
+				() => board.Rows[2].Squares[2].IsSelectable.ShouldBeTrue());
 
-			"Then the last square in the 2nd row should be the same as the 1st square in the 6th column".Observation(
-				() => _board.Rows[1].Squares[2].ShouldBeTheSameAs(_board.Columns[5].Squares[0]));
+			"Then the square at index 3 on row 2 should be selectable".Observation(
+				() => board.Rows[2].Squares[3].IsSelectable.ShouldBeTrue());
 
-			"Then the last square in the 3rd row should be the same as the 1st square in the 7th column".Observation(
-				() => _board.Rows[2].Squares[4].ShouldBeTheSameAs(_board.Columns[6].Squares[0]));
+			"Then the square at index 4 on row 1 should be selectable".Observation(
+				() => board.Rows[2].Squares[4].IsSelectable.ShouldBeTrue());
 
-			"Then the last square in the 4th row should be the same as the 1st square in the 8th column".Observation(
-				() => _board.Rows[3].Squares[6].ShouldBeTheSameAs(_board.Columns[7].Squares[0]));
+			"Then the square at index 5 on row 2 should be selectable".Observation(
+				() => board.Rows[2].Squares[5].IsSelectable.ShouldBeTrue());
 
-			"Then the last square in the 5th row should be the same as the 1st square in the 9th column".Observation(
-				() => _board.Rows[4].Squares[8].ShouldBeTheSameAs(_board.Columns[8].Squares[0]));
+			"Then the square at index 6 on row 1 should be selectable".Observation(
+				() => board.Rows[2].Squares[6].IsSelectable.ShouldBeTrue());
 
-			"Then the last square in the 6th row should be the same as the last square in the 8th column".Observation(
-				() => _board.Rows[5].Squares[6].ShouldBeTheSameAs(_board.Columns[7].Squares[2]));
+			"Then row 3 should have 7 selectable squares".Observation(
+				() => board.Rows[3].Squares.Count(sq => sq.IsSelectable).ShouldEqual(7));
 
-			"Then the last square in the 7th row should be the same as the last square in the 7th column".Observation(
-				() => _board.Rows[6].Squares[4].ShouldBeTheSameAs(_board.Columns[6].Squares[4]));
+			"Then the square at index 1 on row 3 should be selectable".Observation(
+				() => board.Rows[3].Squares[1].IsSelectable.ShouldBeTrue());
 
-			"Then the last square in the 8th row should be the same as the last square in the 6th column".Observation(
-				() => _board.Rows[7].Squares[2].ShouldBeTheSameAs(_board.Columns[5].Squares[6]));
+			"Then the square at index 2 on row 3 should be selectable".Observation(
+				() => board.Rows[3].Squares[2].IsSelectable.ShouldBeTrue());
 
-			"Then the last square in the 9th row should be the same as the last square in the 5th column".Observation(
-				() => _board.Rows[8].Squares[0].ShouldBeTheSameAs(_board.Columns[4].Squares[8]));
+			"Then the square at index 3 on row 3 should be selectable".Observation(
+				() => board.Rows[3].Squares[3].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 4 on row 3 should be selectable".Observation(
+				() => board.Rows[3].Squares[4].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 5 on row 3 should be selectable".Observation(
+				() => board.Rows[3].Squares[5].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 6 on row 3 should be selectable".Observation(
+				() => board.Rows[3].Squares[6].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 7 on row 3 should be selectable".Observation(
+				() => board.Rows[3].Squares[7].IsSelectable.ShouldBeTrue());
+
+			"Then row 4 should have 9 selectable squares".Observation(
+				() => board.Rows[4].Squares.Count(sq => sq.IsSelectable).ShouldEqual(9));
+
+			"Then the square at index 0 on row 4 should be selectable".Observation(
+				() => board.Rows[4].Squares[0].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 1 on row 4 should be selectable".Observation(
+				() => board.Rows[4].Squares[1].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 2 on row 4 should be selectable".Observation(
+				() => board.Rows[4].Squares[4].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 3 on row 4 should be selectable".Observation(
+				() => board.Rows[4].Squares[3].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 4 on row 4 should be selectable".Observation(
+				() => board.Rows[4].Squares[4].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 5 on row 4 should be selectable".Observation(
+				() => board.Rows[4].Squares[5].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 6 on row 4 should be selectable".Observation(
+				() => board.Rows[4].Squares[6].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 7 on row 4 should be selectable".Observation(
+				() => board.Rows[4].Squares[7].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 8 on row 4 should be selectable".Observation(
+				() => board.Rows[4].Squares[8].IsSelectable.ShouldBeTrue());
+
+			"Then row 5 should have 7 selectable squares".Observation(
+				() => board.Rows[5].Squares.Count(sq => sq.IsSelectable).ShouldEqual(7));
+
+			"Then the square at index 1 on row 5 should be selectable".Observation(
+				() => board.Rows[5].Squares[1].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 2 on row 5 should be selectable".Observation(
+				() => board.Rows[5].Squares[2].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 3 on row 5 should be selectable".Observation(
+				() => board.Rows[5].Squares[3].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 4 on row 5 should be selectable".Observation(
+				() => board.Rows[5].Squares[4].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 5 on row 5 should be selectable".Observation(
+				() => board.Rows[5].Squares[5].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 6 on row 5 should be selectable".Observation(
+				() => board.Rows[5].Squares[6].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 7 on row 5 should be selectable".Observation(
+				() => board.Rows[5].Squares[7].IsSelectable.ShouldBeTrue());
+
+			"Then row 6 should have 5 selectable squares".Observation(
+				() => board.Rows[6].Squares.Count(sq => sq.IsSelectable).ShouldEqual(5));
+
+			"Then the square at index 2 on row 6 should be selectable".Observation(
+				() => board.Rows[6].Squares[2].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 3 on row 6 should be selectable".Observation(
+				() => board.Rows[6].Squares[3].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 4 on row 6 should be selectable".Observation(
+				() => board.Rows[6].Squares[4].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 5 on row 6 should be selectable".Observation(
+				() => board.Rows[6].Squares[5].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 6 on row 6 should be selectable".Observation(
+				() => board.Rows[6].Squares[6].IsSelectable.ShouldBeTrue());
+
+			"Then row 7 should have 3 selectable squares".Observation(
+				() => board.Rows[7].Squares.Count(sq => sq.IsSelectable).ShouldEqual(3));
+
+			"Then the square at index 7 on row 1 should be selectable".Observation(
+				() => board.Rows[7].Squares[3].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 7 on row 1 should be selectable".Observation(
+				() => board.Rows[7].Squares[3].IsSelectable.ShouldBeTrue());
+
+			"Then the square at index 7 on row 1 should be selectable".Observation(
+				() => board.Rows[7].Squares[3].IsSelectable.ShouldBeTrue());
+
+			"Then row 8 should have one selectable square".Observation(
+				() => board.Rows[8].Squares.Count(sq => sq.IsSelectable).ShouldEqual(1));
+
+			"Then the square at index 4 on row 8 should be selectable".Observation(
+				() => board.Rows[8].Squares[4].IsSelectable.ShouldBeTrue());
 		}
 
 		[Specification]
-		public void BoardFactorySetsCorrectSquaresAsSelectable()
+		public void TheSquaresInTheRowsAndColumnsShouldPointToTheSameReference()
 		{
-			"Given that I have a board factory".Context(
-				() => _boardFactory = new BoardFactory());
+			Board board = null;
+			BoardFactory boardFactory = null;
 
-			"When I create a new board".Do(() => _board = _boardFactory.Create());
+			"Given that I have a standard board factory".Context(() => boardFactory = new BoardFactory());
 
-			"Then the first square in every row should not be selectable".Observation(() =>
-			                                                                          	{
-																							foreach (Line r in _board.Rows)
-																								r.Squares[0].IsSelectable.ShouldBeFalse();
-			                                                                          	});
+			"When I create a board".Do(() => board = boardFactory.Create());
 
+			"Then each columns square should have the same reference as its corresponding row".Observation(() =>
+			                                                                                               	{
+			                                                                                               		for (int i = 0;
+			                                                                                               		     i <
+			                                                                                               		     board.Columns.
+			                                                                                               		     	Count;
+			                                                                                               		     i++)
+			                                                                                               		{
+																													for (int j = 0; j < board.Rows.Count; j++)
+																													{
+																														board.Columns[i].Squares[j].ShouldBeTheSameAs(board.Rows[i].Squares[j]);
+																													}
 
-			"Then the last square in every row should not be selectable".Observation(() =>
-			                                                                         	{
-																							foreach(Line r in _board.Rows)
-																								r.Squares[r.Squares.Count-1].IsSelectable.ShouldBeFalse();
-			                                                                         	});
-
-			"Then each square that is not the first or last square in every row should be selectable".Observation(() =>
-			                                                                                         	{
-			                                                                                         		foreach (var r in _board.Rows)			                                                                                         		
-			                                                                                         			for (var i = 1; i < r.Squares.Count - 1; i++)			                                                                                         			
-			                                                                                         				r.Squares[i].IsSelectable.ShouldBeTrue();
-			                                                                                         						                                                                                         		
-			                                                                                         	});
-			
+			                                                                                               		}
+			                                                                                               	});
 		}
 	}
 }
