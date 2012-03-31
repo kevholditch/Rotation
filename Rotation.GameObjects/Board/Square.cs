@@ -1,5 +1,4 @@
-﻿using System;
-using Rotation.GameObjects.Letters;
+﻿using Rotation.GameObjects.Letters;
 using Rotation.GameObjects.Tiles;
 
 namespace Rotation.GameObjects.Board
@@ -9,8 +8,8 @@ namespace Rotation.GameObjects.Board
 		public Square(bool isSelectable)
 		{
 			IsSelectable = isSelectable;
-			IsSelected = false;
-		}
+			IsSelected = false;			
+		}		
 
 		public bool IsSelected { get; set; }
 

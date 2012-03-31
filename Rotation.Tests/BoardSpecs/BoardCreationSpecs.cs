@@ -7,8 +7,6 @@ namespace Xunit.BoardSpecs
 	public class BoardCreationSpecs
 	{
 		
-
-
 		[Specification]
 		public void BoardFactoryShouldCreate9By9Board()
 		{
@@ -205,7 +203,7 @@ namespace Xunit.BoardSpecs
 			                                                                                               		{
 																													for (int j = 0; j < board.Rows.Count; j++)
 																													{
-																														board.Columns[i].Squares[j].ShouldBeTheSameAs(board.Rows[i].Squares[j]);
+																														board.Columns[i].Squares[j].ShouldBeTheSameAs(board.Rows[j].Squares[i]);
 																													}
 
 			                                                                                               		}

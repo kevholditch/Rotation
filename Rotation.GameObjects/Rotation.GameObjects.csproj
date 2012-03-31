@@ -97,13 +97,8 @@
     <Compile Include="Board\BoardFactory.cs" />
     <Compile Include="Board\IBoard.cs" />
     <Compile Include="Board\IBoardFactory.cs" />
-    <Compile Include="Board\ILineIndexSequenceGenerator.cs" />
     <Compile Include="Board\Line.cs" />
-    <Compile Include="Board\LineIndexSequenceGenerator.cs" />
-    <Compile Include="Board\IRowIndexSequenceGenerator.cs" />
-    <Compile Include="Board\RowIndexSequenceGenerator.cs" />
-    <Compile Include="Board\Selection\BoardSquareSelector.cs" />
-    <Compile Include="Board\Selection\IBoardSquareSelector.cs" />
+    <Compile Include="Board\Sequences\RowIndexSequence.cs" />
     <Compile Include="Board\Square.cs" />
     <Compile Include="Drawing\IDrawable.cs" />
     <Compile Include="Letters\ILetterLookup.cs" />
