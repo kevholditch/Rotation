@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rotation.Tests", "Rotation.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rotation.Game", "Rotation.Game\Rotation.Game\Rotation.Game.csproj", "{7589B472-C289-4B7B-B91C-FD6633116F3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTestHarness", "ConsoleTestHarness\ConsoleTestHarness.csproj", "{3815FCCA-E655-4FC2-83BF-10CDC19F761F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{7589B472-C289-4B7B-B91C-FD6633116F3E}.Release|Mixed Platforms.Build.0 = Release|x86
 		{7589B472-C289-4B7B-B91C-FD6633116F3E}.Release|x86.ActiveCfg = Release|x86
 		{7589B472-C289-4B7B-B91C-FD6633116F3E}.Release|x86.Build.0 = Release|x86
+		{3815FCCA-E655-4FC2-83BF-10CDC19F761F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3815FCCA-E655-4FC2-83BF-10CDC19F761F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{3815FCCA-E655-4FC2-83BF-10CDC19F761F}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{3815FCCA-E655-4FC2-83BF-10CDC19F761F}.Debug|x86.ActiveCfg = Debug|x86
+		{3815FCCA-E655-4FC2-83BF-10CDC19F761F}.Debug|x86.Build.0 = Debug|x86
+		{3815FCCA-E655-4FC2-83BF-10CDC19F761F}.Release|Any CPU.ActiveCfg = Release|x86
+		{3815FCCA-E655-4FC2-83BF-10CDC19F761F}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{3815FCCA-E655-4FC2-83BF-10CDC19F761F}.Release|Mixed Platforms.Build.0 = Release|x86
+		{3815FCCA-E655-4FC2-83BF-10CDC19F761F}.Release|x86.ActiveCfg = Release|x86
+		{3815FCCA-E655-4FC2-83BF-10CDC19F761F}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
