@@ -15,6 +15,8 @@ namespace Rotation.GameObjects.Board
 
 		public bool IsSelectable { get; private set; }
 
+		public bool HasTile { get { return _tile != null; } }
+
 		private Tile _tile;
 
 		public void SetTile(Tile tile)

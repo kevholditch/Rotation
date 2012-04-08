@@ -194,20 +194,20 @@ namespace Xunit.BoardSpecs
 			"When I create a board".Do(() => board = boardFactory.Create());
 
 			"Then each columns square should have the same reference as its corresponding row".Observation(() =>
-			                                                                                               	{
-			                                                                                               		for (int i = 0;
-			                                                                                               		     i <
-			                                                                                               		     board.Columns.
-			                                                                                               		     	Count;
-			                                                                                               		     i++)
-			                                                                                               		{
-																													for (int j = 0; j < board.Rows.Count; j++)
-																													{
-																														board.Columns[i].Squares[j].ShouldBeTheSameAs(board.Rows[j].Squares[i]);
-																													}
+			                {
+			                    for (int i = 0;
+			                            i <
+			                            board.Columns.
+			                            Count;
+			                            i++)
+			                    {
+									for (int j = 0; j < board.Rows.Count; j++)
+									{
+										board.Columns[i].Squares[j].ShouldBeTheSameAs(board.Rows[j].Squares[i]);
+									}
 
-			                                                                                               		}
-			                                                                                               	});
+			                    }
+			                });
 		}
 	}
 }
