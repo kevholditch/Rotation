@@ -100,6 +100,9 @@
     <Compile Include="Board\IBoardFactory.cs" />
     <Compile Include="Board\IBoardFiller.cs" />
     <Compile Include="Board\Line.cs" />
+    <Compile Include="Board\Selection\BoardSelectionExtensions.cs" />
+    <Compile Include="Board\Selection\ISquareSelector.cs" />
+    <Compile Include="Board\Selection\SquareSelector.cs" />
     <Compile Include="Board\Sequences\RowIndexSequence.cs" />
     <Compile Include="Board\Square.cs" />
     <Compile Include="Drawing\IDrawable.cs" />

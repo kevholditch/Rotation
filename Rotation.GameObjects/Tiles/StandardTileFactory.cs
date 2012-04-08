@@ -17,7 +17,7 @@ namespace Rotation.GameObjects.Tiles
 		{
 			var random = new Random(DateTime.Now.Millisecond);
 
-			var num = random.Next(0, 26);
+			var num = random.Next(0, 25);
 
 			return new StandardTile(_letterLookup.Letters.Take(num).First());
 		}
