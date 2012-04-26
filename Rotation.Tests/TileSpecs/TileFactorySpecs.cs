@@ -2,7 +2,7 @@
 using Rotation.GameObjects.Tiles;
 using SubSpec;
 
-namespace Xunit.TileSpecs
+namespace Rotation.Tests.TileSpecs
 {
 	public class TileFactorySpecs
 	{

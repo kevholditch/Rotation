@@ -59,9 +59,14 @@
     <Compile Include="AssertExtensions.cs" />
     <Compile Include="BoardSpecs\BoardCreationSpecs.cs" />
     <Compile Include="BoardSpecs\BoardFillerSpecs.cs" />
+    <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\SelectingSquareSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\SquareDeSelectionSpecs.cs" />
     <Compile Include="BoardSpecs\SequenceSpecs.cs" />
+    <Compile Include="TestClasses\AlphabeticalBoardFiller.cs" />
+    <Compile Include="TestClasses\AlphabeticalBoardFillerSpecs.cs" />
+    <Compile Include="TestClasses\TestTile.cs" />
+    <Compile Include="Builders\BoardBuilder.cs" />
     <Compile Include="LetterSpecs\LetterLookupSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TileSpecs\TileFactorySpecs.cs" />

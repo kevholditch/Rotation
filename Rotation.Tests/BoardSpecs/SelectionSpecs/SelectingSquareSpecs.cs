@@ -3,7 +3,7 @@ using Rotation.GameObjects.Board.Selection;
 using SubSpec;
 using System.Linq;
 
-namespace Xunit.BoardSpecs.SelectionSpecs
+namespace Rotation.Tests.BoardSpecs.SelectionSpecs
 {
 	public class SelectingSquareSpecs
 	{

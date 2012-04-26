@@ -16,5 +16,10 @@ namespace Rotation.GameObjects.Board
 		{
 			return board.Rows.SelectMany(row => row.Squares).ToList();
 		}
+
+		public static List<Square> AllSelectableSquaresWithTiles(this IBoard board)
+		{
+			return AllSquares(board).Where(sq => sq.IsSelectable && sq.HasTile).ToList();
+		}
 	}
 }

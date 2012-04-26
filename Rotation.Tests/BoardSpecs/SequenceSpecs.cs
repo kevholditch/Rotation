@@ -3,7 +3,7 @@ using System.Linq;
 using Rotation.GameObjects.Board.Sequences;
 using SubSpec;
 
-namespace Xunit.BoardSpecs
+namespace Rotation.Tests.BoardSpecs
 {
 	public class SequenceSpecs
 	{

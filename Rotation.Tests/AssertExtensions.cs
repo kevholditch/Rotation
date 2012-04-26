@@ -5,7 +5,7 @@ using System.Linq;
 using Xunit;
 
 // ReSharper disable CheckNamespace
-namespace Xunit
+namespace Rotation.Tests
 // ReSharper restore CheckNamespace
 {
     [DebuggerNonUserCode]

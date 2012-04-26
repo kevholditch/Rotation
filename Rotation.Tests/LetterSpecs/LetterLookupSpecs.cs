@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using Rotation.GameObjects.Letters;
 using SubSpec;
-using Xunit;
 
 namespace Rotation.Tests.LetterSpecs
 {

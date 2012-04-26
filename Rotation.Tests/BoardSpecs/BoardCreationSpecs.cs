@@ -2,7 +2,7 @@
 using SubSpec;
 using System.Linq;
 
-namespace Xunit.BoardSpecs
+namespace Rotation.Tests.BoardSpecs
 {
 	public class BoardCreationSpecs
 	{
