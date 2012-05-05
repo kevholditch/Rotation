@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Board\Board.cs" />
+    <Compile Include="Board\BoardCoordinate.cs" />
     <Compile Include="Board\BoardExtensionMethods.cs" />
     <Compile Include="Board\BoardFactory.cs" />
     <Compile Include="Board\BoardFiller.cs" />

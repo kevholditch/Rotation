@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +61,7 @@
     <Compile Include="BoardSpecs\BoardCreationSpecs.cs" />
     <Compile Include="BoardSpecs\BoardFillerSpecs.cs" />
     <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationSpecs.cs" />
+    <Compile Include="BoardSpecs\SelectionSpecs\MainSelectedSquareSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\SelectingSquareSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\SquareDeSelectionSpecs.cs" />
     <Compile Include="BoardSpecs\SequenceSpecs.cs" />

@@ -15,7 +15,7 @@ namespace Rotation.Tests.TestClasses
 
 			foreach (var square in board.AllSquares().Where(sq => sq.IsSelectable && !sq.HasTile))
 			{				
-				square.SetTile(new TestTile(lookup.Letters.First(l => l.Value == currentLetter)));
+				square.Tile = new TestTile(lookup.Letters.First(l => l.Value == currentLetter));
 
 				if (currentLetter == 'Z')
 				{

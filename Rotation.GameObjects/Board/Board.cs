@@ -12,6 +12,20 @@ namespace Rotation.GameObjects.Board
 
 		public List<Line> Rows { get; private set; }		
 		public List<Line> Columns { get; private set; }
-		public Square this[int x, int y] { get { return Rows[x].Squares[y]; } }
+		public Square this[int x, int y] { get { return Columns[x].Squares[y]; } }
+
+		public BoardCoordinate GetMainSelectedSquare()
+		{			
+			for (int i = 0; i < Rows.Count; i++)
+			{
+				for (int j = 0; j < Columns.Count; j++)
+				{
+					if (this[i, j].IsMainSelection)
+						return new BoardCoordinate(j, i);
+				}
+			}
+
+			return null;
+		}
 	}
 }

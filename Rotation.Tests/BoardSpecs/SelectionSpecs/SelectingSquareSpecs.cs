@@ -23,6 +23,8 @@ namespace Rotation.Tests.BoardSpecs.SelectionSpecs
 
 			"When I select the centre square".Do(() => squareSelector.Select(board, 4, 4));
 
+			"Then square 4, 4 should be the main selection".Observation(() => board[4, 4].IsMainSelection.ShouldBeTrue());
+
 			"Then the square at position 4, 0 should be selected".Observation(() => board[4, 0].IsSelected.ShouldBeTrue());
 
 			"Then the square at position 4, 1 should be selected".Observation(() => board[4, 1].IsSelected.ShouldBeTrue());
@@ -78,6 +80,8 @@ namespace Rotation.Tests.BoardSpecs.SelectionSpecs
 
 			"When I select the centre square 4,2".Do(() => squareSelector.Select(board, 4, 2));
 
+			"Then square 4, 2 should be the main selection".Observation(() => board[4, 2].IsMainSelection.ShouldBeTrue());
+
 			"Then the square at position 4, 0 should be selected".Observation(() => board[4, 0].IsSelected.ShouldBeTrue());
 
 			"Then the square at position 4, 1 should be selected".Observation(() => board[4, 1].IsSelected.ShouldBeTrue());
@@ -114,6 +118,8 @@ namespace Rotation.Tests.BoardSpecs.SelectionSpecs
 			});
 
 			"When I select the centre square 5, 6".Do(() => squareSelector.Select(board, 5, 6));
+
+			"Then square 5, 6 should be the main selection".Observation(() => board[5, 6].IsMainSelection.ShouldBeTrue());
 
 			"Then the square at position 5, 5 should be selected".Observation(() => board[5, 5].IsSelected.ShouldBeTrue());
 

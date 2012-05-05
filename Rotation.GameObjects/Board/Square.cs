@@ -15,18 +15,15 @@ namespace Rotation.GameObjects.Board
 
 		public bool IsSelectable { get; private set; }
 
-		public bool HasTile { get { return _tile != null; } }
+		public bool HasTile { get { return Tile != null; } }
 
-		private Tile _tile;
+		public bool IsMainSelection { get; set; }	
 
-		public void SetTile(Tile tile)
-		{
-			_tile = tile;
-		}
+		public Tile Tile { get; set; }
 
 		public Letter Letter
 		{
-			get { return _tile.Letter; }
+			get { return Tile.Letter; }
 		}
 
 		

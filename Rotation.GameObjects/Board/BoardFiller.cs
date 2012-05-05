@@ -16,7 +16,7 @@ namespace Rotation.GameObjects.Board
 		{
 			foreach (var square in board.AllSquares().Where(sq => sq.IsSelectable && !sq.HasTile))
 			{
-				square.SetTile(_tileFactory.Create());
+				square.Tile = _tileFactory.Create();
 			}
 		}
 	}

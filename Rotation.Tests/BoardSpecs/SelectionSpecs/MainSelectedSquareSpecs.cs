@@ -1,0 +1,32 @@
+﻿using System.Drawing;
+using Rotation.GameObjects.Board;
+using Rotation.GameObjects.Board.Selection;
+using SubSpec;
+
+namespace Rotation.Tests.BoardSpecs.SelectionSpecs
+{
+	public class MainSelectedSquareSpecs
+	{
+		[Specification]
+		public void CanFindTheMainSelectedSquare()
+		{
+			SquareSelector squareSelector = default(SquareSelector);
+			IBoard board = null;
+			var boardCoordinate = default(BoardCoordinate); 
+
+			"Given I have selected the centre square on a normal board".Context(() =>
+			{
+				board = new BoardFactory().Create();
+				squareSelector = new SquareSelector();
+				squareSelector.Select(board, 4, 4);
+			});
+
+			"When I get the selected square".Do(() => boardCoordinate = board.GetMainSelectedSquare());
+
+			"Then the x value of the coordindate should be 4".Observation(() => boardCoordinate.X.ShouldEqual(4));
+
+			"Then the y value of the coordinate should be 4".Observation(() => boardCoordinate.Y.ShouldEqual(4));
+
+		}
+	}
+}
