@@ -1,9 +1,10 @@
-﻿using Rotation.GameObjects.Letters;
+﻿using Rotation.GameObjects.Drawing;
+using Rotation.GameObjects.Letters;
 using Rotation.GameObjects.Tiles;
 
 namespace Rotation.GameObjects.Board
 {
-	public class Square 
+	public class Square : IDrawableItem
 	{
 		public Square(bool isSelectable)
 		{

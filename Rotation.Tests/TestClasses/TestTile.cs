@@ -1,7 +1,7 @@
 ﻿using Rotation.GameObjects.Letters;
 using Rotation.GameObjects.Tiles;
 
-namespace Rotation.Tests.TestClasses
+namespace Rotation.GameObjects.sTests.TestClasses
 {
 	public class TestTile : Tile
 	{

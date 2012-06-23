@@ -1,11 +1,11 @@
 ﻿using Rotation.GameObjects.Board;
 using Rotation.GameObjects.Board.Rotation;
 using Rotation.GameObjects.Board.Selection;
-using Rotation.GameObjects.Tiles;
-using Rotation.Tests.TestClasses;
+using Rotation.GameObjects.sTests.TestClasses;
+using Rotation.Tests.Common;
 using SubSpec;
 
-namespace Rotation.Tests.BoardSpecs.RotationSpecs
+namespace Rotation.GameObjects.sTests.BoardSpecs.RotationSpecs
 {
 	public class SelectionRotationSpecs
 	{

@@ -1,9 +1,9 @@
-﻿using System.Drawing;
-using Rotation.GameObjects.Board;
+﻿using Rotation.GameObjects.Board;
 using Rotation.GameObjects.Board.Selection;
+using Rotation.Tests.Common;
 using SubSpec;
 
-namespace Rotation.Tests.BoardSpecs.SelectionSpecs
+namespace Rotation.GameObjects.sTests.BoardSpecs.SelectionSpecs
 {
 	public class MainSelectedSquareSpecs
 	{

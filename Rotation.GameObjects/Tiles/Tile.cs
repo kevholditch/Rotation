@@ -1,8 +1,9 @@
-﻿using Rotation.GameObjects.Letters;
+﻿using Rotation.GameObjects.Drawing;
+using Rotation.GameObjects.Letters;
 
 namespace Rotation.GameObjects.Tiles
 {
-	public abstract class Tile
+	public abstract class Tile : IDrawableItem
 	{
 		protected Tile(Letter letter)
 		{

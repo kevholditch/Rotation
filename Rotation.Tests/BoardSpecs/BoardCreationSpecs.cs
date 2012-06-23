@@ -1,8 +1,9 @@
 ﻿using Rotation.GameObjects.Board;
+using Rotation.Tests.Common;
 using SubSpec;
 using System.Linq;
 
-namespace Rotation.Tests.BoardSpecs
+namespace Rotation.GameObjects.sTests.BoardSpecs
 {
 	public class BoardCreationSpecs
 	{
@@ -10,7 +11,7 @@ namespace Rotation.Tests.BoardSpecs
 		[Specification]
 		public void BoardFactoryShouldCreate9By9Board()
 		{
-			Board board = null;
+			Board.Board board = null;
 			BoardFactory boardFactory = null;
 
 			"Given that I have a standard board factory".Context(() => boardFactory = new BoardFactory());
@@ -25,7 +26,7 @@ namespace Rotation.Tests.BoardSpecs
 		[Specification]
 		public void BoardFactoryShouldHaveSelectableSquaresInTheCorrectPositions()
 		{
-			Board board = null;
+			Board.Board board = null;
 			BoardFactory boardFactory = null;
 
 			"Given that I have a standard board factory".Context(() => boardFactory = new BoardFactory());
@@ -186,7 +187,7 @@ namespace Rotation.Tests.BoardSpecs
 		[Specification]
 		public void TheSquaresInTheRowsAndColumnsShouldPointToTheSameReference()
 		{
-			Board board = null;
+			Board.Board board = null;
 			BoardFactory boardFactory = null;
 
 			"Given that I have a standard board factory".Context(() => boardFactory = new BoardFactory());

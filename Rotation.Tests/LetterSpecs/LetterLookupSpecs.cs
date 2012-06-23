@@ -1,8 +1,9 @@
 ﻿using System.Linq;
 using Rotation.GameObjects.Letters;
+using Rotation.Tests.Common;
 using SubSpec;
 
-namespace Rotation.Tests.LetterSpecs
+namespace Rotation.GameObjects.sTests.LetterSpecs
 {
 	public class LetterLookupSpecs
 	{

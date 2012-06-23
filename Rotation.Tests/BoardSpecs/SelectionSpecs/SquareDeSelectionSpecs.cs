@@ -1,9 +1,10 @@
 ﻿using Rotation.GameObjects.Board;
+using Rotation.Tests.Common;
 using SubSpec;
 using Rotation.GameObjects.Board.Selection;
 using System.Linq;
 
-namespace Rotation.Tests.BoardSpecs.SelectionSpecs
+namespace Rotation.GameObjects.sTests.BoardSpecs.SelectionSpecs
 {
 	public class SquareDeSelectionSpecs
 	{

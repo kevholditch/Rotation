@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Rotation.GameObjects.Board;
+using Rotation.GameObjects.Board.Rotation;
+using Rotation.GameObjects.Board.Selection;
 using Rotation.GameObjects.Letters;
 using Rotation.GameObjects.Tiles;
 
@@ -30,6 +32,19 @@ namespace ConsoleTestHarness
 			boardFiller.Fill(board);
 
 			display.Display();
+
+		    Console.ReadKey();
+
+		    var tileSelector = new SquareSelector();
+
+            tileSelector.Select(board, 3, 3);
+
+		    var selectionRotator = new SelectionRotatator();
+
+            selectionRotator.Left(board);
+
+            display.Display();
+
 
 			Console.ReadKey();
 		}

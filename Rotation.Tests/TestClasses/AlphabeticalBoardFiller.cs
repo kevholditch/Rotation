@@ -2,7 +2,7 @@ using System.Linq;
 using Rotation.GameObjects.Board;
 using Rotation.GameObjects.Letters;
 
-namespace Rotation.Tests.TestClasses
+namespace Rotation.GameObjects.sTests.TestClasses
 {
 	public class AlphabeticalBoardFiller : IBoardFiller
 	{

@@ -1,8 +1,9 @@
 ﻿using Rotation.GameObjects.Letters;
 using Rotation.GameObjects.Tiles;
+using Rotation.Tests.Common;
 using SubSpec;
 
-namespace Rotation.Tests.TileSpecs
+namespace Rotation.GameObjects.sTests.TileSpecs
 {
 	public class TileFactorySpecs
 	{

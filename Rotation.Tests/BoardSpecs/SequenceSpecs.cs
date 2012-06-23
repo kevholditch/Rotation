@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Rotation.GameObjects.Board.Sequences;
+using Rotation.Tests.Common;
 using SubSpec;
 
-namespace Rotation.Tests.BoardSpecs
+namespace Rotation.GameObjects.sTests.BoardSpecs
 {
 	public class SequenceSpecs
 	{

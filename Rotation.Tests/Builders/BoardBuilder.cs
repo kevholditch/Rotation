@@ -1,6 +1,6 @@
 ﻿using Rotation.GameObjects.Board;
 
-namespace Rotation.Tests.Builders
+namespace Rotation.GameObjects.sTests.Builders
 {
 	public class BoardBuilder
 	{		

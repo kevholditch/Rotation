@@ -2,10 +2,11 @@
 using Rotation.GameObjects.Board;
 using Rotation.GameObjects.Letters;
 using Rotation.GameObjects.Tiles;
+using Rotation.Tests.Common;
 using SubSpec;
 using System.Linq;
 
-namespace Rotation.Tests.BoardSpecs
+namespace Rotation.GameObjects.sTests.BoardSpecs
 {
 	public class BoardFillerSpecs
 	{
@@ -13,7 +14,7 @@ namespace Rotation.Tests.BoardSpecs
 		public void CanFillAnEmptyBoard()
 		{
 			var boardFiller = default(BoardFiller);
-			var board = default(Board);
+			var board = default(Board.Board);
 
 			"Given that I have a board with with 41 selectable squares".Context(() =>
 			                                                                    	{
