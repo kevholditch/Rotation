@@ -1,5 +1,5 @@
-﻿using Rotation.GameObjects.Board;
-using Rotation.GameObjects.Board.Selection;
+﻿using Rotation.GameObjects.StandardBoard;
+using Rotation.GameObjects.StandardBoard.Selection;
 using Rotation.Tests.Common;
 using SubSpec;
 
@@ -11,7 +11,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.SelectionSpecs
 		public void CanFindTheMainSelectedSquare()
 		{
 			SquareSelector squareSelector = default(SquareSelector);
-			IBoard board = null;
+			Board board = null;
 			var boardCoordinate = default(BoardCoordinate); 
 
 			"Given I have selected the centre square on a normal board".Context(() =>

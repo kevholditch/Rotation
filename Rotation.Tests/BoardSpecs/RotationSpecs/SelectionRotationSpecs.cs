@@ -1,6 +1,6 @@
-﻿using Rotation.GameObjects.Board;
-using Rotation.GameObjects.Board.Rotation;
-using Rotation.GameObjects.Board.Selection;
+﻿using Rotation.GameObjects.StandardBoard;
+using Rotation.GameObjects.StandardBoard.Rotation;
+using Rotation.GameObjects.StandardBoard.Selection;
 using Rotation.GameObjects.sTests.TestClasses;
 using Rotation.Tests.Common;
 using SubSpec;
@@ -13,7 +13,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.RotationSpecs
 		public void CanRotateASelectionRight()
 		{
 			var selectionRotator = new SelectionRotatator();
-			var board = default(IBoard);
+			var board = default(Board);
 			var squareSelector = new SquareSelector();
 
 			"Given that I have a board filled alphabetically and I have selected the centre square".Context(() =>
@@ -111,7 +111,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.RotationSpecs
 		public void CanRotateASmallSelectionRight()
 		{
 			var selectionRotator = new SelectionRotatator();
-			var board = default(IBoard);
+			var board = default(Board);
 			var squareSelector = new SquareSelector();
 
 			"Given that I have a board filled alphabetically and I have selected the square 5, 2".Context(() =>
@@ -144,7 +144,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.RotationSpecs
 		public void CanRotateASelectionLeft()
 		{
 			var selectionRotator = new SelectionRotatator();
-			var board = default(IBoard);
+			var board = default(Board);
 			var squareSelector = new SquareSelector();
 
 			"Given that I have a board filled alphabetically and I have selected the centre square".Context(() =>
@@ -242,7 +242,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.RotationSpecs
 		public void CanRotateASmallSelectionLeft()
 		{
 			var selectionRotator = new SelectionRotatator();
-			var board = default(IBoard);
+			var board = default(Board);
 			var squareSelector = new SquareSelector();
 
 			"Given that I have a board filled alphabetically and I have selected the square 5, 2".Context(() =>

@@ -1,5 +1,5 @@
-﻿using Rotation.GameObjects.Board;
-using Rotation.GameObjects.Board.Selection;
+﻿using Rotation.GameObjects.StandardBoard;
+using Rotation.GameObjects.StandardBoard.Selection;
 using Rotation.Tests.Common;
 using SubSpec;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.SelectionSpecs
 		public void CanSelectTheCentreSquareCorrectly()
 		{
 			SquareSelector squareSelector = default(SquareSelector);
-			IBoard board = null;
+			Board board = null;
 
 			"Given I have a standard board with no squares selected and a square selector".Context(() =>
 			                                                                                       	{
@@ -69,7 +69,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.SelectionSpecs
 		public void CanSelectSquareFourAcrossTwoDownCorrectly()
 		{
 			SquareSelector squareSelector = default(SquareSelector);
-			IBoard board = null;
+			Board board = null;
 
 			"Given I have a standard board with no squares selected and a square selector".Context(() =>
 			                                                                                       	{
@@ -108,7 +108,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.SelectionSpecs
 		public void CanSelectSquareFiveAcrossSixDownCorrectly()
 		{
 			SquareSelector squareSelector = default(SquareSelector);
-			IBoard board = null;
+			Board board = null;
 
 			"Given I have a standard board with no squares selected and a square selector".Context(() =>
 			{

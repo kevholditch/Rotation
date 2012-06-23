@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Rotation.GameObjects.Board;
+using Rotation.GameObjects.StandardBoard;
 using Rotation.Tests.Common;
 using SubSpec;
 
@@ -11,7 +11,7 @@ namespace Rotation.GameObjects.sTests.TestClasses
 		public void CanFillAnEmptyBoard()
 		{
 			var alphabeticalBoardFiller = default(AlphabeticalBoardFiller);
-			var board = default(Board.Board);
+			var board = default(Board);
 
 			"Given that I have a board with with 41 selectable squares".Context(() =>
 			{				
@@ -33,7 +33,7 @@ namespace Rotation.GameObjects.sTests.TestClasses
 		public void SquaresShouldContainLettersInAlphabeticalOrder()
 		{
 			var alphabeticalBoardFiller = default(AlphabeticalBoardFiller);
-			var board = default(Board.Board);
+			var board = default(Board);
 
 			"Given that I have a board with with 41 selectable squares".Context(() =>
 			{

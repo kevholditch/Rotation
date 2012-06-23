@@ -43,7 +43,7 @@
     <Compile Include="ItemDrawers\IItemDrawer.cs" />
     <Compile Include="ItemDrawers\ItemDrawerBase.cs" />
     <Compile Include="ItemDrawers\ItemDrawerFactory.cs" />
-    <Compile Include="ItemDrawers\StandardTileDrawer.cs" />
+    <Compile Include="ItemDrawers\SquareDrawer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

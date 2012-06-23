@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Rotation.GameObjects.Board;
-using Rotation.GameObjects.Board.Rotation;
-using Rotation.GameObjects.Board.Selection;
 using Rotation.GameObjects.Letters;
+using Rotation.GameObjects.StandardBoard;
+using Rotation.GameObjects.StandardBoard.Rotation;
+using Rotation.GameObjects.StandardBoard.Selection;
 using Rotation.GameObjects.Tiles;
 
 namespace ConsoleTestHarness
@@ -15,7 +15,7 @@ namespace ConsoleTestHarness
 		static void Main(string[] args)
 		{
 
-			IBoard board = new BoardFactory().Create();
+			Board board = new BoardFactory().Create();
 
 			var display = new ConsoleBoardDisplayer(board);
 

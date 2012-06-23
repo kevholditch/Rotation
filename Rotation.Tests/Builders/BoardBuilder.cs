@@ -1,10 +1,10 @@
-﻿using Rotation.GameObjects.Board;
+﻿using Rotation.GameObjects.StandardBoard;
 
 namespace Rotation.GameObjects.sTests.Builders
 {
 	public class BoardBuilder
 	{		
-		public IBoard BuildStandard()
+		public Board BuildStandard()
 		{
 			return new BoardFactory().Create();
 		}

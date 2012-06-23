@@ -1,14 +1,14 @@
 ﻿using System;
-using Rotation.GameObjects.Board;
+using Rotation.GameObjects.StandardBoard;
 
 namespace ConsoleTestHarness
 {
 	public class ConsoleBoardDisplayer
 	{
 
-		private readonly IBoard _board;
+		private readonly Board _board;
 
-		public ConsoleBoardDisplayer(IBoard board)
+		public ConsoleBoardDisplayer(Board board)
 		{
 			_board = board;
 		}

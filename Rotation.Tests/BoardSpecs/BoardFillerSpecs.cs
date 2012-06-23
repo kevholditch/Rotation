@@ -1,6 +1,6 @@
 ﻿using FakeItEasy;
-using Rotation.GameObjects.Board;
 using Rotation.GameObjects.Letters;
+using Rotation.GameObjects.StandardBoard;
 using Rotation.GameObjects.Tiles;
 using Rotation.Tests.Common;
 using SubSpec;
@@ -14,7 +14,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs
 		public void CanFillAnEmptyBoard()
 		{
 			var boardFiller = default(BoardFiller);
-			var board = default(Board.Board);
+			var board = default(Board);
 
 			"Given that I have a board with with 41 selectable squares".Context(() =>
 			                                                                    	{

@@ -1,12 +1,12 @@
 using System.Linq;
-using Rotation.GameObjects.Board;
 using Rotation.GameObjects.Letters;
+using Rotation.GameObjects.StandardBoard;
 
 namespace Rotation.GameObjects.sTests.TestClasses
 {
 	public class AlphabeticalBoardFiller : IBoardFiller
 	{
-		public void Fill(IBoard board)
+		public void Fill(Board board)
 		{
 
 			var currentLetter = 'A';

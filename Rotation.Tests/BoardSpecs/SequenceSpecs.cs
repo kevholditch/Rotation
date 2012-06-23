@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Rotation.GameObjects.Board.Sequences;
+using Rotation.GameObjects.StandardBoard.Sequences;
 using Rotation.Tests.Common;
 using SubSpec;
 

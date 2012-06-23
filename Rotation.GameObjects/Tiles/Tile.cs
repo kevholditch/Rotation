@@ -3,7 +3,7 @@ using Rotation.GameObjects.Letters;
 
 namespace Rotation.GameObjects.Tiles
 {
-	public abstract class Tile : IDrawableItem
+	public abstract class Tile 
 	{
 		protected Tile(Letter letter)
 		{

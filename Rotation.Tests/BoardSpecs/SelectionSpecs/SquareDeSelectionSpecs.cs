@@ -1,7 +1,7 @@
-﻿using Rotation.GameObjects.Board;
+﻿using Rotation.GameObjects.StandardBoard;
+using Rotation.GameObjects.StandardBoard.Selection;
 using Rotation.Tests.Common;
 using SubSpec;
-using Rotation.GameObjects.Board.Selection;
 using System.Linq;
 
 namespace Rotation.GameObjects.sTests.BoardSpecs.SelectionSpecs
@@ -11,7 +11,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.SelectionSpecs
 		[Specification]
 		public void CanDeSelectAllSquares()
 		{
-			IBoard board = null;
+			Board board = null;
 
 			"Given that I have a standard board with some squares selected"
 				.Context(() => { board = new BoardFactory().Create();
