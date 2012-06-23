@@ -14,7 +14,7 @@
     </TargetFrameworkProfile>
     <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
     <XnaPlatform>Windows</XnaPlatform>
-    <XnaProfile>HiDef</XnaProfile>
+    <XnaProfile>Reach</XnaProfile>
     <XnaCrossPlatformGroupID>ad084ba0-8db9-4caa-bf33-afe65a57833b</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
     <ApplicationIcon>Game.ico</ApplicationIcon>
@@ -144,9 +144,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Rotation.Content\Rotation.Content.contentproj">
-      <Project>{2FC8F55F-65AD-4657-B631-1AD5CBD6C3BD}</Project>
-      <Name>Rotation.Content</Name>
+    <ProjectReference Include="..\..\Rotation.Drawing\Rotation.Drawing.csproj">
+      <Project>{1D831CB5-9771-424C-B466-40B232305202}</Project>
+      <Name>Rotation.Drawing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Rotation.GameObjects\Rotation.GameObjects.csproj">
+      <Project>{759DF5D1-DF21-4F41-9BFA-07FCF9A56539}</Project>
+      <Name>Rotation.GameObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rotation.GameContent\Rotation.GameContent.contentproj">
+      <Project>{7C31BCBD-C8CF-4CEC-A5E5-42C9A92A87DC}</Project>
+      <Name>Rotation.GameContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
   </ItemGroup>

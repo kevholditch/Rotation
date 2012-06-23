@@ -8,6 +8,12 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using Rotation.Drawing.ItemDrawers;
+using Rotation.Drawing.Textures;
+using Rotation.GameObjects.Drawing;
+using Rotation.GameObjects.Letters;
+using Rotation.GameObjects.StandardBoard;
+using Rotation.GameObjects.Tiles;
 
 namespace Rotation.Game
 {
@@ -18,6 +24,10 @@ namespace Rotation.Game
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
+	    private Board _board;
+	    private ITextureLoader _textureLoader;
+	    private ItemDrawerFactory _itemDrawerFactory;
+	    private IEnumerable<IDrawableItem> _drawableItems;
 
 		public RotationGame()
 		{
@@ -47,7 +57,14 @@ namespace Rotation.Game
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
-			// TODO: use this.Content to load your game content here
+		    _board = new BoardFactory().Create();
+		    var boardFiller = new BoardFiller(new StandardTileFactory(new LetterLookup()));
+            boardFiller.Fill(_board);
+
+            _textureLoader = new TextureLoader(s => Content.Load<Texture2D>(s));
+		    _itemDrawerFactory = new ItemDrawerFactory(new List<IItemDrawer>{ new SquareDrawer()});
+		    _drawableItems = _board.GetDrawables();
+
 		}
 
 		/// <summary>
@@ -81,9 +98,16 @@ namespace Rotation.Game
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{
-			GraphicsDevice.Clear(Color.CornflowerBlue);
+			GraphicsDevice.Clear(Color.White);
 
-			// TODO: Add your drawing code here
+            spriteBatch.Begin();
+
+            foreach (var drawable in _drawableItems)
+            {
+                var drawer = _itemDrawerFactory.Create(drawable);
+                drawer.Draw(spriteBatch, _textureLoader, drawable);
+            }
+            spriteBatch.End();
 
 			base.Draw(gameTime);
 		}
