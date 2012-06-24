@@ -5,7 +5,7 @@ namespace Rotation.GameObjects.StandardBoard
 {
 	public class Board : IGetDrawableItems
 	{
-		public Board(List<Line> rows, List<Line> columns)
+		public Board(List<Line> columns, List<Line> rows)
 		{
 			Columns = columns;
 			Rows = rows;
