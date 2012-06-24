@@ -7,6 +7,7 @@ using Rotation.Drawing.Textures;
 using Rotation.GameObjects.Drawing;
 using Rotation.GameObjects.Letters;
 using Rotation.GameObjects.StandardBoard;
+using Rotation.GameObjects.StandardBoard.Selection;
 using Rotation.GameObjects.Tiles;
 
 namespace Rotation.Game
@@ -20,7 +21,9 @@ namespace Rotation.Game
 		SpriteBatch spriteBatch;
 	    private Board _board;
 	    private IItemDrawerFactory _itemDrawerFactory;
-	    private IEnumerable<IDrawableItem> _drawableItems; 
+	    private IEnumerable<IDrawableItem> _drawableItems;
+	    private ISquareSelector _squareSelector;
+	    private Point _currentPos;
 
 		public RotationGame()
 		{
@@ -63,10 +66,15 @@ namespace Rotation.Game
 		                                                                     {
 		                                                                         new BlankTileTextureCreator(textureLoader),
 		                                                                         new StandardTileTextureCreator(textureLoader)
-		                                                                     }))
+		                                                                     }),
+                                                                             new SquareColourSelector())
 		                                  });
 
 		    _drawableItems = _board.GetDrawables();
+
+            _currentPos = new Point(4, 4);
+            _squareSelector = new SquareSelector();
+            _squareSelector.Select(_board, _currentPos.X, _currentPos.Y);
 
 		}
 
@@ -90,6 +98,20 @@ namespace Rotation.Game
 			// Allows the game to exit
 			if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
 				this.Exit();
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                _currentPos.Y--;
+
+            if (GamePad.GetState(PlayerIndex.One).DPad.Down == ButtonState.Pressed)
+                _currentPos.Y++;
+
+            if (GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed)
+                _currentPos.X--;
+
+            if (GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed)
+                _currentPos.X++;
+
+            _squareSelector.Select(_board, _currentPos.X, _currentPos.Y);
 
 			// TODO: Add your update logic here
 

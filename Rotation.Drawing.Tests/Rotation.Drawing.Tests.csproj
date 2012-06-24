@@ -91,6 +91,7 @@
     <Compile Include="FactorySpecs\ItemDrawerFactorySpecs.cs" />
     <Compile Include="FactorySpecs\TileTextureFactorySpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectorSpecs\SquareColourSelectorSpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

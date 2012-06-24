@@ -20,7 +20,7 @@ namespace Rotation.Drawing.Textures
 
         public Texture2D Create(Tile tile)
         {
-            return _textureLoader.Load(DrawingConstants.BLANK_TILE);
+            return _textureLoader.Load(DrawingConstants.Tiles.BLANK_TILE);
         }
     }
 }

@@ -3,7 +3,10 @@ namespace Rotation.GameObjects.StandardBoard.Selection
 	public class SquareSelector : ISquareSelector
 	{
 		public void Select(Board board, int row, int col)
-		{			
+		{
+
+		    DeSelect(board);
+
 			var iteration = 1;
 
 			board[row, col].IsSelected = true;
@@ -18,5 +21,14 @@ namespace Rotation.GameObjects.StandardBoard.Selection
 				iteration++;
 			}
 		}
+
+	    public void DeSelect(Board board)
+	    {
+            board.ForEachSquare(sq =>
+            {
+                sq.IsSelected = false;
+                sq.IsMainSelection = false;
+            });
+	    }
 	}
 }

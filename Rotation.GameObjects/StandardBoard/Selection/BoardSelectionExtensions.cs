@@ -2,15 +2,7 @@
 {
 	public static class BoardSelectionExtensions
 	{
-		public static void DeselectAll(this Board board)
-		{
-			board.ForEachSquare(sq =>
-			                    	{
-			                    		sq.IsSelected = false;
-			                    		sq.IsMainSelection = false;
-			                    	});
-		}
-
+	
 		public static bool CanGoUp(this Board board, int row, int col, int numSquares)
 		{
 			return (row - numSquares) >= 0 && board[row - numSquares, col].IsSelectable;
