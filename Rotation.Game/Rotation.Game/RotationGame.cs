@@ -25,7 +25,6 @@ namespace Rotation.Game
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 	    private Board _board;
-	    private ITextureLoader _textureLoader;
 	    private ItemDrawerFactory _itemDrawerFactory;
 	    private IEnumerable<IDrawableItem> _drawableItems;
 
@@ -61,8 +60,18 @@ namespace Rotation.Game
 		    var boardFiller = new BoardFiller(new StandardTileFactory(new LetterLookup()));
             boardFiller.Fill(_board);
 
-            _textureLoader = new TextureLoader(s => Content.Load<Texture2D>(s));
-		    _itemDrawerFactory = new ItemDrawerFactory(new List<IItemDrawer>{ new SquareDrawer()});
+            var textureLoader = new TextureLoader(s => Content.Load<Texture2D>(s));
+		    _itemDrawerFactory =
+		        new ItemDrawerFactory(new List<IItemDrawer>
+		                                  {
+		                                      new SquareDrawer(
+		                                          new TileTextureFactory(new List<ITileTextureCreator>
+		                                                                     {
+		                                                                         new BlankTileTextureCreator(textureLoader),
+		                                                                         new StandardTileTextureCreator(textureLoader)
+		                                                                     }))
+		                                  });
+
 		    _drawableItems = _board.GetDrawables();
 
 		}
@@ -105,7 +114,7 @@ namespace Rotation.Game
             foreach (var drawable in _drawableItems)
             {
                 var drawer = _itemDrawerFactory.Create(drawable);
-                drawer.Draw(spriteBatch, _textureLoader, drawable);
+                drawer.Draw(spriteBatch, drawable);
             }
             spriteBatch.End();
 

@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
-using Rotation.Drawing.Textures;
 using Rotation.GameObjects.Drawing;
 
 namespace Rotation.Drawing.ItemDrawers
@@ -11,12 +10,12 @@ namespace Rotation.Drawing.ItemDrawers
             return drawableItem is T;
         }
 
-        public void Draw(SpriteBatch spriteBatch, ITextureLoader textureLoader, IDrawableItem drawableItem)
+        public void Draw(SpriteBatch spriteBatch, IDrawableItem drawableItem)
         {
-            DrawImp(spriteBatch, textureLoader, drawableItem as T);
+            DrawImp(spriteBatch, drawableItem as T);
         }
 
-        protected abstract void DrawImp(SpriteBatch spriteBatch, ITextureLoader textureLoader, T drawableItem);
+        protected abstract void DrawImp(SpriteBatch spriteBatch, T drawableItem);
 
         
     }

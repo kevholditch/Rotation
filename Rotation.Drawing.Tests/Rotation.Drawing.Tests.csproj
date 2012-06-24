@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FactorySpecs\ItemDrawerFactorySpecs.cs" />
+    <Compile Include="FactorySpecs\TileTextureFactorySpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

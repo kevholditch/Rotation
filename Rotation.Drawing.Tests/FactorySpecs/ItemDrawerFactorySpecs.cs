@@ -37,7 +37,7 @@ namespace Rotation.Drawing.Tests.FactorySpecs
 
         internal class TestItemDrawer : ItemDrawerBase<TestDrawableItem>
         {
-            protected override void DrawImp(SpriteBatch spriteBatch, ITextureLoader textureLoader, TestDrawableItem drawableItem)
+            protected override void DrawImp(SpriteBatch spriteBatch, TestDrawableItem drawableItem)
             {
                 
             }
