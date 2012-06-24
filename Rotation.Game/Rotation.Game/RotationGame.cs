@@ -1,13 +1,7 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 using Rotation.Drawing.ItemDrawers;
 using Rotation.Drawing.Textures;
 using Rotation.GameObjects.Drawing;
@@ -25,8 +19,8 @@ namespace Rotation.Game
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 	    private Board _board;
-	    private ItemDrawerFactory _itemDrawerFactory;
-	    private IEnumerable<IDrawableItem> _drawableItems;
+	    private IItemDrawerFactory _itemDrawerFactory;
+	    private IEnumerable<IDrawableItem> _drawableItems; 
 
 		public RotationGame()
 		{
@@ -85,6 +79,7 @@ namespace Rotation.Game
 			// TODO: Unload any non ContentManager content here
 		}
 
+	    
 		/// <summary>
 		/// Allows the game to run logic such as updating the world,
 		/// checking for collisions, gathering input, and playing audio.
@@ -110,12 +105,11 @@ namespace Rotation.Game
 			GraphicsDevice.Clear(Color.White);
 
             spriteBatch.Begin();
-
-            foreach (var drawable in _drawableItems)
-            {
-                var drawer = _itemDrawerFactory.Create(drawable);
-                drawer.Draw(spriteBatch, drawable);
-            }
+		    foreach (var drawableItem in _drawableItems)
+		    {
+		        var itemDrawer = _itemDrawerFactory.Create(drawableItem);
+                itemDrawer.Draw(spriteBatch, drawableItem);
+		    }
             spriteBatch.End();
 
 			base.Draw(gameTime);

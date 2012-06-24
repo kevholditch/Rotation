@@ -35,5 +35,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs
 				() => board.AllSquares().Where(sq => sq.IsSelectable && sq.HasTile).Count().ShouldEqual(41));
 
 		}
+
+
 	}
 }

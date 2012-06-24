@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Rotation.GameObjects.Tiles;
 
-namespace Rotation.Drawing.ItemDrawers
+namespace Rotation.Drawing.Textures
 {
     public interface ITileTextureCreator
     {

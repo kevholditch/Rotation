@@ -7,13 +7,13 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
 	{
 		public void Left(Board board)
 		{
-			int numSquares = 1;
+			var numSquares = 1;
 
 			var boardCoordinate = board.GetMainSelectedSquare();
 
 			while (board.CanGoAllDirections(boardCoordinate.X, boardCoordinate.Y, numSquares))
 			{
-				Tile tile = board[boardCoordinate.X, boardCoordinate.Y - numSquares].Tile;
+				var tile = board[boardCoordinate.X, boardCoordinate.Y - numSquares].Tile;
 
 				board[boardCoordinate.X, boardCoordinate.Y - numSquares].Tile =
 					board[boardCoordinate.X + numSquares, boardCoordinate.Y].Tile;
@@ -26,8 +26,10 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
 
 				board[boardCoordinate.X - numSquares, boardCoordinate.Y].Tile = 
 					tile;
+
 				numSquares++;
 			}
+
 		}
 
 		public void Right(Board board)
@@ -38,7 +40,7 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
 
 			while (board.CanGoAllDirections(boardCoordinate.X, boardCoordinate.Y, numSquares))
 			{
-				Tile tile = board[boardCoordinate.X, boardCoordinate.Y - numSquares].Tile;
+				var tile = board[boardCoordinate.X, boardCoordinate.Y - numSquares].Tile;
 
 				board[boardCoordinate.X, boardCoordinate.Y - numSquares].Tile =
 					board[boardCoordinate.X - numSquares, boardCoordinate.Y].Tile;
@@ -51,6 +53,7 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
 
 				board[boardCoordinate.X + numSquares, boardCoordinate.Y].Tile =
 					tile;
+
 				numSquares++;
 			}
 		}

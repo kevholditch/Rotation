@@ -4,7 +4,7 @@ using Rotation.GameObjects.Drawing;
 
 namespace Rotation.Drawing.ItemDrawers
 {
-    public class ItemDrawerFactory
+    public class ItemDrawerFactory : IItemDrawerFactory
     {
         private readonly IEnumerable<IItemDrawer> _itemDrawers;
 

@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using Rotation.Drawing.ItemDrawers;
 using Rotation.GameObjects.Tiles;
 using System.Linq;
 
-namespace Rotation.Drawing.ItemDrawers
+namespace Rotation.Drawing.Textures
 {
     public class TileTextureFactory : ITileTextureFactory
     {
