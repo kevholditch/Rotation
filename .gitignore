@@ -7,3 +7,4 @@ obj/
 *.crunchsolution.local.xml
 *.ncrunchproject
 *.ncrunchsolution
+*.crunchsolution*
