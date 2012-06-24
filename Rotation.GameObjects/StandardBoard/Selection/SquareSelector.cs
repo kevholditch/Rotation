@@ -2,22 +2,22 @@ namespace Rotation.GameObjects.StandardBoard.Selection
 {
 	public class SquareSelector : ISquareSelector
 	{
-		public void Select(Board board, int row, int col)
+		public void Select(Board board, int col, int row)
 		{
 
 		    DeSelect(board);
 
 			var iteration = 1;
 
-			board[row, col].IsSelected = true;
-			board[row, col].IsMainSelection = true;
+			board[col, row].IsSelected = true;
+			board[col, row].IsMainSelection = true;
 
-			while (board.CanGoAllDirections(row, col, iteration))
+			while (board.CanGoAllDirections(col, row, iteration))
 			{
-				board[row - iteration, col].IsSelected = true;
-				board[row + iteration, col].IsSelected = true;
-				board[row, col - iteration].IsSelected = true;
-				board[row, col + iteration].IsSelected = true;
+				board[col, row - iteration].IsSelected = true;
+				board[col, row + iteration].IsSelected = true;
+				board[col - iteration, row].IsSelected = true;
+				board[col + iteration, row].IsSelected = true;
 				iteration++;
 			}
 		}

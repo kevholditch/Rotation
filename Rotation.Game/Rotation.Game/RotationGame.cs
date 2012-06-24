@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -7,6 +8,7 @@ using Rotation.Drawing.Textures;
 using Rotation.GameObjects.Drawing;
 using Rotation.GameObjects.Letters;
 using Rotation.GameObjects.StandardBoard;
+using Rotation.GameObjects.StandardBoard.Rotation;
 using Rotation.GameObjects.StandardBoard.Selection;
 using Rotation.GameObjects.Tiles;
 
@@ -23,7 +25,9 @@ namespace Rotation.Game
 	    private IItemDrawerFactory _itemDrawerFactory;
 	    private IEnumerable<IDrawableItem> _drawableItems;
 	    private ISquareSelector _squareSelector;
+	    private ISelectionRotatator _selectionRotatator;
 	    private Point _currentPos;
+	    private KeyboardState _oldKeyboardState;
 
 		public RotationGame()
 		{
@@ -76,6 +80,9 @@ namespace Rotation.Game
             _squareSelector = new SquareSelector();
             _squareSelector.Select(_board, _currentPos.X, _currentPos.Y);
 
+            _selectionRotatator = new SelectionRotatator();
+
+		    _oldKeyboardState = Keyboard.GetState();
 		}
 
 		/// <summary>
@@ -95,18 +102,68 @@ namespace Rotation.Game
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Update(GameTime gameTime)
 		{
-			// Allows the game to exit
-			if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-				this.Exit();
 
-            
+		    var currentKeyBoardState = Keyboard.GetState();
 
-            _squareSelector.Select(_board, _currentPos.X, _currentPos.Y);
+		    ReactToKeyPress(Keys.Up, _oldKeyboardState, currentKeyBoardState, () =>
+		                                                                          {
+		                                                                              _currentPos.X--;
+		                                                                              _squareSelector.Select(_board,
+		                                                                                                     _currentPos.X,
+		                                                                                                     _currentPos.Y);
+		                                                                          });
 
-			// TODO: Add your update logic here
+            ReactToKeyPress(Keys.Down, _oldKeyboardState, currentKeyBoardState, () =>
+            {
+                _currentPos.X++;
+                _squareSelector.Select(_board,
+                                       _currentPos.X,
+                                       _currentPos.Y);
+            });
+
+            ReactToKeyPress(Keys.Left, _oldKeyboardState, currentKeyBoardState, () =>
+            {
+                _currentPos.Y--;
+                _squareSelector.Select(_board,
+                                       _currentPos.X,
+                                       _currentPos.Y);
+            });
+
+            ReactToKeyPress(Keys.Right, _oldKeyboardState, currentKeyBoardState, () =>
+            {
+                _currentPos.Y++;
+                _squareSelector.Select(_board,
+                                       _currentPos.X,
+                                       _currentPos.Y);
+            });
+
+		    ReactToKeyPress(Keys.S, _oldKeyboardState, currentKeyBoardState, () =>
+		              _selectionRotatator.Right(_board));
+
+            ReactToKeyPress(Keys.A, _oldKeyboardState, currentKeyBoardState, () =>
+                      _selectionRotatator.Left(_board));
+
+            ReactToKeyPress(Keys.Escape, _oldKeyboardState, currentKeyBoardState, () => Exit());
+
+		    _oldKeyboardState = currentKeyBoardState;
+
+		    
+
 
 			base.Update(gameTime);
 		}
+
+        private void ReactToKeyPress(Keys key, KeyboardState oldKeyboardState, KeyboardState currentKeyboardState, Action actionToExcute)
+        {
+            if (currentKeyboardState.IsKeyDown(key))
+            {
+                if (!_oldKeyboardState.IsKeyDown(key))
+                {
+                    actionToExcute();
+                }
+
+            }
+        }
 
 		/// <summary>
 		/// This is called when the game should draw itself.
