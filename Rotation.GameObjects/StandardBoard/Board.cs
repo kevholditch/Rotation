@@ -17,12 +17,12 @@ namespace Rotation.GameObjects.StandardBoard
 
 		public BoardCoordinate GetMainSelectedSquare()
 		{			
-			for (int i = 0; i < Rows.Count; i++)
+			for (int i = 0; i < Columns.Count; i++)
 			{
-				for (int j = 0; j < Columns.Count; j++)
+				for (int j = 0; j < Rows.Count; j++)
 				{
 					if (this[i, j].IsMainSelection)
-						return new BoardCoordinate(j, i);
+						return new BoardCoordinate(i, j);
 				}
 			}
 

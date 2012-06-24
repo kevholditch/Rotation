@@ -99,17 +99,7 @@ namespace Rotation.Game
 			if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
 				this.Exit();
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Up))
-                _currentPos.Y--;
-
-            if (GamePad.GetState(PlayerIndex.One).DPad.Down == ButtonState.Pressed)
-                _currentPos.Y++;
-
-            if (GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed)
-                _currentPos.X--;
-
-            if (GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed)
-                _currentPos.X++;
+            
 
             _squareSelector.Select(_board, _currentPos.X, _currentPos.Y);
 

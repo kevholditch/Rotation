@@ -2,7 +2,7 @@
 {
     public class BoardCoordinate
     {
-        public BoardCoordinate(int y, int x)
+        public BoardCoordinate(int x, int y)
         {
             Y = y;
             X = x;
