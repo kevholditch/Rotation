@@ -105,7 +105,7 @@ namespace Rotation.Game
 
 		    var currentKeyBoardState = Keyboard.GetState();
 
-		    ReactToKeyPress(Keys.Up, _oldKeyboardState, currentKeyBoardState, () =>
+		    ReactToKeyPress(Keys.Up, currentKeyBoardState, () =>
 		    {
 		        _currentPos.Y--;
 		        _squareSelector.Select(_board,
@@ -113,7 +113,7 @@ namespace Rotation.Game
 		                                _currentPos.Y);
 		    });
 
-            ReactToKeyPress(Keys.Down, _oldKeyboardState, currentKeyBoardState, () =>
+            ReactToKeyPress(Keys.Down, currentKeyBoardState, () =>
             {
                 _currentPos.Y++;
                 _squareSelector.Select(_board,
@@ -121,7 +121,7 @@ namespace Rotation.Game
                                        _currentPos.Y);
             });
 
-            ReactToKeyPress(Keys.Left, _oldKeyboardState, currentKeyBoardState, () =>
+            ReactToKeyPress(Keys.Left, currentKeyBoardState, () =>
             {
                 _currentPos.X--;
                 _squareSelector.Select(_board,
@@ -129,7 +129,7 @@ namespace Rotation.Game
                                        _currentPos.Y);
             });
 
-            ReactToKeyPress(Keys.Right, _oldKeyboardState, currentKeyBoardState, () =>
+            ReactToKeyPress(Keys.Right, currentKeyBoardState, () =>
             {
                 _currentPos.X++;
                 _squareSelector.Select(_board,
@@ -137,13 +137,13 @@ namespace Rotation.Game
                                        _currentPos.Y);
             });
 
-		    ReactToKeyPress(Keys.S, _oldKeyboardState, currentKeyBoardState, () =>
+		    ReactToKeyPress(Keys.S, currentKeyBoardState, () =>
 		              _selectionRotatator.Right(_board));
 
-            ReactToKeyPress(Keys.A, _oldKeyboardState, currentKeyBoardState, () =>
+            ReactToKeyPress(Keys.A, currentKeyBoardState, () =>
                       _selectionRotatator.Left(_board));
 
-            ReactToKeyPress(Keys.Escape, _oldKeyboardState, currentKeyBoardState, () => Exit());
+            ReactToKeyPress(Keys.Escape, currentKeyBoardState, Exit);
 
 		    _oldKeyboardState = currentKeyBoardState;
 
@@ -151,7 +151,7 @@ namespace Rotation.Game
 			base.Update(gameTime);
 		}
 
-        private void ReactToKeyPress(Keys key, KeyboardState oldKeyboardState, KeyboardState currentKeyboardState, Action actionToExcute)
+        private void ReactToKeyPress(Keys key, KeyboardState currentKeyboardState, Action actionToExcute)
         {
             if (currentKeyboardState.IsKeyDown(key))
             {

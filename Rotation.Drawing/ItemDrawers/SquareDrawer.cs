@@ -1,3 +1,4 @@
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Rotation.Drawing.Textures;
@@ -25,8 +26,19 @@ namespace Rotation.Drawing.ItemDrawers
             var yPos = (square.YPos*texture.Width) + 10;
 
             var colour = _squareColourSelector.SelectColour(square);
-      
-            spriteBatch.Draw(texture, new Vector2(xPos, yPos), colour);
+            
+            var originX = ((square.XPos-4.5f) * 40);
+            var originY = ((square.YPos-4.5f) * 40);
+
+            spriteBatch.Draw(texture, new Vector2(190, 190), null, colour, MathHelper.ToRadians(45), new Vector2(originX, originY),
+                             new Vector2(1, 1), SpriteEffects.None, 0);
+            //spriteBatch.Draw(texture, new Vector2(xPos, yPos), null, colour, MathHelper.ToRadians(45), new Vector2(0, 0), 
+            //                 new Vector2(1, 1), SpriteEffects.None, 0);
+        }
+
+        private float ReverseSign(float input)
+        {
+            return input < 0 ? Math.Abs(input) : -input;
         }
     }
 }
