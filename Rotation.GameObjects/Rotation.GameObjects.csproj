@@ -72,6 +72,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Drawing\IAnimatableItem.cs" />
+    <Compile Include="Drawing\IRotationAnimationItem.cs" />
+    <Compile Include="Drawing\RotationDirection.cs" />
     <Compile Include="StandardBoard\Board.cs" />
     <Compile Include="StandardBoard\BoardCoordinate.cs" />
     <Compile Include="StandardBoard\BoardExtensionMethods.cs" />
@@ -87,8 +90,7 @@
     <Compile Include="StandardBoard\Selection\SquareSelector.cs" />
     <Compile Include="StandardBoard\Sequences\RowIndexSequence.cs" />
     <Compile Include="StandardBoard\Square.cs" />
-    <Compile Include="Drawing\IDrawableItem.cs" />
-    <Compile Include="Drawing\IGetDrawableItems.cs" />
+    <Compile Include="Drawing\IGetAnimatableItems.cs" />
     <Compile Include="Letters\ILetterLookup.cs" />
     <Compile Include="Letters\Letter.cs" />
     <Compile Include="Letters\LetterLookup.cs" />

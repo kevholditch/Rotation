@@ -5,7 +5,7 @@ namespace Rotation.Drawing.ItemDrawers
 {
     public interface IItemDrawer
     {
-        bool CanDraw(IDrawableItem drawableItem);
-        void Draw(SpriteBatch spriteBatch, IDrawableItem drawableItem);
+        bool CanDraw(IAnimatableItem animatableItem);
+        void Draw(SpriteBatch spriteBatch, IAnimatableItem animatableItem);
     }
 }

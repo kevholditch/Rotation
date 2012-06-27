@@ -13,9 +13,9 @@ namespace Rotation.Drawing.ItemDrawers
             _itemDrawers = itemDrawers;
         }
 
-        public IItemDrawer Create(IDrawableItem drawableItem)
+        public IItemDrawer Create(IAnimatableItem animatableItem)
         {
-            return _itemDrawers.First(i => i.CanDraw(drawableItem));
+            return _itemDrawers.First(i => i.CanDraw(animatableItem));
         }
     }
 }

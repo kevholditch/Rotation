@@ -94,7 +94,7 @@
     <Compile Include="BoardSpecs\SelectionSpecs\SelectingSquareSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\SquareDeSelectionSpecs.cs" />
     <Compile Include="BoardSpecs\SequenceSpecs.cs" />
-    <Compile Include="DrawingInterfaceSpecs\GetDrawableItemsFromBoardSpecs.cs" />
+    <Compile Include="DrawingInterfaceSpecs\GetAnimatableItemsFromBoardSpecs.cs" />
     <Compile Include="TestClasses\AlphabeticalBoardFiller.cs" />
     <Compile Include="TestClasses\AlphabeticalBoardFillerSpecs.cs" />
     <Compile Include="TestClasses\TestTile.cs" />

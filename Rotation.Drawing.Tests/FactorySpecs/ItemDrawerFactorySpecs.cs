@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
 using Rotation.Drawing.ItemDrawers;
-using Rotation.Drawing.Textures;
 using Rotation.GameObjects.Drawing;
 using Rotation.Tests.Common;
 using SubSpec;
@@ -30,7 +26,7 @@ namespace Rotation.Drawing.Tests.FactorySpecs
         }
 
 
-        internal class TestDrawableItem : IDrawableItem
+        internal class TestDrawableItem : IAnimatableItem
         {
 
         }

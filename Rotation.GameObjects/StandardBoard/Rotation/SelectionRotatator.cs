@@ -1,3 +1,4 @@
+using Rotation.GameObjects.Drawing;
 using Rotation.GameObjects.StandardBoard.Selection;
 using Rotation.GameObjects.Tiles;
 
@@ -27,12 +28,23 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
 				board[boardCoordinate.X - numSquares, boardCoordinate.Y].Tile = 
 					tile;
 
+                SetSquareLeft(board[boardCoordinate.X, boardCoordinate.Y - numSquares]);
+                SetSquareLeft(board[boardCoordinate.X + numSquares, boardCoordinate.Y]);
+                SetSquareLeft(board[boardCoordinate.X, boardCoordinate.Y + numSquares]);
+                SetSquareLeft(board[boardCoordinate.X - numSquares, boardCoordinate.Y]);
+
 				numSquares++;
 			}
 
 		}
 
-		public void Right(Board board)
+        private void SetSquareLeft(Square square)
+        {
+            square.Angle = 90;
+            square.Direction = RotationDirection.AntiClockwise;
+        }
+
+	    public void Right(Board board)
 		{
 			int numSquares = 1;
 
@@ -54,10 +66,21 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
 				board[boardCoordinate.X + numSquares, boardCoordinate.Y].Tile =
 					tile;
 
+                SetSquareRight(board[boardCoordinate.X, boardCoordinate.Y - numSquares]);
+                SetSquareRight(board[boardCoordinate.X - numSquares, boardCoordinate.Y]);
+                SetSquareRight(board[boardCoordinate.X, boardCoordinate.Y + numSquares]);
+                SetSquareRight(board[boardCoordinate.X + numSquares, boardCoordinate.Y]);
+
 				numSquares++;
 			}
-		}
 		
-		
+        
+        }
+
+	    private void SetSquareRight(Square square)
+	    {
+	        square.Angle = -90;
+	        square.Direction = RotationDirection.Clockwise;
+	    }
 	}
 }

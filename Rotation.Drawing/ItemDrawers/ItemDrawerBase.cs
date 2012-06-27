@@ -3,16 +3,16 @@ using Rotation.GameObjects.Drawing;
 
 namespace Rotation.Drawing.ItemDrawers
 {
-    public abstract class ItemDrawerBase<T> : IItemDrawer where T : class, IDrawableItem 
+    public abstract class ItemDrawerBase<T> : IItemDrawer where T : class, IAnimatableItem 
     {
-        public bool CanDraw(IDrawableItem drawableItem)
+        public bool CanDraw(IAnimatableItem animatableItem)
         {
-            return drawableItem is T;
+            return animatableItem is T;
         }
 
-        public void Draw(SpriteBatch spriteBatch, IDrawableItem drawableItem)
+        public void Draw(SpriteBatch spriteBatch, IAnimatableItem animatableItem)
         {
-            DrawImp(spriteBatch, drawableItem as T);
+            DrawImp(spriteBatch, animatableItem as T);
         }
 
         protected abstract void DrawImp(SpriteBatch spriteBatch, T drawableItem);

@@ -22,18 +22,14 @@ namespace Rotation.Drawing.ItemDrawers
             var tileTextureCreator = _tileTextureFactory.Create(square.Tile);
             var texture = tileTextureCreator.Create(square.Tile);
             
-            var xPos = (square.XPos*texture.Width) + 10;
-            var yPos = (square.YPos*texture.Width) + 10;
-
             var colour = _squareColourSelector.SelectColour(square);
             
-            var originX = ((square.XPos-4.5f) * 40);
-            var originY = ((square.YPos-4.5f) * 40);
+            var originX = ReverseSign((square.XPos-4.5f) * 40);
+            var originY = ReverseSign((square.YPos-4.5f) * 40);
 
-            spriteBatch.Draw(texture, new Vector2(190, 190), null, colour, MathHelper.ToRadians(45), new Vector2(originX, originY),
+            spriteBatch.Draw(texture, new Vector2(190, 190), null, colour, MathHelper.ToRadians(square.Angle), new Vector2(originX, originY),
                              new Vector2(1, 1), SpriteEffects.None, 0);
-            //spriteBatch.Draw(texture, new Vector2(xPos, yPos), null, colour, MathHelper.ToRadians(45), new Vector2(0, 0), 
-            //                 new Vector2(1, 1), SpriteEffects.None, 0);
+     
         }
 
         private float ReverseSign(float input)

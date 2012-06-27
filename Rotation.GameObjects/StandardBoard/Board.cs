@@ -3,7 +3,7 @@ using Rotation.GameObjects.Drawing;
 
 namespace Rotation.GameObjects.StandardBoard
 {
-	public class Board : IGetDrawableItems
+	public class Board : IGetAnimatableItems
 	{
 		public Board(List<Line> columns, List<Line> rows)
 		{
@@ -29,7 +29,7 @@ namespace Rotation.GameObjects.StandardBoard
 			return null;
 		}
 
-	    public IEnumerable<IDrawableItem> GetDrawables()
+        public IEnumerable<IAnimatableItem> GetAnimatables()
 	    {
 	        return this.AllSquares();
 	    }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Rotation.Drawing;
+using Rotation.Drawing.ItemAnimators;
 using Rotation.Drawing.ItemDrawers;
 using Rotation.Drawing.Textures;
 using Rotation.GameObjects.Drawing;
@@ -23,11 +25,12 @@ namespace Rotation.Game
 		SpriteBatch spriteBatch;
 	    private Board _board;
 	    private IItemDrawerFactory _itemDrawerFactory;
-	    private IEnumerable<IDrawableItem> _drawableItems;
+	    private IEnumerable<IAnimatableItem> _animatableItems;
 	    private ISquareSelector _squareSelector;
 	    private ISelectionRotatator _selectionRotatator;
 	    private Point _currentPos;
 	    private KeyboardState _oldKeyboardState;
+	    private AnimationEngine _animationEngine;
 
 		public RotationGame()
 		{
@@ -74,7 +77,9 @@ namespace Rotation.Game
                                                                              new SquareColourSelector())
 		                                  });
 
-		    _drawableItems = _board.GetDrawables();
+		    var itemAnimatorFactory = new ItemAnimatorFactory(new List<IItemAnimator> {new RotationAnimator()});
+
+            _animationEngine = new AnimationEngine(itemAnimatorFactory, _itemDrawerFactory, _board.GetAnimatables);
 
             _currentPos = new Point(4, 4);
             _squareSelector = new SquareSelector();
@@ -143,6 +148,7 @@ namespace Rotation.Game
             ReactToKeyPress(Keys.A, currentKeyBoardState, () =>
                       _selectionRotatator.Left(_board));
 
+            
             ReactToKeyPress(Keys.Escape, currentKeyBoardState, Exit);
 
 		    _oldKeyboardState = currentKeyBoardState;
@@ -172,11 +178,7 @@ namespace Rotation.Game
 			GraphicsDevice.Clear(Color.White);
 
             spriteBatch.Begin();
-		    foreach (var drawableItem in _drawableItems)
-		    {
-		        var itemDrawer = _itemDrawerFactory.Create(drawableItem);
-                itemDrawer.Draw(spriteBatch, drawableItem);
-		    }
+		    _animationEngine.Animate(spriteBatch);
             spriteBatch.End();
 
 			base.Draw(gameTime);
