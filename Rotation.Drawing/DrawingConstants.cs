@@ -13,6 +13,14 @@ namespace Rotation.Drawing
             public const string NON_TILE = "TileNon";
             public const string STANDARD_TILE = "StandardTile";
             public const string BLANK_TILE = "TileBlank";
+            public const int TILE_WIDTH = 40;
+            public const int TILE_HEIGHT = 40;
+        }
+
+        public static class Board
+        {
+            public const int BOARD_X_MARGIN = 10;
+            public const int BOARD_Y_MARGIN = 10;
         }
 
         public static class SquareColours
@@ -25,7 +33,7 @@ namespace Rotation.Drawing
 
         public static class RotationAnimation
         {
-            public static readonly int ANGLE_INCREASE_RATE = 6;
+            public const int ANGLE_INCREASE_RATE = 6;
         }
     }
 }

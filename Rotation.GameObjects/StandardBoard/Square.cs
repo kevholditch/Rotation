@@ -19,6 +19,8 @@ namespace Rotation.GameObjects.StandardBoard
 
         public int YPos { get; private set; }
 
+	    public int Origin { get; set; }
+
 		public bool IsSelected { get; set; }
 
 		public bool IsSelectable { get; private set; }

@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Rotation.Drawing;
 using Rotation.Drawing.ItemDrawers;
+using Rotation.Drawing.ItemDrawers.Squares;
 using Rotation.Drawing.Textures;
 using Rotation.GameObjects.Drawing;
 using Rotation.GameObjects.Drawing.ItemAnimators;
@@ -64,6 +65,9 @@ namespace Rotation.Game
 		    var boardFiller = new BoardFiller(new StandardTileFactory(new LetterLookup()));
             boardFiller.Fill(_board);
 
+
+		    Func<BoardCoordinate> getMainSelectedSquare = () => _board.GetMainSelectedSquare();
+
             var textureLoader = new TextureLoader(s => Content.Load<Texture2D>(s));
 		    _itemDrawerFactory =
 		        new ItemDrawerFactory(new List<IItemDrawer>
@@ -74,7 +78,9 @@ namespace Rotation.Game
 		                                                                         new BlankTileTextureCreator(textureLoader),
 		                                                                         new StandardTileTextureCreator(textureLoader)
 		                                                                     }),
-                                                                             new SquareColourSelector())
+		                                          new SquareColourSelector(),
+		                                          new SquarePositionCalculator(getMainSelectedSquare),
+		                                          new SquareOriginCalculator(getMainSelectedSquare))
 		                                  });
 
 		    var itemAnimatorFactory = new ItemAnimatorFactory(new List<IItemAnimator> {new RotationAnimator()});
