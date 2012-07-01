@@ -1,32 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
-using Rotation.Drawing.ItemAnimators;
 using Rotation.Drawing.ItemDrawers;
 using Rotation.GameObjects.Drawing;
+using Rotation.GameObjects.Drawing.ItemAnimators;
 
 namespace Rotation.Drawing
 {
     public class AnimationEngine
     {
+        private readonly IItemAnimatorFactory _itemAnimatorFactory;
+        private readonly IItemDrawerFactory _itemDrawerFactory;
+        private readonly Func<IEnumerable<IAnimatableItem>> _getAnimatables;
 
-
-        private IItemAnimatorFactory _itemAnimatorFactory;
-        private IItemDrawerFactory _itemDrawerFactory;
-        private Func<IEnumerable<IAnimatableItem>> _getAnimatablesFunc;
-
-        public AnimationEngine(IItemAnimatorFactory itemAnimatorFactory, IItemDrawerFactory itemDrawerFactory, Func<IEnumerable<IAnimatableItem>> getAnimatablesFunc)
+        public AnimationEngine(IItemAnimatorFactory itemAnimatorFactory, IItemDrawerFactory itemDrawerFactory, Func<IEnumerable<IAnimatableItem>> getAnimatables)
         {
             _itemAnimatorFactory = itemAnimatorFactory;
             _itemDrawerFactory = itemDrawerFactory;
-            _getAnimatablesFunc = getAnimatablesFunc;
+            _getAnimatables = getAnimatables;
         }
 
 
         public void Animate(SpriteBatch spriteBatch)
         {
 
-            foreach (var animatableItem in _getAnimatablesFunc())
+            foreach (var animatableItem in _getAnimatables())
             {
                 foreach (var itemAnimator in _itemAnimatorFactory.Create(animatableItem))
                 {
@@ -36,8 +34,6 @@ namespace Rotation.Drawing
                 var itemDrawer = _itemDrawerFactory.Create(animatableItem);
                 itemDrawer.Draw(spriteBatch, animatableItem);
             }
-
-
         }
     }
 }

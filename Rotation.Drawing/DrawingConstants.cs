@@ -25,7 +25,7 @@ namespace Rotation.Drawing
 
         public static class RotationAnimation
         {
-            public static readonly int ANGLE_INCREASE_RATE = 2;
+            public static readonly int ANGLE_INCREASE_RATE = 6;
         }
     }
 }

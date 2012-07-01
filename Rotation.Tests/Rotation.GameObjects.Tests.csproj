@@ -87,6 +87,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimationSpecs\RotationAnimatorSpecs.cs" />
     <Compile Include="BoardSpecs\BoardCreationSpecs.cs" />
     <Compile Include="BoardSpecs\BoardFillerSpecs.cs" />
     <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationSpecs.cs" />

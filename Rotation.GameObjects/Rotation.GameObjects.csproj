@@ -72,8 +72,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\GameConstants.cs" />
     <Compile Include="Drawing\IAnimatableItem.cs" />
     <Compile Include="Drawing\IRotationAnimationItem.cs" />
+    <Compile Include="Drawing\ItemAnimators\AnimatorBase.cs" />
+    <Compile Include="Drawing\ItemAnimators\IItemAnimator.cs" />
+    <Compile Include="Drawing\ItemAnimators\IItemAnimatorFactory.cs" />
+    <Compile Include="Drawing\ItemAnimators\ItemAnimatorFactory.cs" />
+    <Compile Include="Drawing\ItemAnimators\RotationAnimator.cs" />
     <Compile Include="Drawing\RotationDirection.cs" />
     <Compile Include="StandardBoard\Board.cs" />
     <Compile Include="StandardBoard\BoardCoordinate.cs" />
