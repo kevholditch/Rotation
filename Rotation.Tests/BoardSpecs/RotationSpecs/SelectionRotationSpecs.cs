@@ -1,4 +1,5 @@
-﻿using Rotation.GameObjects.StandardBoard;
+﻿using Rotation.GameObjects.Drawing;
+using Rotation.GameObjects.StandardBoard;
 using Rotation.GameObjects.StandardBoard.Rotation;
 using Rotation.GameObjects.StandardBoard.Selection;
 using Rotation.GameObjects.sTests.TestClasses;
@@ -105,6 +106,172 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.RotationSpecs
 			"Then square 5, 7 will contain letter N".Observation(() => board[5, 7].Letter.Value.ShouldEqual('N'));
 
 			"Then square 4, 8 will contain letter Y".Observation(() => board[4, 8].Letter.Value.ShouldEqual('Y'));
+
+            //
+
+            "Then square 4, 0 will have a rotation direction of clockwise".Observation(() => board[4, 0].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 3, 1 will have a rotation direction of none".Observation(() => board[3, 1].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 4, 1 will have a rotation direction of clockwise".Observation(() => board[4, 1].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 5, 1 will have a rotation direction of none".Observation(() => board[5, 1].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 2, 2 will have a rotation direction of none".Observation(() => board[2, 2].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 3, 2 will have a rotation direction of none".Observation(() => board[3, 2].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 4, 2 will have a rotation direction of clockwise".Observation(() => board[4, 2].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 5, 2 will have a rotation direction of none".Observation(() => board[5, 2].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 6, 2 will have a rotation direction of none".Observation(() => board[6, 2].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 1, 3 will have a rotation direction of none".Observation(() => board[1, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 2, 3 will have a rotation direction of none".Observation(() => board[2, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 3, 3 will have a rotation direction of none".Observation(() => board[3, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 4, 3 will have a rotation direction of clockwise".Observation(() => board[4, 3].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 5, 3 will have a rotation direction of none".Observation(() => board[5, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 6, 3 will have a rotation direction of none".Observation(() => board[6, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 7, 3 will have a rotation direction of none".Observation(() => board[7, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 0, 4 will have a rotation direction of clockwise".Observation(() => board[0, 4].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 1, 4 will have a rotation direction of clockwise".Observation(() => board[1, 4].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 2, 4 will have a rotation direction of clockwise".Observation(() => board[2, 4].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 3, 4 will have a rotation direction of clockwise".Observation(() => board[3, 4].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 4, 4 will have a rotation direction of none".Observation(() => board[4, 4].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 5, 4 will have a rotation direction of clockwise".Observation(() => board[5, 4].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 6, 4 will have a rotation direction of clockwise".Observation(() => board[6, 4].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 7, 4 will have a rotation direction of clockwise".Observation(() => board[7, 4].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 8, 4 will have a rotation direction of clockwise".Observation(() => board[8, 4].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 1, 5 will have a rotation direction of none".Observation(() => board[1, 5].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 2, 5 will have a rotation direction of none".Observation(() => board[2, 5].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 3, 5 will have a rotation direction of none".Observation(() => board[3, 5].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 4, 5 will have a rotation direction of clockwise".Observation(() => board[4, 5].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 5, 5 will have a rotation direction of none".Observation(() => board[5, 5].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 6, 5 will have a rotation direction of none".Observation(() => board[6, 5].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 7, 5 will have a rotation direction of none".Observation(() => board[7, 5].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 2, 6 will have a rotation direction of none".Observation(() => board[2, 6].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 3, 6 will have a rotation direction of none".Observation(() => board[3, 6].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 4, 6 will have a rotation direction of clockwise".Observation(() => board[4, 6].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 5, 6 will have a rotation direction of none".Observation(() => board[5, 6].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 6, 6 will have a rotation direction of none".Observation(() => board[6, 6].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 3, 7 will have a rotation direction of none".Observation(() => board[3, 7].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 4, 7 will have a rotation direction of clockwise".Observation(() => board[4, 7].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 5, 7 will have a rotation direction of none".Observation(() => board[5, 7].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 4, 8 will have a rotation direction of clockwise".Observation(() => board[4, 8].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 4, 0 will have an angle of -90".Observation(() => board[4, 0].Angle.ShouldEqual(-90));
+
+            "Then square 3, 1 will have an angle of 0".Observation(() => board[3, 1].Angle.ShouldEqual(0));
+
+            "Then square 4, 1 will have an angle of -90".Observation(() => board[4, 1].Angle.ShouldEqual(-90));
+
+            "Then square 5, 1 will have an angle of 0".Observation(() => board[5, 1].Angle.ShouldEqual(0));
+
+            "Then square 2, 2 will have an angle of 0".Observation(() => board[2, 2].Angle.ShouldEqual(0));
+
+            "Then square 3, 2 will have an angle of 0".Observation(() => board[3, 2].Angle.ShouldEqual(0));
+
+            "Then square 4, 2 will have an angle of -90".Observation(() => board[4, 2].Angle.ShouldEqual(-90));
+
+            "Then square 5, 2 will have an angle of 0".Observation(() => board[5, 2].Angle.ShouldEqual(0));
+
+            "Then square 6, 2 will have an angle of 0".Observation(() => board[6, 2].Angle.ShouldEqual(0));
+
+            "Then square 1, 3 will have an angle of 0".Observation(() => board[1, 3].Angle.ShouldEqual(0));
+
+            "Then square 2, 3 will have an angle of 0".Observation(() => board[2, 3].Angle.ShouldEqual(0));
+
+            "Then square 3, 3 will have an angle of 0".Observation(() => board[3, 3].Angle.ShouldEqual(0));
+
+            "Then square 4, 3 will have an angle of -90".Observation(() => board[4, 3].Angle.ShouldEqual(-90));
+
+            "Then square 5, 3 will have an angle of 0".Observation(() => board[5, 3].Angle.ShouldEqual(0));
+
+            "Then square 6, 3 will have an angle of 0".Observation(() => board[6, 3].Angle.ShouldEqual(0));
+
+            "Then square 7, 3 will have an angle of 0".Observation(() => board[7, 3].Angle.ShouldEqual(0));
+
+            "Then square 0, 4 will have an angle of -90".Observation(() => board[0, 4].Angle.ShouldEqual(-90));
+
+            "Then square 1, 4 will have an angle of -90".Observation(() => board[1, 4].Angle.ShouldEqual(-90));
+
+            "Then square 2, 4 will have an angle of -90".Observation(() => board[2, 4].Angle.ShouldEqual(-90));
+
+            "Then square 3, 4 will have an angle of -90".Observation(() => board[3, 4].Angle.ShouldEqual(-90));
+
+            "Then square 4, 4 will have an angle of 0".Observation(() => board[4, 4].Angle.ShouldEqual(0));
+
+            "Then square 5, 4 will have an angle of -90".Observation(() => board[5, 4].Angle.ShouldEqual(-90));
+
+            "Then square 6, 4 will have an angle of -90".Observation(() => board[6, 4].Angle.ShouldEqual(-90));
+
+            "Then square 7, 4 will have an angle of -90".Observation(() => board[7, 4].Angle.ShouldEqual(-90));
+
+            "Then square 8, 4 will have an angle of -90".Observation(() => board[8, 4].Angle.ShouldEqual(-90));
+
+            "Then square 1, 5 will have an angle of 0".Observation(() => board[1, 5].Angle.ShouldEqual(0));
+
+            "Then square 2, 5 will have an angle of 0".Observation(() => board[2, 5].Angle.ShouldEqual(0));
+
+            "Then square 3, 5 will have an angle of 0".Observation(() => board[3, 5].Angle.ShouldEqual(0));
+
+            "Then square 4, 5 will have an angle of -90".Observation(() => board[4, 5].Angle.ShouldEqual(-90));
+
+            "Then square 5, 5 will have an angle of 0".Observation(() => board[5, 5].Angle.ShouldEqual(0));
+
+            "Then square 6, 5 will have an angle of 0".Observation(() => board[6, 5].Angle.ShouldEqual(0));
+
+            "Then square 7, 5 will have an angle of 0".Observation(() => board[7, 5].Angle.ShouldEqual(0));
+
+            "Then square 2, 6 will have an angle of 0".Observation(() => board[2, 6].Angle.ShouldEqual(0));
+
+            "Then square 3, 6 will have an angle of 0".Observation(() => board[3, 6].Angle.ShouldEqual(0));
+
+            "Then square 4, 6 will have an angle of -90".Observation(() => board[4, 6].Angle.ShouldEqual(-90));
+
+            "Then square 5, 6 will have an angle of 0".Observation(() => board[5, 6].Angle.ShouldEqual(0));
+
+            "Then square 6, 6 will have an angle of 0".Observation(() => board[6, 6].Angle.ShouldEqual(0));
+
+            "Then square 3, 7 will have an angle of 0".Observation(() => board[3, 7].Angle.ShouldEqual(0));
+
+            "Then square 4, 7 will have an angle of -90".Observation(() => board[4, 7].Angle.ShouldEqual(-90));
+
+            "Then square 5, 7 will have an angle of 0".Observation(() => board[5, 7].Angle.ShouldEqual(0));
+
+            "Then square 4, 8 will have an angle of -90".Observation(() => board[4, 8].Angle.ShouldEqual(-90));
 		}
 
 		[Specification]
@@ -137,6 +304,46 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.RotationSpecs
 			"Then square 6, 3 will contain letter O".Observation(() => board[6, 3].Letter.Value.ShouldEqual('O'));
 
 			"Then square 7, 3 will contain letter P".Observation(() => board[7, 3].Letter.Value.ShouldEqual('P'));
+
+            //
+
+            "Then square 4, 1 will have a rotation direction of none".Observation(() => board[4, 1].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 5, 1 will have a rotation direction of clockwise".Observation(() => board[5, 1].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 4, 2 will have a rotation direction of clockwise".Observation(() => board[4, 2].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 5, 2 will have a rotation direction of none".Observation(() => board[5, 2].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 6, 2 will have a rotation direction of clockwise".Observation(() => board[6, 2].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 4, 3 will have a rotation direction of none".Observation(() => board[4, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 5, 3 will have a rotation direction of clockwise".Observation(() => board[5, 3].Direction.ShouldEqual(RotationDirection.Clockwise));
+
+            "Then square 6, 3 will have a rotation direction of none".Observation(() => board[6, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 7, 3 will have a rotation direction of none".Observation(() => board[7, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            //
+
+            "Then square 4, 1 will have an angle of 0".Observation(() => board[4, 1].Angle.ShouldEqual(0));
+
+            "Then square 5, 1 will have an angle of -90".Observation(() => board[5, 1].Angle.ShouldEqual(-90));
+
+            "Then square 4, 2 will have an angle of -90".Observation(() => board[4, 2].Angle.ShouldEqual(-90));
+
+            "Then square 5, 2 will have an angle of 0".Observation(() => board[5, 2].Angle.ShouldEqual(0));
+
+            "Then square 6, 2 will have an angle of -90".Observation(() => board[6, 2].Angle.ShouldEqual(-90));
+
+            "Then square 4, 3 will have an angle of 0".Observation(() => board[4, 3].Angle.ShouldEqual(0));
+
+            "Then square 5, 3 will have an angle of -90".Observation(() => board[5, 3].Angle.ShouldEqual(-90));
+
+            "Then square 6, 3 will have an angle of 0".Observation(() => board[6, 3].Angle.ShouldEqual(0));
+
+            "Then square 7, 3 will have an angle of 0".Observation(() => board[7, 3].Angle.ShouldEqual(0));
 
 		}
 
@@ -236,6 +443,170 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.RotationSpecs
 			"Then square 5, 7 will contain letter N".Observation(() => board[5, 7].Letter.Value.ShouldEqual('N'));
 
 			"Then square 4, 8 will contain letter Q".Observation(() => board[4, 8].Letter.Value.ShouldEqual('Q'));
+
+            "Then square 4, 0 will have a rotation direction of anti-clockwise".Observation(() => board[4, 0].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 3, 1 will have a rotation direction of none".Observation(() => board[3, 1].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 4, 1 will have a rotation direction of anti-clockwise".Observation(() => board[4, 1].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 5, 1 will have a rotation direction of none".Observation(() => board[5, 1].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 2, 2 will have a rotation direction of none".Observation(() => board[2, 2].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 3, 2 will have a rotation direction of none".Observation(() => board[3, 2].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 4, 2 will have a rotation direction of anti-clockwise".Observation(() => board[4, 2].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 5, 2 will have a rotation direction of none".Observation(() => board[5, 2].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 6, 2 will have a rotation direction of none".Observation(() => board[6, 2].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 1, 3 will have a rotation direction of none".Observation(() => board[1, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 2, 3 will have a rotation direction of none".Observation(() => board[2, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 3, 3 will have a rotation direction of none".Observation(() => board[3, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 4, 3 will have a rotation direction of anti-clockwise".Observation(() => board[4, 3].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 5, 3 will have a rotation direction of none".Observation(() => board[5, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 6, 3 will have a rotation direction of none".Observation(() => board[6, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 7, 3 will have a rotation direction of none".Observation(() => board[7, 3].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 0, 4 will have a rotation direction of anti-clockwise".Observation(() => board[0, 4].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 1, 4 will have a rotation direction of anti-clockwise".Observation(() => board[1, 4].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 2, 4 will have a rotation direction of anti-clockwise".Observation(() => board[2, 4].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 3, 4 will have a rotation direction of anti-clockwise".Observation(() => board[3, 4].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 4, 4 will have a rotation direction of none".Observation(() => board[4, 4].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 5, 4 will have a rotation direction of anti-clockwise".Observation(() => board[5, 4].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 6, 4 will have a rotation direction of anti-clockwise".Observation(() => board[6, 4].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 7, 4 will have a rotation direction of anti-clockwise".Observation(() => board[7, 4].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 8, 4 will have a rotation direction of anti-clockwise".Observation(() => board[8, 4].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 1, 5 will have a rotation direction of none".Observation(() => board[1, 5].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 2, 5 will have a rotation direction of none".Observation(() => board[2, 5].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 3, 5 will have a rotation direction of none".Observation(() => board[3, 5].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 4, 5 will have a rotation direction of anti-clockwise".Observation(() => board[4, 5].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 5, 5 will have a rotation direction of none".Observation(() => board[5, 5].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 6, 5 will have a rotation direction of none".Observation(() => board[6, 5].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 7, 5 will have a rotation direction of none".Observation(() => board[7, 5].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 2, 6 will have a rotation direction of none".Observation(() => board[2, 6].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 3, 6 will have a rotation direction of none".Observation(() => board[3, 6].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 4, 6 will have a rotation direction of anti-clockwise".Observation(() => board[4, 6].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 5, 6 will have a rotation direction of none".Observation(() => board[5, 6].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 6, 6 will have a rotation direction of none".Observation(() => board[6, 6].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 3, 7 will have a rotation direction of none".Observation(() => board[3, 7].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 4, 7 will have a rotation direction of anti-clockwise".Observation(() => board[4, 7].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 5, 7 will have a rotation direction of none".Observation(() => board[5, 7].Direction.ShouldEqual(RotationDirection.None));
+
+            "Then square 4, 8 will have a rotation direction of anti-clockwise".Observation(() => board[4, 8].Direction.ShouldEqual(RotationDirection.AntiClockwise));
+
+            "Then square 4, 0 will have an angle of 90".Observation(() => board[4, 0].Angle.ShouldEqual(90));
+
+            "Then square 3, 1 will have an angle of 0".Observation(() => board[3, 1].Angle.ShouldEqual(0));
+
+            "Then square 4, 1 will have an angle of 90".Observation(() => board[4, 1].Angle.ShouldEqual(90));
+
+            "Then square 5, 1 will have an angle of 0".Observation(() => board[5, 1].Angle.ShouldEqual(0));
+
+            "Then square 2, 2 will have an angle of 0".Observation(() => board[2, 2].Angle.ShouldEqual(0));
+
+            "Then square 3, 2 will have an angle of 0".Observation(() => board[3, 2].Angle.ShouldEqual(0));
+
+            "Then square 4, 2 will have an angle of 90".Observation(() => board[4, 2].Angle.ShouldEqual(90));
+
+            "Then square 5, 2 will have an angle of 0".Observation(() => board[5, 2].Angle.ShouldEqual(0));
+
+            "Then square 6, 2 will have an angle of 0".Observation(() => board[6, 2].Angle.ShouldEqual(0));
+
+            "Then square 1, 3 will have an angle of 0".Observation(() => board[1, 3].Angle.ShouldEqual(0));
+
+            "Then square 2, 3 will have an angle of 0".Observation(() => board[2, 3].Angle.ShouldEqual(0));
+
+            "Then square 3, 3 will have an angle of 0".Observation(() => board[3, 3].Angle.ShouldEqual(0));
+
+            "Then square 4, 3 will have an angle of 90".Observation(() => board[4, 3].Angle.ShouldEqual(90));
+
+            "Then square 5, 3 will have an angle of 0".Observation(() => board[5, 3].Angle.ShouldEqual(0));
+
+            "Then square 6, 3 will have an angle of 0".Observation(() => board[6, 3].Angle.ShouldEqual(0));
+
+            "Then square 7, 3 will have an angle of 0".Observation(() => board[7, 3].Angle.ShouldEqual(0));
+
+            "Then square 0, 4 will have an angle of 90".Observation(() => board[0, 4].Angle.ShouldEqual(90));
+
+            "Then square 1, 4 will have an angle of 90".Observation(() => board[1, 4].Angle.ShouldEqual(90));
+
+            "Then square 2, 4 will have an angle of 90".Observation(() => board[2, 4].Angle.ShouldEqual(90));
+
+            "Then square 3, 4 will have an angle of 90".Observation(() => board[3, 4].Angle.ShouldEqual(90));
+
+            "Then square 4, 4 will have an angle of 0".Observation(() => board[4, 4].Angle.ShouldEqual(0));
+
+            "Then square 5, 4 will have an angle of 90".Observation(() => board[5, 4].Angle.ShouldEqual(90));
+
+            "Then square 6, 4 will have an angle of 90".Observation(() => board[6, 4].Angle.ShouldEqual(90));
+
+            "Then square 7, 4 will have an angle of 90".Observation(() => board[7, 4].Angle.ShouldEqual(90));
+
+            "Then square 8, 4 will have an angle of 90".Observation(() => board[8, 4].Angle.ShouldEqual(90));
+
+            "Then square 1, 5 will have an angle of 0".Observation(() => board[1, 5].Angle.ShouldEqual(0));
+
+            "Then square 2, 5 will have an angle of 0".Observation(() => board[2, 5].Angle.ShouldEqual(0));
+
+            "Then square 3, 5 will have an angle of 0".Observation(() => board[3, 5].Angle.ShouldEqual(0));
+
+            "Then square 4, 5 will have an angle of 90".Observation(() => board[4, 5].Angle.ShouldEqual(90));
+
+            "Then square 5, 5 will have an angle of 0".Observation(() => board[5, 5].Angle.ShouldEqual(0));
+
+            "Then square 6, 5 will have an angle of 0".Observation(() => board[6, 5].Angle.ShouldEqual(0));
+
+            "Then square 7, 5 will have an angle of 0".Observation(() => board[7, 5].Angle.ShouldEqual(0));
+
+            "Then square 2, 6 will have an angle of 0".Observation(() => board[2, 6].Angle.ShouldEqual(0));
+
+            "Then square 3, 6 will have an angle of 0".Observation(() => board[3, 6].Angle.ShouldEqual(0));
+
+            "Then square 4, 6 will have an angle of 90".Observation(() => board[4, 6].Angle.ShouldEqual(90));
+
+            "Then square 5, 6 will have an angle of 0".Observation(() => board[5, 6].Angle.ShouldEqual(0));
+
+            "Then square 6, 6 will have an angle of 0".Observation(() => board[6, 6].Angle.ShouldEqual(0));
+
+            "Then square 3, 7 will have an angle of 0".Observation(() => board[3, 7].Angle.ShouldEqual(0));
+
+            "Then square 4, 7 will have an angle of 90".Observation(() => board[4, 7].Angle.ShouldEqual(90));
+
+            "Then square 5, 7 will have an angle of 0".Observation(() => board[5, 7].Angle.ShouldEqual(0));
+
+            "Then square 4, 8 will have an angle of 90".Observation(() => board[4, 8].Angle.ShouldEqual(90));
 		}
 
 		[Specification]
