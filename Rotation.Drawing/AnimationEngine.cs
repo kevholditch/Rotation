@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Rotation.Drawing.ItemAnimators;
 using Rotation.Drawing.ItemDrawers;
@@ -16,14 +14,12 @@ namespace Rotation.Drawing
         private IItemAnimatorFactory _itemAnimatorFactory;
         private IItemDrawerFactory _itemDrawerFactory;
         private Func<IEnumerable<IAnimatableItem>> _getAnimatablesFunc;
-        private int _frame;
 
         public AnimationEngine(IItemAnimatorFactory itemAnimatorFactory, IItemDrawerFactory itemDrawerFactory, Func<IEnumerable<IAnimatableItem>> getAnimatablesFunc)
         {
             _itemAnimatorFactory = itemAnimatorFactory;
             _itemDrawerFactory = itemDrawerFactory;
             _getAnimatablesFunc = getAnimatablesFunc;
-            _frame = 0;
         }
 
 
@@ -34,16 +30,13 @@ namespace Rotation.Drawing
             {
                 foreach (var itemAnimator in _itemAnimatorFactory.Create(animatableItem))
                 {
-                    itemAnimator.Animate(_frame, animatableItem);
+                    itemAnimator.Animate(animatableItem);
                 }
 
                 var itemDrawer = _itemDrawerFactory.Create(animatableItem);
                 itemDrawer.Draw(spriteBatch, animatableItem);
             }
 
-            _frame++;
-            if (_frame > 59)
-                _frame = 0;
 
         }
     }

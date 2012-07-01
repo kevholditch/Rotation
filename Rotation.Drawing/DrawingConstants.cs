@@ -22,5 +22,10 @@ namespace Rotation.Drawing
             public static readonly Color SQUARE_NOT_SELECTED_COLOUR = Color.Orange;
             public static readonly Color SQUARE_NOT_SELECTABLE_COLOUR = Color.White;
         }
+
+        public static class RotationAnimation
+        {
+            public static readonly int ANGLE_INCREASE_RATE = 2;
+        }
     }
 }

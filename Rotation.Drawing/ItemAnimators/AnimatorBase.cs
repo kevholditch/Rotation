@@ -9,11 +9,11 @@ namespace Rotation.Drawing.ItemAnimators
             return animatableItem is T;
         }
 
-        protected abstract void AnimateImp(int frame, T animatableItem);
+        protected abstract void AnimateImp(T animatableItem);
 
-        public void Animate(int frame, IAnimatableItem animatableItem)
+        public void Animate(IAnimatableItem animatableItem)
         {
-            AnimateImp(frame, animatableItem as T);
+            AnimateImp(animatableItem as T);
         }
     }
 }
