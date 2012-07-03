@@ -7,13 +7,13 @@ using Rotation.GameObjects.Drawing.ItemAnimators;
 
 namespace Rotation.Drawing
 {
-    public class AnimationEngine
+    public class AnimationEngine : IAnimationEngine
     {
         private readonly IItemAnimatorFactory _itemAnimatorFactory;
         private readonly IItemDrawerFactory _itemDrawerFactory;
-        private readonly Func<IEnumerable<IAnimatableItem>> _getAnimatables;
+        private readonly IGetAnimatableItems _getAnimatables;
 
-        public AnimationEngine(IItemAnimatorFactory itemAnimatorFactory, IItemDrawerFactory itemDrawerFactory, Func<IEnumerable<IAnimatableItem>> getAnimatables)
+        public AnimationEngine(IItemAnimatorFactory itemAnimatorFactory, IItemDrawerFactory itemDrawerFactory, IGetAnimatableItems getAnimatables)
         {
             _itemAnimatorFactory = itemAnimatorFactory;
             _itemDrawerFactory = itemDrawerFactory;
@@ -24,7 +24,7 @@ namespace Rotation.Drawing
         public void Animate(SpriteBatch spriteBatch)
         {
 
-            foreach (var animatableItem in _getAnimatables())
+            foreach (var animatableItem in _getAnimatables.GetAnimatables())
             {
                 foreach (var itemAnimator in _itemAnimatorFactory.Create(animatableItem))
                 {

@@ -1,12 +1,16 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
+using Autofac;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Rotation.Drawing;
+using Rotation.Drawing.Configuration;
 using Rotation.Drawing.ItemDrawers;
 using Rotation.Drawing.ItemDrawers.Squares;
 using Rotation.Drawing.Textures;
+using Rotation.GameObjects.Configuration;
 using Rotation.GameObjects.Drawing;
 using Rotation.GameObjects.Drawing.ItemAnimators;
 using Rotation.GameObjects.Letters;
@@ -25,13 +29,13 @@ namespace Rotation.Game
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 	    private Board _board;
-	    private IItemDrawerFactory _itemDrawerFactory;
-	    private IEnumerable<IAnimatableItem> _animatableItems;
 	    private ISquareSelector _squareSelector;
 	    private ISelectionRotatator _selectionRotatator;
 	    private Point _currentPos;
 	    private KeyboardState _oldKeyboardState;
-	    private AnimationEngine _animationEngine;
+	    private IAnimationEngine _animationEngine;
+
+	    private IContainer _container;
 
 		public RotationGame()
 		{
@@ -47,7 +51,15 @@ namespace Rotation.Game
 		/// </summary>
 		protected override void Initialize()
 		{
-			// TODO: Add your initialization logic here
+		    var containerBuilder = new ContainerBuilder();
+            containerBuilder.RegisterModule(new InterfaceConventionModule(new[]{ typeof(IItemDrawer).Assembly, typeof(IItemAnimator).Assembly}));
+            containerBuilder.RegisterModule(new TypeModule());
+            containerBuilder.RegisterModule(new DrawingModule());
+
+		    containerBuilder.RegisterInstance(new XnaTextureLoader(s => Content.Load<Texture2D>(s))).As<ITextureLoader>();
+		    containerBuilder.RegisterInstance(new BoardFactory().Create()).As<Board>().As<IGetMainSelectedSquare>().As
+		        <IGetAnimatableItems>().SingleInstance();
+		    _container = containerBuilder.Build();
 
 			base.Initialize();
 		}
@@ -60,32 +72,13 @@ namespace Rotation.Game
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
+		    _board = _container.Resolve<Board>();
 
-		    _board = new BoardFactory().Create();
-		    var boardFiller = new BoardFiller(new StandardTileFactory(new LetterLookup()));
+		    var boardFiller = _container.Resolve<IBoardFiller>();
             boardFiller.Fill(_board);
 
-
-		    Func<BoardCoordinate> getMainSelectedSquare = () => _board.GetMainSelectedSquare();
-
-            var textureLoader = new TextureLoader(s => Content.Load<Texture2D>(s));
-		    _itemDrawerFactory =
-		        new ItemDrawerFactory(new List<IItemDrawer>
-		                                  {
-		                                      new SquareDrawer(
-		                                          new TileTextureFactory(new List<ITileTextureCreator>
-		                                                                     {
-		                                                                         new BlankTileTextureCreator(textureLoader),
-		                                                                         new StandardTileTextureCreator(textureLoader)
-		                                                                     }),
-		                                          new SquareColourSelector(),
-		                                          new SquarePositionCalculator(getMainSelectedSquare),
-		                                          new SquareOriginCalculator(getMainSelectedSquare))
-		                                  });
-
-		    var itemAnimatorFactory = new ItemAnimatorFactory(new List<IItemAnimator> {new RotationAnimator()});
-
-            _animationEngine = new AnimationEngine(itemAnimatorFactory, _itemDrawerFactory, _board.GetAnimatables);
+		    _animationEngine = _container.Resolve<IAnimationEngine>();
+           
 
             _currentPos = new Point(4, 4);
             _squareSelector = new SquareSelector();

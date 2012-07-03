@@ -3,8 +3,8 @@ using Rotation.GameObjects.Drawing;
 
 namespace Rotation.GameObjects.StandardBoard
 {
-	public class Board : IGetAnimatableItems
-	{
+    public class Board : IGetAnimatableItems, IGetMainSelectedSquare
+    {
 		public Board(List<Line> columns, List<Line> rows)
 		{
 			Columns = columns;
