@@ -2,7 +2,7 @@ namespace Rotation.GameObjects.StandardBoard.Selection
 {
 	public class SquareSelector : ISquareSelector
 	{
-		public void Select(Board board, int col, int row)
+		public void Select(IBoard board, int col, int row)
 		{
 
 		    DeSelect(board);
@@ -22,7 +22,7 @@ namespace Rotation.GameObjects.StandardBoard.Selection
 			}
 		}
 
-	    public void DeSelect(Board board)
+	    public void DeSelect(IBoard board)
 	    {
             board.ForEachSquare(sq =>
             {

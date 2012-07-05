@@ -12,7 +12,7 @@ namespace Rotation.GameObjects.StandardBoard
 			_tileFactory = tileFactory;
 		}
 
-		public void Fill(Board board)
+		public void Fill(IBoard board)
 		{
 			foreach (var square in board.AllSquares().Where(sq => sq.IsSelectable && !sq.HasTile))
 			{

@@ -2,6 +2,6 @@
 {
 	public interface IBoardFiller
 	{
-		void Fill(Board board);
+		void Fill(IBoard board);
 	}
 }

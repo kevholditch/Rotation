@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using Autofac;
+using Autofac.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -28,19 +29,25 @@ namespace Rotation.Game
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
-	    private Board _board;
+	    private IBoard _board;
 	    private ISquareSelector _squareSelector;
 	    private ISelectionRotatator _selectionRotatator;
 	    private Point _currentPos;
 	    private KeyboardState _oldKeyboardState;
 	    private IAnimationEngine _animationEngine;
+	    private readonly IContainer _container;
+	    private IBoardFiller _boardFiller;
 
-	    private IContainer _container;
 
-		public RotationGame()
+	    public RotationGame(IContainer container, IBoard board, IBoardFiller boardFiller, ISelectionRotatator selectionRotatator, ISquareSelector squareSelector)
 		{
-			graphics = new GraphicsDeviceManager(this);
+		    _container = container;
+		    graphics = new GraphicsDeviceManager(this);
 			Content.RootDirectory = "Content";
+		    _board = board;
+		    _boardFiller = boardFiller;
+	        _selectionRotatator = selectionRotatator;
+	        _squareSelector = squareSelector;
 		}
 
 		/// <summary>
@@ -51,15 +58,10 @@ namespace Rotation.Game
 		/// </summary>
 		protected override void Initialize()
 		{
-		    var containerBuilder = new ContainerBuilder();
-            containerBuilder.RegisterModule(new InterfaceConventionModule(new[]{ typeof(IItemDrawer).Assembly, typeof(IItemAnimator).Assembly}));
-            containerBuilder.RegisterModule(new TypeModule());
-            containerBuilder.RegisterModule(new DrawingModule());
 
-		    containerBuilder.RegisterInstance(new XnaTextureLoader(s => Content.Load<Texture2D>(s))).As<ITextureLoader>();
-		    containerBuilder.RegisterInstance(new BoardFactory().Create()).As<Board>().As<IGetMainSelectedSquare>().As
-		        <IGetAnimatableItems>().SingleInstance();
-		    _container = containerBuilder.Build();
+		    var containerBuilder = new ContainerBuilder();
+            containerBuilder.RegisterInstance(new XnaTextureLoader(s => Content.Load<Texture2D>(s))).As<ITextureLoader>();
+            containerBuilder.Update(_container);
 
 			base.Initialize();
 		}
@@ -72,19 +74,12 @@ namespace Rotation.Game
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			spriteBatch = new SpriteBatch(GraphicsDevice);
-		    _board = _container.Resolve<Board>();
-
-		    var boardFiller = _container.Resolve<IBoardFiller>();
-            boardFiller.Fill(_board);
-
+		 
+            _boardFiller.Fill(_board);
 		    _animationEngine = _container.Resolve<IAnimationEngine>();
            
-
             _currentPos = new Point(4, 4);
-            _squareSelector = new SquareSelector();
             _squareSelector.Select(_board, _currentPos.X, _currentPos.Y);
-
-            _selectionRotatator = new SelectionRotatator();
 
 		    _oldKeyboardState = Keyboard.GetState();
 		}

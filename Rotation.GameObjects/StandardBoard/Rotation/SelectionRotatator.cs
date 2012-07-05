@@ -6,7 +6,7 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
 {
 	public class SelectionRotatator : ISelectionRotatator
 	{
-		public void Left(Board board)
+		public void Left(IBoard board)
 		{
 			var numSquares = 1;
 
@@ -44,7 +44,7 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
             square.Direction = RotationDirection.AntiClockwise;
         }
 
-	    public void Right(Board board)
+	    public void Right(IBoard board)
 		{
 			int numSquares = 1;
 

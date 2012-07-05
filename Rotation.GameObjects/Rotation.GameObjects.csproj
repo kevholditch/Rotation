@@ -94,6 +94,7 @@
     <Compile Include="StandardBoard\BoardExtensionMethods.cs" />
     <Compile Include="StandardBoard\BoardFactory.cs" />
     <Compile Include="StandardBoard\BoardFiller.cs" />
+    <Compile Include="StandardBoard\IBoard.cs" />
     <Compile Include="StandardBoard\IBoardFactory.cs" />
     <Compile Include="StandardBoard\IBoardFiller.cs" />
     <Compile Include="StandardBoard\IGetMainSelectedSquare.cs" />

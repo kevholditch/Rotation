@@ -6,7 +6,7 @@ namespace Rotation.GameObjects.sTests.TestClasses
 {
 	public class AlphabeticalBoardFiller : IBoardFiller
 	{
-		public void Fill(Board board)
+		public void Fill(IBoard board)
 		{
 
 			var currentLetter = 'A';

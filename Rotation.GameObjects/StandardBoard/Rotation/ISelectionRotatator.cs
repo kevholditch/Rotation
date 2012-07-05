@@ -2,7 +2,7 @@
 {
 	public interface ISelectionRotatator
 	{
-		void Left(Board board);
-		void Right(Board board);
+		void Left(IBoard board);
+		void Right(IBoard board);
 	}
 }
