@@ -1,31 +1,20 @@
 using System;
-using System.Collections.Generic;
-using System.Reflection;
 using Autofac;
-using Autofac.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Rotation.Drawing;
-using Rotation.Drawing.Configuration;
-using Rotation.Drawing.ItemDrawers;
-using Rotation.Drawing.ItemDrawers.Squares;
 using Rotation.Drawing.Textures;
-using Rotation.GameObjects.Configuration;
-using Rotation.GameObjects.Drawing;
-using Rotation.GameObjects.Drawing.ItemAnimators;
-using Rotation.GameObjects.Letters;
 using Rotation.GameObjects.StandardBoard;
 using Rotation.GameObjects.StandardBoard.Rotation;
 using Rotation.GameObjects.StandardBoard.Selection;
-using Rotation.GameObjects.Tiles;
 
 namespace Rotation.Game
 {
 	/// <summary>
 	/// This is the main type for your game
 	/// </summary>
-	public class RotationGame : Microsoft.Xna.Framework.Game
+	public class RotationGame : Microsoft.Xna.Framework.Game, ITextureLoader
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -39,18 +28,18 @@ namespace Rotation.Game
 	    private IBoardFiller _boardFiller;
 
 
-	    public RotationGame(IContainer container, IBoard board, IBoardFiller boardFiller, ISelectionRotatator selectionRotatator, ISquareSelector squareSelector)
-		{
-		    _container = container;
-		    graphics = new GraphicsDeviceManager(this);
-			Content.RootDirectory = "Content";
-		    _board = board;
-		    _boardFiller = boardFiller;
-	        _selectionRotatator = selectionRotatator;
-	        _squareSelector = squareSelector;
-		}
+        public RotationGame(IContainer container, IBoard board, IBoardFiller boardFiller, ISelectionRotatator selectionRotatator, ISquareSelector squareSelector)
+        {
+            _container = container;
+            graphics = new GraphicsDeviceManager(this);
+            Content.RootDirectory = "Content";
+            _board = board;
+            _boardFiller = boardFiller;
+            _selectionRotatator = selectionRotatator;
+            _squareSelector = squareSelector;
+        }
 
-		/// <summary>
+	    /// <summary>
 		/// Allows the game to perform any initialization it needs to before starting to run.
 		/// This is where it can query for any required services and load any non-graphic
 		/// related content.  Calling base.Initialize will enumerate through any components
@@ -59,9 +48,9 @@ namespace Rotation.Game
 		protected override void Initialize()
 		{
 
-		    var containerBuilder = new ContainerBuilder();
-            containerBuilder.RegisterInstance(new XnaTextureLoader(s => Content.Load<Texture2D>(s))).As<ITextureLoader>();
-            containerBuilder.Update(_container);
+            //var containerBuilder = new ContainerBuilder();
+            //containerBuilder.RegisterInstance(new XnaTextureLoader(s => Content.Load<Texture2D>(s))).As<ITextureLoader>();
+            //containerBuilder.Update(_container);
 
 			base.Initialize();
 		}
@@ -177,5 +166,10 @@ namespace Rotation.Game
 
 			base.Draw(gameTime);
 		}
+
+	    public Texture2D Load(string assetName)
+	    {
+	        return Content.Load<Texture2D>(assetName);
+	    }
 	}
 }

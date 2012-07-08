@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
  using Autofac;
+ using Autofac.Core;
+ using Microsoft.Xna.Framework.Graphics;
  using Rotation.Drawing.Configuration;
  using Rotation.Drawing.ItemDrawers;
+ using Rotation.Drawing.Textures;
  using Rotation.GameObjects.Configuration;
  using Rotation.GameObjects.Drawing;
  using Rotation.GameObjects.Drawing.ItemAnimators;
@@ -26,7 +29,7 @@ namespace Rotation.Game
                         .As<IGetAnimatableItems>()
                         .SingleInstance();
 
-            containerBuilder.RegisterType<RotationGame>();
+            containerBuilder.RegisterType<RotationGame>().AsSelf().As<ITextureLoader>().SingleInstance();
 
             return containerBuilder.Build();
         }

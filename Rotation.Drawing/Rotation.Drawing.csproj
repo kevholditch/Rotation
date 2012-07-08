@@ -101,7 +101,6 @@
     <Compile Include="Textures\TileTextureFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Textures\ITextureLoader.cs" />
-    <Compile Include="Textures\XnaTextureLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Rotation.GameObjects\Rotation.GameObjects.csproj">
