@@ -46,12 +46,7 @@ namespace Rotation.Game
 		/// and initialize them as well.
 		/// </summary>
 		protected override void Initialize()
-		{
-
-            //var containerBuilder = new ContainerBuilder();
-            //containerBuilder.RegisterInstance(new XnaTextureLoader(s => Content.Load<Texture2D>(s))).As<ITextureLoader>();
-            //containerBuilder.Update(_container);
-
+		{           
 			base.Initialize();
 		}
 
