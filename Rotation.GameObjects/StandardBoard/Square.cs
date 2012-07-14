@@ -4,8 +4,8 @@ using Rotation.GameObjects.Tiles;
 
 namespace Rotation.GameObjects.StandardBoard
 {
-	public class Square : IRotationAnimationItem
-	{
+    public class Square : IRotationAnimationItem, ISquare
+    {
 		public Square(bool isSelectable, int x, int y)
 		{
 			IsSelectable = isSelectable;
