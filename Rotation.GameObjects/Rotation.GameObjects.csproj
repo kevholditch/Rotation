@@ -114,8 +114,8 @@
     <Compile Include="Tiles\StandardTile.cs" />
     <Compile Include="Tiles\StandardTileFactory.cs" />
     <Compile Include="Tiles\Tile.cs" />
-    <Compile Include="Words\FoundWord.cs" />
-    <Compile Include="Words\IFoundWord.cs" />
+    <Compile Include="Words\Word.cs" />
+    <Compile Include="Words\IWord.cs" />
     <Compile Include="Words\IWordChecker.cs" />
     <Compile Include="Words\IWordList.cs" />
     <Compile Include="Words\IWordListFactory.cs" />

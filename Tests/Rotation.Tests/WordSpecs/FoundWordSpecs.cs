@@ -15,7 +15,7 @@ namespace Rotation.GameObjects.sTests.WordSpecs
         [Specification]
         public void FoundWordReturnsCorrectWordString()
         {
-            var foundWord = default(FoundWord);
+            var foundWord = default(Word);
             var squares = default(IEnumerable<Square>);
 
             "Given I have a set of squares".Context(() =>
@@ -31,16 +31,16 @@ namespace Rotation.GameObjects.sTests.WordSpecs
                                 }
                     );
 
-            "When I instaniate a found word with the squares that spell house".Do(() => foundWord = new FoundWord(squares));
+            "When I instaniate a found word with the squares that spell house".Do(() => foundWord = new Word(squares));
 
-            "Then the word should be HOUSE".Observation(() => foundWord.Word.ShouldEqual("HOUSE"));
+            "Then the word should be HOUSE".Observation(() => foundWord.Value.ShouldEqual("HOUSE"));
 
         }
 
         [Specification]
         public void FoundWordReturnsCorrectWordScore()
         {
-            var foundWord = default(FoundWord);
+            var foundWord = default(Word);
             var squares = default(IEnumerable<Square>);
 
             "Given I have a set of squares".Context(() =>
@@ -56,7 +56,7 @@ namespace Rotation.GameObjects.sTests.WordSpecs
                                     }
             );
 
-            "When I instaniate a found word with the squares that have a combined score of 20".Do(() => foundWord = new FoundWord(squares));
+            "When I instaniate a found word with the squares that have a combined score of 20".Do(() => foundWord = new Word(squares));
 
             "Then the score should be 20".Observation(() => foundWord.Score.ShouldEqual(20));
 

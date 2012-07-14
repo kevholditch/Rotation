@@ -16,7 +16,7 @@ namespace Rotation.GameObjects.sTests.WordSpecs
         {
             var squares = default(IEnumerable<IEnumerable<Square>>);
             var wordChecker = default(WordChecker);
-            var result = default(IEnumerable<IFoundWord>);
+            var result = default(IEnumerable<IWord>);
 
             "Given I have a collection of squares that contain a word in a region that cannot be used to make a word".
                 Context(() =>
@@ -60,7 +60,7 @@ namespace Rotation.GameObjects.sTests.WordSpecs
         {
             var squares = default(IEnumerable<IEnumerable<Square>>);
             var wordChecker = default(WordChecker);
-            var result = default(IEnumerable<IFoundWord>);
+            var result = default(IEnumerable<IWord>);
 
             "Given I have a collection of squares that contain a word in a region that can be used to make a word".
                 Context(() =>
@@ -96,7 +96,7 @@ namespace Rotation.GameObjects.sTests.WordSpecs
 
             "Then 1 word should be returned".Observation(() => result.Count().ShouldEqual(1));
 
-            "Then the word returned should be HOUSE".Observation(() => result.First().Word.ShouldEqual("HOUSE"));
+            "Then the word returned should be HOUSE".Observation(() => result.First().Value.ShouldEqual("HOUSE"));
 
         }
 
@@ -105,7 +105,7 @@ namespace Rotation.GameObjects.sTests.WordSpecs
         {
             var squares = default(IEnumerable<IEnumerable<Square>>);
             var wordChecker = default(WordChecker);
-            var result = default(IEnumerable<IFoundWord>);
+            var result = default(IEnumerable<IWord>);
 
             "Given I have a collection of squares that contain two words".
                 Context(() =>
@@ -154,9 +154,9 @@ namespace Rotation.GameObjects.sTests.WordSpecs
 
             "Then 2 words should be returned".Observation(() => result.Count().ShouldEqual(2));
 
-            "Then the first word returned should be HOUSE".Observation(() => result.First().Word.ShouldEqual("HOUSE"));
+            "Then the word HOUSE should be returned".Observation(() => result.Count(r => r.Value == "HOUSE").ShouldEqual(1));
 
-            "Then the second word returned should be CARD".Observation(() => result.First().Word.ShouldEqual("CARD"));
+            "Then the word CARD should be returned".Observation(() => result.Count(r => r.Value == "CARD").ShouldEqual(1));
 
         }
 
@@ -165,7 +165,7 @@ namespace Rotation.GameObjects.sTests.WordSpecs
         {
             var squares = default(IEnumerable<IEnumerable<Square>>);
             var wordChecker = default(WordChecker);
-            var result = default(IEnumerable<IFoundWord>);
+            var result = default(IEnumerable<IWord>);
 
             "Given I have a collection of squares that contain two words".
                 Context(() =>
@@ -208,9 +208,9 @@ namespace Rotation.GameObjects.sTests.WordSpecs
 
             "Then 2 words should be returned".Observation(() => result.Count().ShouldEqual(2));
 
-            "Then the first word returned should be HOUSE".Observation(() => result.First().Word.ShouldEqual("HOUSE"));
+            "Then the word HOUSE should be returned".Observation(() => result.Count(r => r.Value == "HOUSE").ShouldEqual(1));
 
-            "Then the second word returned should be SEED".Observation(() => result.First().Word.ShouldEqual("SEED"));
+            "Then the word SEED should be returned".Observation(() => result.Count(r => r.Value == "SEED").ShouldEqual(1));
 
         }
 
@@ -219,7 +219,7 @@ namespace Rotation.GameObjects.sTests.WordSpecs
         {
             var squares = default(IEnumerable<IEnumerable<Square>>);
             var wordChecker = default(WordChecker);
-            var result = default(IEnumerable<IFoundWord>);
+            var result = default(IEnumerable<IWord>);
 
             "Given I have a collection of squares that contain two words in two lists".
                 Context(() =>
@@ -273,9 +273,9 @@ namespace Rotation.GameObjects.sTests.WordSpecs
 
             "Then 2 words should be returned".Observation(() => result.Count().ShouldEqual(2));
 
-            "Then the first word returned should be HOUSE".Observation(() => result.First().Word.ShouldEqual("HOUSE"));
+            "Then the word HOUSE should be returned".Observation(() => result.Count(r => r.Value == "HOUSE").ShouldEqual(1));
 
-            "Then the second word returned should be SEED".Observation(() => result.First().Word.ShouldEqual("SEED"));
+            "Then the word SEED should be returned".Observation(() => result.Count(r => r.Value == "SEED").ShouldEqual(1));
 
         }
 
@@ -284,7 +284,7 @@ namespace Rotation.GameObjects.sTests.WordSpecs
         {
             var squares = default(IEnumerable<IEnumerable<Square>>);
             var wordChecker = default(WordChecker);
-            var result = default(IEnumerable<IFoundWord>);
+            var result = default(IEnumerable<IWord>);
 
             "Given I have a collection of squares that contain no words".
                 Context(() =>
@@ -336,12 +336,9 @@ namespace Rotation.GameObjects.sTests.WordSpecs
 
             "When I call check".Do(() => result = wordChecker.Check(squares));
 
-            "Then 2 words should be returned".Observation(() => result.Count().ShouldEqual(2));
+            "Then no words should be returned".Observation(() => result.Count().ShouldEqual(0));
 
-            "Then the first word returned should be HOUSE".Observation(() => result.First().Word.ShouldEqual("HOUSE"));
-
-            "Then the second word returned should be SEED".Observation(() => result.First().Word.ShouldEqual("SEED"));
-
+           
         }
     }
 }

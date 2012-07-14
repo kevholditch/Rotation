@@ -3,9 +3,9 @@ using Rotation.GameObjects.StandardBoard;
 
 namespace Rotation.GameObjects.Words
 {
-    public interface IFoundWord
+    public interface IWord
     {
-        string Word { get; }
+        string Value { get; }
         int Score { get; }
     }
 }

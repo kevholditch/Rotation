@@ -5,25 +5,31 @@ using System.Linq;
 
 namespace Rotation.GameObjects.Words
 {
-    public class FoundWord : IFoundWord
+    public class Word : IWord
     {
 
         private readonly IEnumerable<Square> _squares;
 
-        public FoundWord(IEnumerable<Square> squares)
+        public Word(IEnumerable<Square> squares)
         {
             _squares = squares;
         }
 
-        private string _word;
-        public string Word
+
+        public override string ToString()
+        {
+            return Value;
+        }
+
+        private string _value;
+        public string Value
         {
             get { 
                 
-                if (_word == null)
-                    _word = new string(_squares.Select(s => s.Letter.Value).ToArray());
+                if (_value == null)
+                    _value = new string(_squares.Select(s => s.Letter.Value).ToArray());
 
-                return _word;
+                return _value;
 
             }
         }

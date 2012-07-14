@@ -5,6 +5,6 @@ namespace Rotation.GameObjects.Words
 {
     public interface IWordChecker
     {
-        IEnumerable<IFoundWord> Check(IEnumerable<IEnumerable<Square>> squares);
+        IEnumerable<IWord> Check(IEnumerable<IEnumerable<Square>> squares);
     }
 }
