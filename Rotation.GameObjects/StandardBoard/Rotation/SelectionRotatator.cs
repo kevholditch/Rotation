@@ -38,7 +38,7 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
 
 		}
 
-        private void SetSquareLeft(Square square)
+        private void SetSquareLeft(IRotationAnimationItem square)
         {
             square.Angle = 90;
             square.Direction = RotationDirection.AntiClockwise;
@@ -77,7 +77,7 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
         
         }
 
-	    private void SetSquareRight(Square square)
+	    private void SetSquareRight(IRotationAnimationItem square)
 	    {
 	        square.Angle = -90;
 	        square.Direction = RotationDirection.Clockwise;

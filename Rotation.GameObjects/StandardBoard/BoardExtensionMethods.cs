@@ -14,7 +14,7 @@ namespace Rotation.GameObjects.StandardBoard
 
 		public static List<Square> AllSquares(this IBoard board)
 		{
-			return board.Rows.SelectMany(row => row.Squares).ToList();
+			return board.Rows.SelectMany(row => row).ToList();
 		}
 
 		public static List<Square> AllSelectableSquaresWithTiles(this IBoard board)

@@ -5,8 +5,8 @@ namespace Rotation.GameObjects.StandardBoard
 {
     public interface IBoard : IGetAnimatableItems, IGetMainSelectedSquare
     {
-        List<Line> Rows { get; }
-        List<Line> Columns { get; }
+        List<List<Square>> Rows { get; }
+        List<List<Square>> Columns { get; }
         Square this[int x, int y] { get; }
     }
 }

@@ -12,7 +12,7 @@ namespace Rotation.Drawing.ItemDrawers.Squares
         private readonly ISquarePositionCalculator _squarePositionCalculator;
         private readonly ISquareOriginCalculator _squareOriginCalculator;
 
-        public SquareDrawer(ITileTextureFactory tileTextureFactory, ISquareColourSelector squareColourSelector, ISquarePositionCalculator squarePositionCalculator, ISquareOriginCalculator squareOriginCalculator)
+        public SquareDrawer(ITileTextureFactory tileTextureFactory, SquareColourSelector squareColourSelector, SquarePositionCalculator squarePositionCalculator, SquareOriginCalculator squareOriginCalculator)
         {
             _tileTextureFactory = tileTextureFactory;
             _squareColourSelector = squareColourSelector;

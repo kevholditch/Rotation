@@ -6,20 +6,20 @@ namespace Rotation.GameObjects.Words
     public class WordListFactory : IWordListFactory
     {
 
-        private readonly string filename;
+        private readonly string _filename;
 
         public WordListFactory(string filename)
         {
-            this.filename = filename;
+            _filename = filename;
         }
 
         public IWordList Create()
         {
             var words = new List<string>();
 
-            using (var streamReader = new StreamReader(filename))
+            using (var streamReader = new StreamReader(_filename))
             {
-                var line = "";
+                string line;
                 while((line = streamReader.ReadLine()) != null)
                 {
                     words.Add(line);

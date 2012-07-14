@@ -10,7 +10,7 @@
 
 		public static bool CanGoDown(this IBoard board, int col, int row, int numSquares)
 		{
-			return (row + numSquares) < board.Columns[col].Squares.Count && board[col, row + numSquares].IsSelectable;
+			return (row + numSquares) < board.Columns[col].Count && board[col, row + numSquares].IsSelectable;
 		}
 
 		public static bool CanGoLeft(this IBoard board, int col, int row, int numSquares)
@@ -20,7 +20,7 @@
 
 		public static bool CanGoRight(this IBoard board, int col, int row, int numSquares)
 		{
-			return (col + numSquares) < board.Rows[row].Squares.Count && board[col + numSquares, row].IsSelectable;
+			return (col + numSquares) < board.Rows[row].Count && board[col + numSquares, row].IsSelectable;
 		}
 
 		public static bool CanGoAllDirections(this IBoard board, int col, int row, int numSquares)

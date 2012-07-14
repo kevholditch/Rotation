@@ -16,17 +16,17 @@ namespace Rotation.GameObjects.sTests.WordSpecs
         public void FoundWordReturnsCorrectWordString()
         {
             var foundWord = default(FoundWord);
-            var squares = default(IEnumerable<ISquare>);
+            var squares = default(IEnumerable<Square>);
 
             "Given I have a set of squares".Context(() =>
 
-                    squares = new List<ISquare>
+                    squares = new List<Square>
                                 {
-                                    BuildA.Square().WithLetter(0, 'H').Build(),
-                                    BuildA.Square().WithLetter(0, 'O').Build(),
-                                    BuildA.Square().WithLetter(0, 'U').Build(),
-                                    BuildA.Square().WithLetter(0, 'S').Build(),
-                                    BuildA.Square().WithLetter(0, 'E').Build(),
+                                    BuildA.DefaultSquare().WithLetter(0, 'H').Build(),
+                                    BuildA.DefaultSquare().WithLetter(0, 'O').Build(),
+                                    BuildA.DefaultSquare().WithLetter(0, 'U').Build(),
+                                    BuildA.DefaultSquare().WithLetter(0, 'S').Build(),
+                                    BuildA.DefaultSquare().WithLetter(0, 'E').Build(),
 
                                 }
                     );
@@ -41,17 +41,17 @@ namespace Rotation.GameObjects.sTests.WordSpecs
         public void FoundWordReturnsCorrectWordScore()
         {
             var foundWord = default(FoundWord);
-            var squares = default(IEnumerable<ISquare>);
+            var squares = default(IEnumerable<Square>);
 
             "Given I have a set of squares".Context(() =>
             
-                squares = new List<ISquare>
+                squares = new List<Square>
                                     {
-                                        BuildA.Square().WithLetter(6, ' ').Build(),
-                                        BuildA.Square().WithLetter(2, ' ').Build(),
-                                        BuildA.Square().WithLetter(4, ' ').Build(),
-                                        BuildA.Square().WithLetter(1, ' ').Build(),
-                                        BuildA.Square().WithLetter(7, ' ').Build(),
+                                        BuildA.DefaultSquare().WithLetter(6, ' ').Build(),
+                                        BuildA.DefaultSquare().WithLetter(2, ' ').Build(),
+                                        BuildA.DefaultSquare().WithLetter(4, ' ').Build(),
+                                        BuildA.DefaultSquare().WithLetter(1, ' ').Build(),
+                                        BuildA.DefaultSquare().WithLetter(7, ' ').Build(),
 
                                     }
             );
@@ -61,7 +61,6 @@ namespace Rotation.GameObjects.sTests.WordSpecs
             "Then the score should be 20".Observation(() => foundWord.Score.ShouldEqual(20));
 
         }
-
 
     }
 }

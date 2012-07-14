@@ -98,8 +98,6 @@
     <Compile Include="StandardBoard\IBoardFactory.cs" />
     <Compile Include="StandardBoard\IBoardFiller.cs" />
     <Compile Include="StandardBoard\IGetMainSelectedSquare.cs" />
-    <Compile Include="StandardBoard\ISquare.cs" />
-    <Compile Include="StandardBoard\Line.cs" />
     <Compile Include="StandardBoard\Rotation\ISelectionRotatator.cs" />
     <Compile Include="StandardBoard\Rotation\SelectionRotatator.cs" />
     <Compile Include="StandardBoard\Selection\BoardSelectionExtensions.cs" />
@@ -118,8 +116,10 @@
     <Compile Include="Tiles\Tile.cs" />
     <Compile Include="Words\FoundWord.cs" />
     <Compile Include="Words\IFoundWord.cs" />
+    <Compile Include="Words\IWordChecker.cs" />
     <Compile Include="Words\IWordList.cs" />
     <Compile Include="Words\IWordListFactory.cs" />
+    <Compile Include="Words\WordChecker.cs" />
     <Compile Include="Words\WordList.cs" />
     <Compile Include="Words\WordListFactory.cs" />
   </ItemGroup>

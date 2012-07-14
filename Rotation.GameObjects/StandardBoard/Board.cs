@@ -5,15 +5,15 @@ namespace Rotation.GameObjects.StandardBoard
 {
     public class Board : IBoard
     {
-		public Board(List<Line> columns, List<Line> rows)
+		public Board(List<List<Square>> columns, List<List<Square>> rows)
 		{
 			Columns = columns;
 			Rows = rows;
 		}
 
-		public List<Line> Rows { get; private set; }		
-		public List<Line> Columns { get; private set; }
-		public Square this[int x, int y] { get { return Columns[x].Squares[y]; } }
+        public List<List<Square>> Rows { get; private set; }
+        public List<List<Square>> Columns { get; private set; }
+		public Square this[int x, int y] { get { return Columns[x][y]; } }
 
 		public BoardCoordinate GetMainSelectedSquare()
 		{			

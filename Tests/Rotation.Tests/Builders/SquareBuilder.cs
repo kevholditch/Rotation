@@ -1,38 +1,34 @@
 ﻿using FakeItEasy;
 using Rotation.GameObjects.Letters;
 using Rotation.GameObjects.StandardBoard;
+using Rotation.GameObjects.sTests.TestClasses;
 
 namespace Rotation.GameObjects.sTests.Builders
 {
 
     public class SquareBuilder
     {
-        private readonly ISquare _square;
+        private readonly Square _square;
 
-        public SquareBuilder()
+        public SquareBuilder(bool isSelectable, int x, int y)
         {
-            _square = A.Fake<ISquare>();
+            _square = new Square(isSelectable, x, y);
         }
 
         public SquareBuilder WithLetter(int points, char value)
         {
-            A.CallTo(() => _square.Letter).Returns(new Letter(points, value));
+            _square.Tile = new TestTile(new Letter(points, value));
             return this;
         }
 
-        public SquareBuilder WithXPos(int value)
+        public SquareBuilder WithCanUseInWord(bool value)
         {
-            A.CallTo(() => _square.XPos).Returns(value);
+            _square.CanUseInWord = value;
             return this;
         }
 
-        public SquareBuilder WithYPos(int value)
-        {
-            A.CallTo(() => _square.YPos).Returns(value);
-            return this;
-        }
         
-        public ISquare Build()
+        public Square Build()
         {
             return _square;
         }

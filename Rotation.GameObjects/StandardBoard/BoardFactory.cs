@@ -13,7 +13,7 @@ namespace Rotation.GameObjects.StandardBoard
 		public Board Create()
 		{
 
-			var rows = new List<Line>();			
+			var rows = new List<List<Square>>();			
 
 			for (int i = 0; i < BOARD_SIZE; i++)
 			{
@@ -23,13 +23,15 @@ namespace Rotation.GameObjects.StandardBoard
 
 				for (int j = 0; j < BOARD_SIZE; j++)
 				{
-					currentRow.Add(new Square(selectableSquares.Contains(j), i, j));	
+				    var square = new Square(selectableSquares.Contains(j), i, j);
+				    square.CanUseInWord = square.IsSelectable;
+					currentRow.Add(square);	
 				}
 
-				rows.Add(new Line(currentRow));
+				rows.Add(new List<Square>(currentRow));
 			}
 
-			var cols = new List<Line>();
+			var cols = new List<List<Square>>();
 
 			for (int i = 0; i < BOARD_SIZE; i++)
 			{
@@ -37,10 +39,10 @@ namespace Rotation.GameObjects.StandardBoard
 
 				for (int j = 0; j < BOARD_SIZE; j++)
 				{
-					currentCol.Add(rows[j].Squares[i]);
+					currentCol.Add(rows[j][i]);
 				}
 
-				cols.Add(new Line(currentCol));
+				cols.Add(new List<Square>(currentCol));
 			}
 
 

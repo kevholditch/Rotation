@@ -4,7 +4,9 @@ using Rotation.GameObjects.Tiles;
 
 namespace Rotation.GameObjects.StandardBoard
 {
-    public class Square : IRotationAnimationItem, ISquare
+    
+
+    public class Square : IRotationAnimationItem
     {
 		public Square(bool isSelectable, int x, int y)
 		{
@@ -27,7 +29,9 @@ namespace Rotation.GameObjects.StandardBoard
 
 		public bool HasTile { get { return Tile != null; } }
 
-		public bool IsMainSelection { get; set; }	
+		public bool IsMainSelection { get; set; }
+
+        public bool CanUseInWord { get; set; }
 
 		public Tile Tile { get; set; }
 

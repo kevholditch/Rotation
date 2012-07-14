@@ -113,6 +113,7 @@
     <Compile Include="TileSpecs\TileFactorySpecs.cs" />
     <Compile Include="Extensions\EnumerationExtensions.cs" />
     <Compile Include="WordSpecs\FoundWordSpecs.cs" />
+    <Compile Include="WordSpecs\WordCheckerSpecs.cs" />
     <Compile Include="WordSpecs\WordListFactorySpecs.cs" />
   </ItemGroup>
   <ItemGroup>

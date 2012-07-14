@@ -8,9 +8,9 @@ namespace Rotation.GameObjects.Words
     public class FoundWord : IFoundWord
     {
 
-        private readonly IEnumerable<ISquare> _squares;
+        private readonly IEnumerable<Square> _squares;
 
-        public FoundWord(IEnumerable<ISquare> squares)
+        public FoundWord(IEnumerable<Square> squares)
         {
             _squares = squares;
         }
