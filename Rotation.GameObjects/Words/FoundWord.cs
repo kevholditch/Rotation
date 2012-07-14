@@ -34,9 +34,6 @@ namespace Rotation.GameObjects.Words
             get { return _squares.Sum(s => s.Letter.Points); }
         }
 
-        public IEnumerable<ISquare> Squares
-        {
-            get { throw new NotImplementedException(); }
-        }
+        
     }
 }

@@ -111,7 +111,9 @@
     <Compile Include="LetterSpecs\LetterLookupSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TileSpecs\TileFactorySpecs.cs" />
+    <Compile Include="Extensions\EnumerationExtensions.cs" />
     <Compile Include="WordSpecs\FoundWordSpecs.cs" />
+    <Compile Include="WordSpecs\WordListFactorySpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -125,6 +127,11 @@
       <Project>{753F6814-8D74-420A-AD62-493EBBEBE849}</Project>
       <Name>Rotation.Tests.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WordSpecs\TestWordList.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

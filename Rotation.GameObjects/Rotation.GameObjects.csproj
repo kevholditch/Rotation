@@ -119,8 +119,15 @@
     <Compile Include="Words\FoundWord.cs" />
     <Compile Include="Words\IFoundWord.cs" />
     <Compile Include="Words\IWordList.cs" />
+    <Compile Include="Words\IWordListFactory.cs" />
+    <Compile Include="Words\WordList.cs" />
+    <Compile Include="Words\WordListFactory.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Words\Words.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

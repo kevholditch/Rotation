@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Rotation.GameObjects.Words
 {
-    interface IWordList
+    public interface IWordList
     {
         IEnumerable<string> Words { get; } 
     }

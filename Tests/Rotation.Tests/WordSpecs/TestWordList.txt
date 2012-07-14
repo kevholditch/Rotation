@@ -1,0 +1,4 @@
+﻿apples
+pears
+stairs
+teddy

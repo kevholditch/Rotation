@@ -7,6 +7,5 @@ namespace Rotation.GameObjects.Words
     {
         string Word { get; }
         int Score { get; }
-        IEnumerable<ISquare> Squares{ get; }
     }
 }
