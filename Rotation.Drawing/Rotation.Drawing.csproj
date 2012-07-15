@@ -94,9 +94,11 @@
     <Compile Include="Textures\BaseTileTextureCreator.cs" />
     <Compile Include="Textures\BlankTileTextureCreator.cs" />
     <Compile Include="Textures\ISquareColourSelector.cs" />
+    <Compile Include="Textures\ISquareDepthCalculator.cs" />
     <Compile Include="Textures\ITileTextureCreator.cs" />
     <Compile Include="ItemDrawers\Squares\SquareDrawer.cs" />
     <Compile Include="Textures\SquareColourSelector.cs" />
+    <Compile Include="Textures\SquareDepthCalculator.cs" />
     <Compile Include="Textures\StandardTileTextureCreator.cs" />
     <Compile Include="Textures\TileTextureFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -155,7 +155,7 @@ namespace Rotation.Game
 		{
 			GraphicsDevice.Clear(Color.White);
 
-            spriteBatch.Begin();
+		    spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
 		    _animationEngine.Animate(spriteBatch);
             spriteBatch.End();
 

@@ -1,6 +1,7 @@
 using System.Linq;
 using Rotation.GameObjects.Letters;
 using Rotation.GameObjects.StandardBoard;
+using Rotation.Tests.Common;
 
 namespace Rotation.GameObjects.sTests.TestClasses
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Rotation.GameObjects.StandardBoard;
 using Rotation.GameObjects.Words;
-using Rotation.GameObjects.sTests.Builders;
+using Rotation.Tests.Common.Builders;
 using SubSpec;
 using Rotation.Tests.Common;
 

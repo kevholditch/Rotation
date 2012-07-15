@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using FakeItEasy;
 using Rotation.GameObjects.StandardBoard;
 using Rotation.GameObjects.Words;
-using Rotation.GameObjects.sTests.Builders;
+using Rotation.Tests.Common.Builders;
 using SubSpec;
 using System.Linq;
 using Rotation.Tests.Common;

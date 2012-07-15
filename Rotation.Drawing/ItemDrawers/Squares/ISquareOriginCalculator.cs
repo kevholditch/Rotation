@@ -6,4 +6,6 @@ namespace Rotation.Drawing.ItemDrawers.Squares
     {
         Vector2 Calculate(int x, int y);
     }
+
+
 }

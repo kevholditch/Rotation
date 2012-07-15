@@ -11,14 +11,15 @@ namespace Rotation.Drawing.ItemDrawers.Squares
         private readonly ISquareColourSelector _squareColourSelector;
         private readonly ISquarePositionCalculator _squarePositionCalculator;
         private readonly ISquareOriginCalculator _squareOriginCalculator;
+        private readonly ISquareDepthCalculator _squareDepthCalculator;
 
-        public SquareDrawer(ITileTextureFactory tileTextureFactory, ISquareColourSelector squareColourSelector, ISquarePositionCalculator squarePositionCalculator, ISquareOriginCalculator squareOriginCalculator)
+        public SquareDrawer(ITileTextureFactory tileTextureFactory, ISquareColourSelector squareColourSelector, ISquarePositionCalculator squarePositionCalculator, ISquareOriginCalculator squareOriginCalculator, ISquareDepthCalculator squareDepthCalculator)
         {
             _tileTextureFactory = tileTextureFactory;
             _squareColourSelector = squareColourSelector;
             _squarePositionCalculator = squarePositionCalculator;
             _squareOriginCalculator = squareOriginCalculator;
-
+            _squareDepthCalculator = squareDepthCalculator;
         }
 
         protected override void DrawImp(SpriteBatch spriteBatch, Square square)
@@ -29,9 +30,11 @@ namespace Rotation.Drawing.ItemDrawers.Squares
             var colour = _squareColourSelector.SelectColour(square);
             var position = _squarePositionCalculator.Calculate();
             var origin = _squareOriginCalculator.Calculate(square.XPos, square.YPos);
-
+            var layerDepth = _squareDepthCalculator.Calculate(square);
+            
             spriteBatch.Draw(texture, position, null, colour, MathHelper.ToRadians(square.Angle), origin,
-                             new Vector2(1, 1), SpriteEffects.None, 0);
+                             new Vector2(1f, 1f), SpriteEffects.None, layerDepth);
+            
      
         }
     }
