@@ -8,3 +8,4 @@ obj/
 *.ncrunchproject
 *.ncrunchsolution
 *.crunchsolution*
+*.suo
