@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Autofac;
+﻿using Autofac;
 using Rotation.GameObjects.Drawing.ItemAnimators;
 using Rotation.GameObjects.Tiles;
+using Module = Autofac.Module;
 
 namespace Rotation.GameObjects.Configuration
 {

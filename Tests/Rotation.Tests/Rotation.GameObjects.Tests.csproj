@@ -103,6 +103,7 @@
     <Compile Include="BoardSpecs\SequenceSpecs.cs" />
     <Compile Include="ConfigurationSpecs\InterfaceConventionModuleSpecs.cs" />
     <Compile Include="DrawingInterfaceSpecs\GetAnimatableItemsFromBoardSpecs.cs" />
+    <Compile Include="EventsSpecs\EventsInstallerSpec.cs" />
     <Compile Include="TestClasses\AlphabeticalBoardFiller.cs" />
     <Compile Include="TestClasses\AlphabeticalBoardFillerSpecs.cs" />
     <Compile Include="LetterSpecs\LetterLookupSpecs.cs" />

@@ -78,6 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\EventsInstaller.cs" />
     <Compile Include="Configuration\InterfaceConventionModule.cs" />
     <Compile Include="Configuration\TypeModule.cs" />
     <Compile Include="Constants\GameConstants.cs" />
@@ -89,6 +90,10 @@
     <Compile Include="Drawing\ItemAnimators\ItemAnimatorFactory.cs" />
     <Compile Include="Drawing\ItemAnimators\RotationAnimator.cs" />
     <Compile Include="Drawing\RotationDirection.cs" />
+    <Compile Include="Events\GameEvents.cs" />
+    <Compile Include="Events\IGameEvent.cs" />
+    <Compile Include="Events\IGameEventDispatcher.cs" />
+    <Compile Include="Events\IGameEventHandler.cs" />
     <Compile Include="StandardBoard\Board.cs" />
     <Compile Include="StandardBoard\BoardCoordinate.cs" />
     <Compile Include="StandardBoard\BoardExtensionMethods.cs" />
