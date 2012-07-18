@@ -96,7 +96,10 @@
     <Compile Include="AnimationSpecs\RotationAnimatorSpecs.cs" />
     <Compile Include="BoardSpecs\BoardCreationSpecs.cs" />
     <Compile Include="BoardSpecs\BoardFillerSpecs.cs" />
-    <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationSpecs.cs" />
+    <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationDirectionSpecs.cs" />
+    <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationAngleSpecs.cs" />
+    <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationEventRaisedSpecs.cs" />
+    <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationLetterSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\MainSelectedSquareSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\SelectingSquareSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\SquareDeSelectionSpecs.cs" />

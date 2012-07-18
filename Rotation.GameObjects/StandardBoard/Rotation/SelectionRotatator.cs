@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Rotation.GameObjects.Drawing;
 using Rotation.GameObjects.Events;
 using Rotation.GameObjects.StandardBoard.Selection;
@@ -12,6 +13,9 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
 			var numSquares = 1;
 
 			var boardCoordinate = board.GetMainSelectedSquare();
+
+		    var squares = new List<Square>();
+            squares.Add(board[boardCoordinate.X, boardCoordinate.Y]);
 
 			while (board.CanGoAllDirections(boardCoordinate.X, boardCoordinate.Y, numSquares))
 			{
@@ -34,10 +38,15 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
                 SetSquareLeft(board[boardCoordinate.X, boardCoordinate.Y + numSquares]);
                 SetSquareLeft(board[boardCoordinate.X - numSquares, boardCoordinate.Y]);
 
+                squares.Add(board[boardCoordinate.X, boardCoordinate.Y - numSquares]);
+                squares.Add(board[boardCoordinate.X + numSquares, boardCoordinate.Y]);
+                squares.Add(board[boardCoordinate.X, boardCoordinate.Y + numSquares]);
+                squares.Add(board[boardCoordinate.X - numSquares, boardCoordinate.Y]);  
+
 				numSquares++;
 			}
 
-            GameEvents.Raise(new RotatedLeftEvent());
+            GameEvents.Raise(new RotatedLeftEvent{ Squares = squares});
 
 		}
 
@@ -52,6 +61,9 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
 			int numSquares = 1;
 
 			var boardCoordinate = board.GetMainSelectedSquare();
+
+            var squares = new List<Square>();
+            squares.Add(board[boardCoordinate.X, boardCoordinate.Y]);
 
 			while (board.CanGoAllDirections(boardCoordinate.X, boardCoordinate.Y, numSquares))
 			{
@@ -74,10 +86,15 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
                 SetSquareRight(board[boardCoordinate.X, boardCoordinate.Y + numSquares]);
                 SetSquareRight(board[boardCoordinate.X + numSquares, boardCoordinate.Y]);
 
+                squares.Add(board[boardCoordinate.X, boardCoordinate.Y - numSquares]);
+                squares.Add(board[boardCoordinate.X - numSquares, boardCoordinate.Y]);
+                squares.Add(board[boardCoordinate.X, boardCoordinate.Y + numSquares]);
+                squares.Add(board[boardCoordinate.X + numSquares, boardCoordinate.Y]);
+
 				numSquares++;
 			}
 
-            
+            GameEvents.Raise(new RotatedRightEvent{Squares = squares});
 		
         
         }

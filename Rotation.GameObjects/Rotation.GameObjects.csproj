@@ -98,6 +98,7 @@
     <Compile Include="Events\IGameEventHandler.cs" />
     <Compile Include="Events\IGameEventHandlerFactory.cs" />
     <Compile Include="Events\RotatedLeftEvent.cs" />
+    <Compile Include="Events\RotatedRightEvent.cs" />
     <Compile Include="StandardBoard\Board.cs" />
     <Compile Include="StandardBoard\BoardCoordinate.cs" />
     <Compile Include="StandardBoard\BoardExtensionMethods.cs" />
