@@ -1,4 +1,5 @@
 using Rotation.GameObjects.Drawing;
+using Rotation.GameObjects.Events;
 using Rotation.GameObjects.StandardBoard.Selection;
 using Rotation.GameObjects.Tiles;
 
@@ -35,6 +36,8 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
 
 				numSquares++;
 			}
+
+            GameEvents.Raise(new RotatedLeftEvent());
 
 		}
 
@@ -73,6 +76,8 @@ namespace Rotation.GameObjects.StandardBoard.Rotation
 
 				numSquares++;
 			}
+
+            
 		
         
         }
