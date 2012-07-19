@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Rotation.GameObjects.Drawing.Animations;
 using Rotation.GameObjects.Drawing.ItemAnimators;
 using Rotation.GameObjects.Tiles;
 using Module = Autofac.Module;
@@ -12,6 +13,10 @@ namespace Rotation.GameObjects.Configuration
             builder.RegisterType<RotationAnimator>().As<IItemAnimator>();
 
             builder.RegisterType<StandardTileFactory>().As<ITileFactory>();
+
+            builder.RegisterType<SingleAnimationStore>().As<IAnimationStore>().SingleInstance();
         }
     }
+
+    
 }
