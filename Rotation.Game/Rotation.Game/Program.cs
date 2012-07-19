@@ -1,16 +1,4 @@
-using System;
 using Autofac;
-using Autofac.Core;
-using Autofac.Core.Lifetime;
-using Autofac.Core.Registration;
-using Microsoft.Xna.Framework.Graphics;
-using Rotation.Drawing.Configuration;
-using Rotation.Drawing.ItemDrawers;
-using Rotation.Drawing.Textures;
-using Rotation.GameObjects.Configuration;
-using Rotation.GameObjects.Drawing;
-using Rotation.GameObjects.Drawing.ItemAnimators;
-using Rotation.GameObjects.StandardBoard;
 
 namespace Rotation.Game
 {

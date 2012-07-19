@@ -4,7 +4,7 @@ namespace Rotation.GameObjects.Events
     {
         public static IGameEventDispatcher Dispatcher { get; set; }
 
-        public static void Raise(IGameEvent gameEvent)
+        public static void Raise<TGameEvent>(TGameEvent gameEvent) where TGameEvent : IGameEvent
         {
             Dispatcher.Dispatch(gameEvent);
         }

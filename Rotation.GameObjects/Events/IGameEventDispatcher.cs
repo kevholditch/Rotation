@@ -2,6 +2,6 @@
 {
     public interface IGameEventDispatcher
     {
-        void Dispatch(IGameEvent gameEvent);
+        void Dispatch<TGameEvent>(TGameEvent gameEvent) where TGameEvent : IGameEvent;
     }
 }

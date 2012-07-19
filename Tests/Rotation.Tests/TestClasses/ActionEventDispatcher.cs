@@ -12,8 +12,7 @@ namespace Rotation.GameObjects.sTests.TestClasses
             _action = action;
         }
 
-
-        public void Dispatch(IGameEvent gameEvent)
+        public void Dispatch<TGameEvent>(TGameEvent gameEvent) where TGameEvent : IGameEvent
         {
             _action(gameEvent);
         }

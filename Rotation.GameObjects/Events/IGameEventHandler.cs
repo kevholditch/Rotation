@@ -4,4 +4,6 @@ namespace Rotation.GameObjects.Events
     {
         void Handle(T gameEvent);
     }
+
+  
 }

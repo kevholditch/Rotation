@@ -5,8 +5,7 @@ using Rotation.GameObjects.Tiles;
 namespace Rotation.GameObjects.StandardBoard
 {
     
-
-    public class Square : IRotationAnimationItem
+    public class Square : IAnimatableItem
     {
 		public Square(bool isSelectable, int x, int y)
 		{
@@ -40,10 +39,8 @@ namespace Rotation.GameObjects.StandardBoard
 			get { return Tile.Letter; }
 		}
 
-
 	    public int Angle { get; set; }
 
-	    public RotationDirection Direction { get; set; }
 	    
 	}
 }

@@ -78,10 +78,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnimationEngine.cs" />
+    <Compile Include="DrawEngine.cs" />
     <Compile Include="Configuration\DrawingModule.cs" />
     <Compile Include="DrawingConstants.cs" />
-    <Compile Include="IAnimationEngine.cs" />
+    <Compile Include="IDrawEngine.cs" />
     <Compile Include="ItemDrawers\IItemDrawer.cs" />
     <Compile Include="ItemDrawers\IItemDrawerFactory.cs" />
     <Compile Include="ItemDrawers\ItemDrawerBase.cs" />

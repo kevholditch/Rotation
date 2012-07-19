@@ -2,7 +2,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Rotation.Drawing
 {
-    public interface IAnimationEngine
+    public interface IDrawEngine
     {
         void Animate(SpriteBatch spriteBatch);
     }
