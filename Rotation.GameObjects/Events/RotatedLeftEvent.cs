@@ -5,6 +5,6 @@ namespace Rotation.GameObjects.Events
 {
     public class RotatedLeftEvent : IGameEvent
     {
-        public IEnumerable<Square> Squares { get; set; }
+        public IEnumerable<BoardCoordinate> BoardCoordinates { get; set; }
     }
 }

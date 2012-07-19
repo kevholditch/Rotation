@@ -31,7 +31,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.RotationSpecs
 
             "Then a rotated left event should be raised".Observation(() => result.ShouldNotBeNull());
 
-            "Then 17 squares should be in the event".Observation(() => result.Squares.Count().ShouldEqual(17));
+            "Then 16 squares should be in the event".Observation(() => result.BoardCoordinates.Count().ShouldEqual(16));
 
         }
 
@@ -55,7 +55,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.RotationSpecs
 
             "Then a rotated right event should be raised".Observation(() => result.ShouldNotBeNull());
 
-            "Then 17 squares should be in the event".Observation(() => result.Squares.Count().ShouldEqual(17));
+            "Then 16 squares should be in the event".Observation(() => result.BoardCoordinates.Count().ShouldEqual(16));
 
         }
     }
