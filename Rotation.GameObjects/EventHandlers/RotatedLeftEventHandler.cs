@@ -1,7 +1,8 @@
 using Rotation.GameObjects.Drawing.Animations;
+using Rotation.GameObjects.Events;
 using Rotation.GameObjects.StandardBoard;
 
-namespace Rotation.GameObjects.Events.EventHandlers
+namespace Rotation.GameObjects.EventHandlers
 {
     public class RotatedLeftEventHandler : IGameEventHandler<RotatedLeftEvent>
     {

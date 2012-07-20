@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Rotation.GameObjects.Constants;
+using Rotation.GameObjects.Events;
 using Rotation.GameObjects.StandardBoard;
 
 namespace Rotation.GameObjects.Drawing.Animations
@@ -40,6 +41,11 @@ namespace Rotation.GameObjects.Drawing.Animations
                     _finished = true;
                 }
             }
+        }
+
+        public void OnFinished()
+        {
+            GameEvents.Raise(new BoardChangedEvent());
         }
     }
 }

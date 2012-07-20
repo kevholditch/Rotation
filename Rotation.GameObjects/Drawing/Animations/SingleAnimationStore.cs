@@ -24,6 +24,7 @@ namespace Rotation.GameObjects.Drawing.Animations
 
         public void Remove(IAnimation animation)
         {
+            animation.OnFinished();
             _animations.Remove(animation);
         }
     }

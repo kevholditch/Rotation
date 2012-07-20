@@ -4,5 +4,6 @@
     {
         bool Finished();
         void Animate();
+        void OnFinished();
     }
 }

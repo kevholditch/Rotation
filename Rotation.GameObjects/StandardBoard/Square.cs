@@ -13,7 +13,8 @@ namespace Rotation.GameObjects.StandardBoard
 		    XPos = x;
 		    YPos = y;
 		    Angle = 0;
-			IsSelected = false;			
+			IsSelected = false;
+		    InWord = false;
 		}
 
         public int XPos { get; private set; }
@@ -33,6 +34,8 @@ namespace Rotation.GameObjects.StandardBoard
         public bool CanUseInWord { get; set; }
 
 		public Tile Tile { get; set; }
+
+        public bool InWord { get; set; }
 
 		public Letter Letter
 		{

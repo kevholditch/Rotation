@@ -24,7 +24,10 @@ namespace Rotation.GameObjects.sTests.WordSpecs
                                 var wordList = A.Fake<IWordList>();
                                 A.CallTo(() => wordList.Words).Returns(new[] {"HOUSE"});
 
-                                wordChecker = new WordChecker(wordList);
+                                var wordListFactory = A.Fake<IWordListFactory>();
+                                A.CallTo(() => wordListFactory.Create()).Returns(wordList);
+
+                                wordChecker = new WordChecker(wordListFactory);
                                 squares = new List<List<Square>>
                                               {
                                                   new List<Square>()
@@ -68,7 +71,10 @@ namespace Rotation.GameObjects.sTests.WordSpecs
                     var wordList = A.Fake<IWordList>();
                     A.CallTo(() => wordList.Words).Returns(new[] { "HOUSE" });
 
-                    wordChecker = new WordChecker(wordList);
+                    var wordListFactory = A.Fake<IWordListFactory>();
+                    A.CallTo(() => wordListFactory.Create()).Returns(wordList);
+
+                    wordChecker = new WordChecker(wordListFactory);
                     squares = new List<List<Square>>
                                               {
                                                   new List<Square>()
@@ -113,7 +119,10 @@ namespace Rotation.GameObjects.sTests.WordSpecs
                     var wordList = A.Fake<IWordList>();
                     A.CallTo(() => wordList.Words).Returns(new[] { "HOUSE", "CARD" });
 
-                    wordChecker = new WordChecker(wordList);
+                    var wordListFactory = A.Fake<IWordListFactory>();
+                    A.CallTo(() => wordListFactory.Create()).Returns(wordList);
+
+                    wordChecker = new WordChecker(wordListFactory);
                     squares = new List<List<Square>>
                                               {
                                                   new List<Square>()
@@ -173,7 +182,10 @@ namespace Rotation.GameObjects.sTests.WordSpecs
                     var wordList = A.Fake<IWordList>();
                     A.CallTo(() => wordList.Words).Returns(new[] { "HOUSE", "SEED" });
 
-                    wordChecker = new WordChecker(wordList);
+                    var wordListFactory = A.Fake<IWordListFactory>();
+                    A.CallTo(() => wordListFactory.Create()).Returns(wordList);
+
+                    wordChecker = new WordChecker(wordListFactory);
                     squares = new List<List<Square>>
                                               {
                                                   new List<Square>()
@@ -227,7 +239,10 @@ namespace Rotation.GameObjects.sTests.WordSpecs
                     var wordList = A.Fake<IWordList>();
                     A.CallTo(() => wordList.Words).Returns(new[] { "HOUSE", "SEED" });
 
-                    wordChecker = new WordChecker(wordList);
+                    var wordListFactory = A.Fake<IWordListFactory>();
+                    A.CallTo(() => wordListFactory.Create()).Returns(wordList);
+
+                    wordChecker = new WordChecker(wordListFactory);
                     squares = new List<List<Square>>
                                               {
                                                   new List<Square>()
@@ -292,7 +307,10 @@ namespace Rotation.GameObjects.sTests.WordSpecs
                     var wordList = A.Fake<IWordList>();
                     A.CallTo(() => wordList.Words).Returns(new[] { "HOUSE", "SEED" });
 
-                    wordChecker = new WordChecker(wordList);
+                    var wordListFactory = A.Fake<IWordListFactory>();
+                    A.CallTo(() => wordListFactory.Create()).Returns(wordList);
+
+                    wordChecker = new WordChecker(wordListFactory);
                     squares = new List<List<Square>>
                                               {
                                                   new List<Square>()

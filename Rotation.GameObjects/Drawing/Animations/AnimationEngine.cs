@@ -13,7 +13,6 @@ namespace Rotation.GameObjects.Drawing.Animations
 
         public void Run()
         {
-
             var finishedAnimations = new List<IAnimation>();
 
             foreach (var animation in _animationStore.GetCurrentAnimations())

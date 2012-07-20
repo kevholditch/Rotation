@@ -5,7 +5,6 @@ namespace Rotation.GameObjects.Words
 {
     public class WordListFactory : IWordListFactory
     {
-
         private readonly string _filename;
 
         public WordListFactory(string filename)
@@ -29,4 +28,6 @@ namespace Rotation.GameObjects.Words
             return new WordList(words);
         }
     }
+
+    
 }

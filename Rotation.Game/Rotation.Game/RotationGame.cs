@@ -10,6 +10,7 @@ using Rotation.GameObjects.Events;
 using Rotation.GameObjects.StandardBoard;
 using Rotation.GameObjects.StandardBoard.Rotation;
 using Rotation.GameObjects.StandardBoard.Selection;
+using Rotation.GameObjects.Words;
 
 namespace Rotation.Game
 {
@@ -29,9 +30,9 @@ namespace Rotation.Game
 	    private readonly IContainer _container;
 	    private IBoardFiller _boardFiller;
 	    private readonly IAnimationEngine _animationEngine;
+	    private IWordChecker _wordChecker;
 
-
-        public RotationGame(IContainer container, IBoard board, IBoardFiller boardFiller, ISelectionRotatator selectionRotatator, ISquareSelector squareSelector, IGameEventDispatcher gameEventDispatcher, IAnimationEngine animationEngine)
+        public RotationGame(IContainer container, IBoard board, IBoardFiller boardFiller, ISelectionRotatator selectionRotatator, ISquareSelector squareSelector, IGameEventDispatcher gameEventDispatcher, IAnimationEngine animationEngine, IWordChecker wordChecker)
         {
             _container = container;
             graphics = new GraphicsDeviceManager(this);
@@ -41,6 +42,7 @@ namespace Rotation.Game
             _selectionRotatator = selectionRotatator;
             _squareSelector = squareSelector;
             _animationEngine = animationEngine;
+            _wordChecker = wordChecker;
             GameEvents.Dispatcher = gameEventDispatcher;
         }
 
@@ -71,6 +73,7 @@ namespace Rotation.Game
             _squareSelector.Select(_board, _currentPos.X, _currentPos.Y);
 
 		    _oldKeyboardState = Keyboard.GetState();
+
 		}
 
 		/// <summary>

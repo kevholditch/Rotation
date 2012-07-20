@@ -107,6 +107,7 @@
     <Compile Include="BoardSpecs\SequenceSpecs.cs" />
     <Compile Include="ConfigurationSpecs\InterfaceConventionModuleSpecs.cs" />
     <Compile Include="DrawingInterfaceSpecs\GetAnimatableItemsFromBoardSpecs.cs" />
+    <Compile Include="EventsSpecs\BoardChangedEventHandlerSpecs.cs" />
     <Compile Include="EventsSpecs\EventsInstallerSpec.cs" />
     <Compile Include="EventsSpecs\RotatedLefttEventHandlerSpecs.cs" />
     <Compile Include="EventsSpecs\RotatedRightEventHandlerSpecs.cs" />

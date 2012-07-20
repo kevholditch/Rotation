@@ -7,4 +7,6 @@ namespace Rotation.GameObjects.Events
     {
         public IEnumerable<BoardCoordinate> BoardCoordinates { get; set; } 
     }
+
+    
 }

@@ -3,11 +3,11 @@ using Rotation.GameObjects.Tiles;
 
 namespace Rotation.GameObjects.StandardBoard
 {
-	public class BoardFiller : IBoardFiller
+	public class StandardBoardFiller : IBoardFiller
 	{
 		private readonly ITileFactory _tileFactory;
 
-		public BoardFiller(ITileFactory tileFactory)
+		public StandardBoardFiller(ITileFactory tileFactory)
 		{
 			_tileFactory = tileFactory;
 		}

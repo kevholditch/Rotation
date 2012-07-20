@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
+using FakeItEasy;
 using Rotation.GameObjects.Constants;
 using Rotation.GameObjects.Drawing.Animations;
+using Rotation.GameObjects.Events;
 using Rotation.GameObjects.StandardBoard;
+using Rotation.GameObjects.sTests.TestClasses;
 using Rotation.Tests.Common;
 using SubSpec;
 
@@ -92,6 +95,27 @@ namespace Rotation.GameObjects.sTests.AnimationSpecs
 
             "Then the animation should be finished".Observation(() => rotateLeftAnimation.Finished().ShouldBeTrue());
 
+
+        }
+
+        [Specification]
+        public void RaisesABoardChangedEventWhenFinished()
+        {
+            var animation = default(RotateLeftAnimation);
+            var result = default(IGameEvent);
+
+            "Given I have a rotate right animation".Context(
+                () => { 
+                    
+                    GameEvents.Dispatcher = new ActionEventDispatcher(a => result = a);
+                    animation = new RotateLeftAnimation(new BoardCoordinate[] {}, A.Fake<IBoard>());
+                    
+                });
+
+
+            "When I call OnFinished".Do(() => animation.OnFinished());
+
+            "Then a board changed event will be raised".Observation(() => result.ShouldBeOfType<BoardChangedEvent>());
 
         }
     }

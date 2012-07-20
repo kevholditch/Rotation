@@ -1,8 +1,8 @@
 using System.Linq;
 using FakeItEasy;
 using Rotation.GameObjects.Drawing.Animations;
+using Rotation.GameObjects.EventHandlers;
 using Rotation.GameObjects.Events;
-using Rotation.GameObjects.Events.EventHandlers;
 using Rotation.GameObjects.StandardBoard;
 using Rotation.Tests.Common;
 using SubSpec;
