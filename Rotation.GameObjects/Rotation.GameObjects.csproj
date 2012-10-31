@@ -10,12 +10,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Rotation.GameObjects</RootNamespace>
     <AssemblyName>Rotation.GameObjects</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>True</DebugSymbols>
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>False</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -23,14 +24,14 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>True</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>True</DebugSymbols>
+    <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
@@ -44,13 +45,11 @@
     <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
-    <WarningLevel>4</WarningLevel>
-    <Optimize>False</Optimize>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <Optimize>True</Optimize>
+    <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisLogFile>bin\Release\Rotation.GameObjects.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
@@ -62,7 +61,6 @@
     <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
     <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac">
@@ -80,22 +78,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\EventsInstaller.cs" />
     <Compile Include="Configuration\InterfaceConventionModule.cs" />
     <Compile Include="Configuration\TypeModule.cs" />
     <Compile Include="Constants\GameConstants.cs" />
+    <Compile Include="Drawing\Animations\IAnimation.cs" />
+    <Compile Include="Drawing\Animations\IAnimationStore.cs" />
+    <Compile Include="Drawing\Animations\IAnimationEngine.cs" />
+    <Compile Include="Drawing\Animations\AnimationEngine.cs" />
+    <Compile Include="Drawing\Animations\RotateLeftAnimation.cs" />
+    <Compile Include="Drawing\Animations\RotateRightAnimation.cs" />
+    <Compile Include="Drawing\Animations\SingleAnimationStore.cs" />
+    <Compile Include="Drawing\Animations\WordFoundAnimation.cs" />
     <Compile Include="Drawing\IAnimatableItem.cs" />
-    <Compile Include="Drawing\IRotationAnimationItem.cs" />
-    <Compile Include="Drawing\ItemAnimators\AnimatorBase.cs" />
-    <Compile Include="Drawing\ItemAnimators\IItemAnimator.cs" />
-    <Compile Include="Drawing\ItemAnimators\IItemAnimatorFactory.cs" />
-    <Compile Include="Drawing\ItemAnimators\ItemAnimatorFactory.cs" />
-    <Compile Include="Drawing\ItemAnimators\RotationAnimator.cs" />
-    <Compile Include="Drawing\RotationDirection.cs" />
+    <Compile Include="EventHandlers\WordsFoundEventHandler.cs" />
+    <Compile Include="Events\BoardChangedEvent.cs" />
+    <Compile Include="EventHandlers\BoardChangedEventHandler.cs" />
+    <Compile Include="EventHandlers\RotatedLeftEventHandler.cs" />
+    <Compile Include="Events\GameEventDispatcher.cs" />
+    <Compile Include="Events\GameEventHandlerFactory.cs" />
+    <Compile Include="Events\GameEvents.cs" />
+    <Compile Include="Events\IGameEvent.cs" />
+    <Compile Include="Events\IGameEventDispatcher.cs" />
+    <Compile Include="Events\IGameEventHandler.cs" />
+    <Compile Include="Events\IGameEventHandlerFactory.cs" />
+    <Compile Include="Events\RotatedLeftEvent.cs" />
+    <Compile Include="Events\RotatedRightEvent.cs" />
+    <Compile Include="EventHandlers\RotatedRightEventHandler.cs" />
+    <Compile Include="Events\WordsFoundEvent.cs" />
     <Compile Include="StandardBoard\Board.cs" />
     <Compile Include="StandardBoard\BoardCoordinate.cs" />
     <Compile Include="StandardBoard\BoardExtensionMethods.cs" />
     <Compile Include="StandardBoard\BoardFactory.cs" />
-    <Compile Include="StandardBoard\BoardFiller.cs" />
+    <Compile Include="StandardBoard\RiggedBoardFiller.cs" />
+    <Compile Include="StandardBoard\StandardBoardFiller.cs" />
     <Compile Include="StandardBoard\IBoard.cs" />
     <Compile Include="StandardBoard\IBoardFactory.cs" />
     <Compile Include="StandardBoard\IBoardFiller.cs" />
@@ -133,6 +149,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

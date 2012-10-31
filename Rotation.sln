@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rotation.GameObjects.Tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rotation.Tests.Common", "Tests\Rotation.Tests.Common\Rotation.Tests.Common.csproj", "{753F6814-8D74-420A-AD62-493EBBEBE849}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{8B960772-6200-471C-BD07-568E7CC036A5}"
+EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Rotation.Design", "Rotation.Design\Rotation.Design.modelproj", "{645C3622-CFA4-4B82-A8A1-6C1DBBE9148F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -102,6 +106,16 @@ Global
 		{753F6814-8D74-420A-AD62-493EBBEBE849}.Release|Mixed Platforms.Build.0 = Release|x86
 		{753F6814-8D74-420A-AD62-493EBBEBE849}.Release|x86.ActiveCfg = Release|x86
 		{753F6814-8D74-420A-AD62-493EBBEBE849}.Release|x86.Build.0 = Release|x86
+		{645C3622-CFA4-4B82-A8A1-6C1DBBE9148F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{645C3622-CFA4-4B82-A8A1-6C1DBBE9148F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{645C3622-CFA4-4B82-A8A1-6C1DBBE9148F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{645C3622-CFA4-4B82-A8A1-6C1DBBE9148F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{645C3622-CFA4-4B82-A8A1-6C1DBBE9148F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{645C3622-CFA4-4B82-A8A1-6C1DBBE9148F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{645C3622-CFA4-4B82-A8A1-6C1DBBE9148F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{645C3622-CFA4-4B82-A8A1-6C1DBBE9148F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{645C3622-CFA4-4B82-A8A1-6C1DBBE9148F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{645C3622-CFA4-4B82-A8A1-6C1DBBE9148F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,5 +124,6 @@ Global
 		{4CF3586F-996C-4E36-8AFD-1BA2CC4D6C6F} = {6D4A7522-6B5D-4B9B-A110-5B82112BCC5E}
 		{D81D2A6D-37A7-4F57-B5F1-0AB716D5153B} = {6D4A7522-6B5D-4B9B-A110-5B82112BCC5E}
 		{753F6814-8D74-420A-AD62-493EBBEBE849} = {6D4A7522-6B5D-4B9B-A110-5B82112BCC5E}
+		{645C3622-CFA4-4B82-A8A1-6C1DBBE9148F} = {8B960772-6200-471C-BD07-568E7CC036A5}
 	EndGlobalSection
 EndGlobal

@@ -40,6 +40,9 @@ namespace Rotation.GameObjects.Words
             get { return _squares.Sum(s => s.Letter.Points); }
         }
 
-        
+        public IEnumerable<Square> Squres
+        {
+            get { return _squares; }
+        }
     }
 }

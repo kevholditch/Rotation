@@ -13,7 +13,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs
 		[Specification]
 		public void CanFillAnEmptyBoard()
 		{
-			var boardFiller = default(BoardFiller);
+			var boardFiller = default(StandardBoardFiller);
 			var board = default(Board);
 
 			"Given that I have a board with with 41 selectable squares".Context(() =>
@@ -22,7 +22,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs
 			                                                                    		A.CallTo(() => fakeTileFactory.Create()).
 			                                                                    			Returns(new StandardTile(new Letter(1, 'C')));
 
-																						boardFiller = new BoardFiller(fakeTileFactory);
+																						boardFiller = new StandardBoardFiller(fakeTileFactory);
 			                                                                    		board = new BoardFactory().Create();
 			                                                                    	});
 

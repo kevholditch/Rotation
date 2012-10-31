@@ -5,9 +5,12 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Rotation.Drawing;
 using Rotation.Drawing.Textures;
+using Rotation.GameObjects.Drawing.Animations;
+using Rotation.GameObjects.Events;
 using Rotation.GameObjects.StandardBoard;
 using Rotation.GameObjects.StandardBoard.Rotation;
 using Rotation.GameObjects.StandardBoard.Selection;
+using Rotation.GameObjects.Words;
 
 namespace Rotation.Game
 {
@@ -23,12 +26,13 @@ namespace Rotation.Game
 	    private ISelectionRotatator _selectionRotatator;
 	    private Point _currentPos;
 	    private KeyboardState _oldKeyboardState;
-	    private IAnimationEngine _animationEngine;
+	    private IDrawEngine _drawEngine;
 	    private readonly IContainer _container;
 	    private IBoardFiller _boardFiller;
+	    private readonly IAnimationEngine _animationEngine;
+	    private IWordChecker _wordChecker;
 
-
-        public RotationGame(IContainer container, IBoard board, IBoardFiller boardFiller, ISelectionRotatator selectionRotatator, ISquareSelector squareSelector)
+        public RotationGame(IContainer container, IBoard board, IBoardFiller boardFiller, ISelectionRotatator selectionRotatator, ISquareSelector squareSelector, IGameEventDispatcher gameEventDispatcher, IAnimationEngine animationEngine, IWordChecker wordChecker)
         {
             _container = container;
             graphics = new GraphicsDeviceManager(this);
@@ -37,6 +41,9 @@ namespace Rotation.Game
             _boardFiller = boardFiller;
             _selectionRotatator = selectionRotatator;
             _squareSelector = squareSelector;
+            _animationEngine = animationEngine;
+            _wordChecker = wordChecker;
+            GameEvents.Dispatcher = gameEventDispatcher;
         }
 
 	    /// <summary>
@@ -60,12 +67,13 @@ namespace Rotation.Game
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 		 
             _boardFiller.Fill(_board);
-		    _animationEngine = _container.Resolve<IAnimationEngine>();
+		    _drawEngine = _container.Resolve<IDrawEngine>();
            
             _currentPos = new Point(4, 4);
             _squareSelector.Select(_board, _currentPos.X, _currentPos.Y);
 
 		    _oldKeyboardState = Keyboard.GetState();
+
 		}
 
 		/// <summary>
@@ -156,7 +164,8 @@ namespace Rotation.Game
 			GraphicsDevice.Clear(Color.White);
 
 		    spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
-		    _animationEngine.Animate(spriteBatch);
+            _animationEngine.Run();
+		    _drawEngine.Animate(spriteBatch);
             spriteBatch.End();
 
 			base.Draw(gameTime);

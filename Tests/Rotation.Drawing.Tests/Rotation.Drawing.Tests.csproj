@@ -63,7 +63,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core">
-      <HintPath>..\..\packages\Castle.Core.2.5.2\lib\SL4\Castle.Core.dll</HintPath>
+      <HintPath>..\..\packages\Castle.Core.2.5.2\lib\NET40ClientProfile\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="FakeItEasy">
       <HintPath>..\..\packages\FakeItEasy.1.7.4257.42\lib\NET40\FakeItEasy.dll</HintPath>
@@ -91,7 +91,6 @@
     <Compile Include="DrawingSpecs\SquareDepthCalculatorSpecs.cs" />
     <Compile Include="DrawingSpecs\SquareOriginCalculatorSpecs.cs" />
     <Compile Include="DrawingSpecs\SquarePositionCalculatorSpecs.cs" />
-    <Compile Include="FactorySpecs\ItemAnimatorFactorySpecs.cs" />
     <Compile Include="FactorySpecs\ItemDrawerFactorySpecs.cs" />
     <Compile Include="FactorySpecs\TileTextureFactorySpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

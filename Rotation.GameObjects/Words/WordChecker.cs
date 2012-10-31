@@ -9,9 +9,9 @@ namespace Rotation.GameObjects.Words
     {
         private readonly IWordList _wordList;
 
-        public WordChecker(IWordList wordList)
+        public WordChecker(IWordListFactory wordListFactory)
         {
-            _wordList = wordList;
+            _wordList = wordListFactory.Create();
         }
 
         public IEnumerable<IWord> Check(IEnumerable<IEnumerable<Square>> squares)
