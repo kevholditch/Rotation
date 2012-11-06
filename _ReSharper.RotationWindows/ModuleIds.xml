@@ -1,0 +1,7 @@
+<Modules>
+  <Module PersistentId="4CF3586F-996C-4E36-8AFD-1BA2CC4D6C6F" ModuleId="Rotation.Drawing.Tests" />
+  <Module PersistentId="1D831CB5-9771-424C-B466-40B232305202" ModuleId="Rotation.Drawing" />
+  <Module PersistentId="40CF6194-5CC7-4F39-88A2-BE840AC58468" ModuleId="MonoRotation" />
+  <Module PersistentId="759DF5D1-DF21-4F41-9BFA-07FCF9A56539" ModuleId="Rotation.GameObjects" />
+  <Module PersistentId="0FD4AAC5-BD86-45C9-A8A2-34AFEFB46D31" ModuleId="Rotation.ContentBuilder" />
+</Modules>
