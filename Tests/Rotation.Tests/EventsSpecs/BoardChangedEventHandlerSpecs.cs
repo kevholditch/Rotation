@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using FakeItEasy;
-using Rotation.GameObjects.EventHandlers;
-using Rotation.GameObjects.Events;
-using Rotation.GameObjects.StandardBoard;
-using Rotation.GameObjects.Words;
+using Rotation.EventHandlers;
+using Rotation.Events;
+using Rotation.GameObjects.sTests.Builders;
 using Rotation.GameObjects.sTests.Extensions;
 using Rotation.GameObjects.sTests.TestClasses;
-using Rotation.Tests.Common.Builders;
+using Rotation.StandardBoard;
+using Rotation.Words;
 using SubSpec;
-using Rotation.Tests.Common;
 
 namespace Rotation.GameObjects.sTests.EventsSpecs
 {

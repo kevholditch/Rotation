@@ -1,8 +1,7 @@
 ﻿using FakeItEasy;
-using Rotation.GameObjects.Letters;
-using Rotation.GameObjects.StandardBoard;
-using Rotation.GameObjects.Tiles;
-using Rotation.Tests.Common;
+using Rotation.Letters;
+using Rotation.StandardBoard;
+using Rotation.Tiles;
 using SubSpec;
 using System.Linq;
 

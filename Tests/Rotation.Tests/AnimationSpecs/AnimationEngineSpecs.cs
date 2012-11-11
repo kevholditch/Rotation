@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using FakeItEasy;
-using Rotation.GameObjects.Drawing.Animations;
+using Rotation.Drawing.Animations;
 using SubSpec;
 
 namespace Rotation.GameObjects.sTests.AnimationSpecs

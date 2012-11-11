@@ -1,5 +1,4 @@
-﻿using Rotation.GameObjects.StandardBoard;
-using Rotation.Tests.Common;
+﻿using Rotation.StandardBoard;
 using SubSpec;
 using System.Linq;
 

@@ -1,5 +1,5 @@
 ﻿using System;
-using Rotation.GameObjects.Events;
+using Rotation.Events;
 
 namespace Rotation.GameObjects.sTests.TestClasses
 {

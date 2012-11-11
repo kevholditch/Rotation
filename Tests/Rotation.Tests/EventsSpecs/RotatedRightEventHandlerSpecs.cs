@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using FakeItEasy;
-using Rotation.GameObjects.Drawing.Animations;
-using Rotation.GameObjects.EventHandlers;
-using Rotation.GameObjects.Events;
-using Rotation.GameObjects.StandardBoard;
+using Rotation.Drawing.Animations;
+using Rotation.EventHandlers;
+using Rotation.Events;
+using Rotation.StandardBoard;
 using SubSpec;
-using Rotation.Tests.Common;
 
 namespace Rotation.GameObjects.sTests.EventsSpecs
 {

@@ -1,6 +1,5 @@
-﻿using Rotation.GameObjects.StandardBoard;
-using Rotation.GameObjects.StandardBoard.Selection;
-using Rotation.Tests.Common;
+﻿using Rotation.StandardBoard;
+using Rotation.StandardBoard.Selection;
 using SubSpec;
 
 namespace Rotation.GameObjects.sTests.BoardSpecs.SelectionSpecs

@@ -1,10 +1,8 @@
-﻿using Rotation.GameObjects.Drawing;
-using Rotation.GameObjects.Events;
-using Rotation.GameObjects.StandardBoard;
-using Rotation.GameObjects.StandardBoard.Rotation;
-using Rotation.GameObjects.StandardBoard.Selection;
+﻿using Rotation.Events;
 using Rotation.GameObjects.sTests.TestClasses;
-using Rotation.Tests.Common;
+using Rotation.StandardBoard;
+using Rotation.StandardBoard.Rotation;
+using Rotation.StandardBoard.Selection;
 using SubSpec;
 
 namespace Rotation.GameObjects.sTests.BoardSpecs.RotationSpecs

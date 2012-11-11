@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using Rotation.GameObjects.Words;
 using Rotation.GameObjects.sTests.Extensions;
+using Rotation.Words;
 using SubSpec;
-using Rotation.Tests.Common;
 
 namespace Rotation.GameObjects.sTests.WordSpecs
 {

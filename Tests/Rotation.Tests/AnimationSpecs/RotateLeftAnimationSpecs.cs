@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using FakeItEasy;
-using Rotation.GameObjects.Constants;
-using Rotation.GameObjects.Drawing.Animations;
-using Rotation.GameObjects.Events;
-using Rotation.GameObjects.StandardBoard;
+using Rotation.Constants;
+using Rotation.Drawing.Animations;
+using Rotation.Events;
 using Rotation.GameObjects.sTests.TestClasses;
-using Rotation.Tests.Common;
+using Rotation.StandardBoard;
 using SubSpec;
 
 namespace Rotation.GameObjects.sTests.AnimationSpecs

@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using FakeItEasy;
-using Rotation.GameObjects.StandardBoard;
-using Rotation.GameObjects.Words;
-using Rotation.Tests.Common.Builders;
+using Rotation.GameObjects.sTests.Builders;
+using Rotation.StandardBoard;
+using Rotation.Words;
 using SubSpec;
 using System.Linq;
-using Rotation.Tests.Common;
 
 namespace Rotation.GameObjects.sTests.WordSpecs
 {

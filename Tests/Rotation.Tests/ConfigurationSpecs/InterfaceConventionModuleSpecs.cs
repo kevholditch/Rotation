@@ -1,9 +1,8 @@
 ﻿using System;
 using Autofac;
 using Autofac.Core.Registration;
-using Rotation.GameObjects.Configuration;
+using Rotation.Configuration;
 using SubSpec;
-using Rotation.Tests.Common;
 using Xunit;
 
 namespace Rotation.GameObjects.sTests.ConfigurationSpecs

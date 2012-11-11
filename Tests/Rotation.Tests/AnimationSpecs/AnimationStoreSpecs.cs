@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using FakeItEasy;
-using Rotation.GameObjects.Drawing.Animations;
+using Rotation.Drawing.Animations;
 using SubSpec;
 using System.Linq;
-using Rotation.Tests.Common;
 
 namespace Rotation.GameObjects.sTests.AnimationSpecs
 {

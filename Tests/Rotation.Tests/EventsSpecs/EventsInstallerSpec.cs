@@ -4,10 +4,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Autofac;
-using Rotation.GameObjects.Configuration;
-using Rotation.GameObjects.Events;
+using Rotation.Configuration;
+using Rotation.Events;
 using SubSpec;
-using Rotation.Tests.Common;
 
 namespace Rotation.GameObjects.sTests.EventsSpecs
 {

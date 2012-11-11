@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{759DF5D1-DF21-4F41-9BFA-07FCF9A56539}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rotation</RootNamespace>
+    <AssemblyName>Rotation</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Rotation.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Rotation.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NCRUNCH|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\NCRUNCH\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Rotation.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NCRUNCH|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\NCRUNCH\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Rotation.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration">
+      <HintPath>..\packages\Autofac.2.6.3.862\lib\NET40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework.Windows">
+      <HintPath>..\..\..\Program Files (x86)\MonoGame\v3.0\Assemblies\MonoGame.Framework.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\DrawingModule.cs" />
+    <Compile Include="Configuration\EventsInstaller.cs" />
+    <Compile Include="Configuration\InterfaceConventionModule.cs" />
+    <Compile Include="Configuration\TypeModule.cs" />
+    <Compile Include="Constants\GameConstants.cs" />
+    <Compile Include="Drawing\Animations\IAnimation.cs" />
+    <Compile Include="Drawing\Animations\IAnimationStore.cs" />
+    <Compile Include="Drawing\Animations\IAnimationEngine.cs" />
+    <Compile Include="Drawing\Animations\AnimationEngine.cs" />
+    <Compile Include="Drawing\Animations\RotateLeftAnimation.cs" />
+    <Compile Include="Drawing\Animations\RotateRightAnimation.cs" />
+    <Compile Include="Drawing\Animations\SingleAnimationStore.cs" />
+    <Compile Include="Drawing\Animations\WordFoundAnimation.cs" />
+    <Compile Include="Drawing\IAnimatableItem.cs" />
+    <Compile Include="Engine\DrawEngine.cs" />
+    <Compile Include="Engine\DrawingConstants.cs" />
+    <Compile Include="Engine\IDrawEngine.cs" />
+    <Compile Include="EventHandlers\WordsFoundEventHandler.cs" />
+    <Compile Include="Events\BoardChangedEvent.cs" />
+    <Compile Include="EventHandlers\BoardChangedEventHandler.cs" />
+    <Compile Include="EventHandlers\RotatedLeftEventHandler.cs" />
+    <Compile Include="Events\GameEventDispatcher.cs" />
+    <Compile Include="Events\GameEventHandlerFactory.cs" />
+    <Compile Include="Events\GameEvents.cs" />
+    <Compile Include="Events\IGameEvent.cs" />
+    <Compile Include="Events\IGameEventDispatcher.cs" />
+    <Compile Include="Events\IGameEventHandler.cs" />
+    <Compile Include="Events\IGameEventHandlerFactory.cs" />
+    <Compile Include="Events\RotatedLeftEvent.cs" />
+    <Compile Include="Events\RotatedRightEvent.cs" />
+    <Compile Include="EventHandlers\RotatedRightEventHandler.cs" />
+    <Compile Include="Events\WordsFoundEvent.cs" />
+    <Compile Include="ItemDrawers\IItemDrawer.cs" />
+    <Compile Include="ItemDrawers\IItemDrawerFactory.cs" />
+    <Compile Include="ItemDrawers\ItemDrawerBase.cs" />
+    <Compile Include="ItemDrawers\ItemDrawerFactory.cs" />
+    <Compile Include="ItemDrawers\ITileDrawerFactory.cs" />
+    <Compile Include="ItemDrawers\Squares\ISquareOriginCalculator.cs" />
+    <Compile Include="ItemDrawers\Squares\ISquarePositionCalculator.cs" />
+    <Compile Include="ItemDrawers\Squares\SquareDrawer.cs" />
+    <Compile Include="ItemDrawers\Squares\SquareOriginCalculator.cs" />
+    <Compile Include="ItemDrawers\Squares\SquarePositionCalculator.cs" />
+    <Compile Include="StandardBoard\Board.cs" />
+    <Compile Include="StandardBoard\BoardCoordinate.cs" />
+    <Compile Include="StandardBoard\BoardExtensionMethods.cs" />
+    <Compile Include="StandardBoard\BoardFactory.cs" />
+    <Compile Include="StandardBoard\RiggedBoardFiller.cs" />
+    <Compile Include="StandardBoard\StandardBoardFiller.cs" />
+    <Compile Include="StandardBoard\IBoard.cs" />
+    <Compile Include="StandardBoard\IBoardFactory.cs" />
+    <Compile Include="StandardBoard\IBoardFiller.cs" />
+    <Compile Include="StandardBoard\IGetMainSelectedSquare.cs" />
+    <Compile Include="StandardBoard\Rotation\ISelectionRotatator.cs" />
+    <Compile Include="StandardBoard\Rotation\SelectionRotatator.cs" />
+    <Compile Include="StandardBoard\Selection\BoardSelectionExtensions.cs" />
+    <Compile Include="StandardBoard\Selection\ISquareSelector.cs" />
+    <Compile Include="StandardBoard\Selection\SquareSelector.cs" />
+    <Compile Include="StandardBoard\Sequences\RowIndexSequence.cs" />
+    <Compile Include="StandardBoard\Square.cs" />
+    <Compile Include="Drawing\IGetAnimatableItems.cs" />
+    <Compile Include="Letters\ILetterLookup.cs" />
+    <Compile Include="Letters\Letter.cs" />
+    <Compile Include="Letters\LetterLookup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Textures\BaseTileTextureCreator.cs" />
+    <Compile Include="Textures\BlankTileTextureCreator.cs" />
+    <Compile Include="Textures\ISquareColourSelector.cs" />
+    <Compile Include="Textures\ISquareDepthCalculator.cs" />
+    <Compile Include="Textures\ITextureLoader.cs" />
+    <Compile Include="Textures\ITileTextureCreator.cs" />
+    <Compile Include="Textures\SquareColourSelector.cs" />
+    <Compile Include="Textures\SquareDepthCalculator.cs" />
+    <Compile Include="Textures\StandardTileTextureCreator.cs" />
+    <Compile Include="Textures\TileTextureFactory.cs" />
+    <Compile Include="Tiles\ITileFactory.cs" />
+    <Compile Include="Tiles\StandardTile.cs" />
+    <Compile Include="Tiles\StandardTileFactory.cs" />
+    <Compile Include="Tiles\Tile.cs" />
+    <Compile Include="Words\Word.cs" />
+    <Compile Include="Words\IWord.cs" />
+    <Compile Include="Words\IWordChecker.cs" />
+    <Compile Include="Words\IWordList.cs" />
+    <Compile Include="Words\IWordListFactory.cs" />
+    <Compile Include="Words\WordChecker.cs" />
+    <Compile Include="Words\WordList.cs" />
+    <Compile Include="Words\WordListFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Words\Words.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

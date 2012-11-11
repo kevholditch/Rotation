@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Rotation.GameObjects.StandardBoard;
-using Rotation.GameObjects.Words;
-using Rotation.Tests.Common.Builders;
+using Rotation.GameObjects.sTests.Builders;
+using Rotation.StandardBoard;
+using Rotation.Words;
 using SubSpec;
-using Rotation.Tests.Common;
 
 namespace Rotation.GameObjects.sTests.WordSpecs
 {
