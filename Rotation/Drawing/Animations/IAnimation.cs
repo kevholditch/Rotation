@@ -1,9 +1,11 @@
-﻿namespace Rotation.Drawing.Animations
+﻿using Microsoft.Xna.Framework;
+
+namespace Rotation.Drawing.Animations
 {
     public interface IAnimation
     {
         bool Finished();
-        void Animate();
+        void Animate(GameTime gameTime);
         void OnFinished();
     }
 }

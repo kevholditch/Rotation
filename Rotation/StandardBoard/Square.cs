@@ -42,7 +42,7 @@ namespace Rotation.StandardBoard
 			get { return Tile.Letter; }
 		}
 
-	    public int Angle { get; set; }
+	    public float Angle { get; set; }
 
 	    
 	}

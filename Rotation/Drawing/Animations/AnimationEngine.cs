@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 
 namespace Rotation.Drawing.Animations
 {
@@ -11,13 +12,13 @@ namespace Rotation.Drawing.Animations
             _animationStore = animationStore;
         }
 
-        public void Run()
+        public void Run(GameTime gameTime)
         {
             var finishedAnimations = new List<IAnimation>();
 
             foreach (var animation in _animationStore.GetCurrentAnimations())
             {
-                animation.Animate();
+                animation.Animate(gameTime);
 
                 if (animation.Finished())
                     finishedAnimations.Add(animation);

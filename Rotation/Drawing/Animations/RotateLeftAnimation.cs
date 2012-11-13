@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Rotation.Constants;
 using Rotation.Events;
 using Rotation.StandardBoard;
@@ -27,13 +28,13 @@ namespace Rotation.Drawing.Animations
             return _finished;
         }
 
-        public void Animate()
+        public void Animate(GameTime gameTime)
         {
             foreach (var boardCoordinate in _boardCoordinates)
             {
                 var square = _board[boardCoordinate.X, boardCoordinate.Y];
 
-                square.Angle = square.Angle - GameConstants.Animation.ANGLE_INCREASE_RATE;
+                square.Angle = (float)(square.Angle - (GameConstants.Animation.ANGLE_INCREASE_SPEED * gameTime.ElapsedGameTime.TotalMilliseconds));
 
                 if (square.Angle <= 0)
                 {
