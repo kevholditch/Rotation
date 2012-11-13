@@ -1,0 +1,8 @@
+
+
+rotation to do
+
+1.  Update velocities so that they take GameTime into account
+2.  Update graphics so they are optimised for mobile and rescale for mobile
+3.  Use a new interface to get the input rather than the hardcoded stuff in the game loop (ie touch for mobile)
+4.  Get a project working on iPhone and Android for testing as I go along

@@ -106,7 +106,7 @@
       <HintPath>..\..\packages\FakeItEasy.1.7.4257.42\lib\NET40\FakeItEasy.dll</HintPath>
     </Reference>
     <Reference Include="MonoGame.Framework.Windows">
-      <HintPath>..\..\..\..\Program Files (x86)\MonoGame\v3.0\Assemblies\MonoGame.Framework.Windows.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\MonoGame\v3.0\Assemblies\MonoGame.Framework.Windows.dll</HintPath>
     </Reference>
     <Reference Include="SubSpecGWT">
       <HintPath>..\..\packages\SubSpecGWT.0.1.3.0\lib\net35\SubSpecGWT.dll</HintPath>
