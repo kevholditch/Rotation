@@ -8,19 +8,19 @@ namespace Rotation.Engine
     public class DrawEngine : IDrawEngine
     {
         private readonly IItemDrawerFactory _itemDrawerFactory;
-        private readonly IGetAnimatableItems _getAnimatables;
+        private readonly IGetDrawableItems _getDrawables;
 
-        public DrawEngine(IItemDrawerFactory itemDrawerFactory, IGetAnimatableItems getAnimatables)
+        public DrawEngine(IItemDrawerFactory itemDrawerFactory, IGetDrawableItems getDrawables)
         {
             _itemDrawerFactory = itemDrawerFactory;
-            _getAnimatables = getAnimatables;
+            _getDrawables = getDrawables;
         }
 
 
-        public void Animate(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
 
-            foreach (var animatableItemTypes in _getAnimatables.GetAnimatables().GroupBy(t => t.GetType()))
+            foreach (var animatableItemTypes in _getDrawables.GetAnimatables().GroupBy(t => t.GetType()))
             {
                 var itemDrawer = _itemDrawerFactory.Create(animatableItemTypes.First());
 

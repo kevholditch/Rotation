@@ -1,6 +1,6 @@
 ﻿namespace Rotation.Drawing
 {
-    public interface IAnimatableItem 
+    public interface IDrawableItem 
     {
         
     }

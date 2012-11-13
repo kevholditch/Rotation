@@ -29,7 +29,7 @@ namespace Rotation.StandardBoard
 			return null;
 		}
 
-        public IEnumerable<IAnimatableItem> GetAnimatables()
+        public IEnumerable<IDrawableItem> GetAnimatables()
 	    {
 	        return this.AllSquares();
 	    }

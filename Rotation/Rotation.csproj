@@ -126,7 +126,7 @@
     <Compile Include="Drawing\Animations\RotateRightAnimation.cs" />
     <Compile Include="Drawing\Animations\SingleAnimationStore.cs" />
     <Compile Include="Drawing\Animations\WordFoundAnimation.cs" />
-    <Compile Include="Drawing\IAnimatableItem.cs" />
+    <Compile Include="Drawing\IDrawableItem.cs" />
     <Compile Include="Engine\DrawEngine.cs" />
     <Compile Include="Engine\DrawingConstants.cs" />
     <Compile Include="Engine\IDrawEngine.cs" />
@@ -172,7 +172,7 @@
     <Compile Include="StandardBoard\Selection\SquareSelector.cs" />
     <Compile Include="StandardBoard\Sequences\RowIndexSequence.cs" />
     <Compile Include="StandardBoard\Square.cs" />
-    <Compile Include="Drawing\IGetAnimatableItems.cs" />
+    <Compile Include="Drawing\IGetDrawableItems.cs" />
     <Compile Include="Letters\ILetterLookup.cs" />
     <Compile Include="Letters\Letter.cs" />
     <Compile Include="Letters\LetterLookup.cs" />

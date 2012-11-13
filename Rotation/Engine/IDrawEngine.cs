@@ -4,6 +4,6 @@ namespace Rotation.Engine
 {
     public interface IDrawEngine
     {
-        void Animate(SpriteBatch spriteBatch);
+        void Draw(SpriteBatch spriteBatch);
     }
 }

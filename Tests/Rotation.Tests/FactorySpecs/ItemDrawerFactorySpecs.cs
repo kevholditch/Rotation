@@ -25,7 +25,7 @@ namespace Rotation.GameObjects.sTests.FactorySpecs
         }
 
 
-        internal class TestDrawableItem : IAnimatableItem
+        internal class TestDrawableItem : IDrawableItem
         {
 
         }

@@ -168,7 +168,7 @@ namespace MonoRotation
 
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
             _animationEngine.Run();
-            _drawEngine.Animate(spriteBatch);
+            _drawEngine.Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);

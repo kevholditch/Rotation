@@ -5,7 +5,7 @@ using Rotation.Tiles;
 namespace Rotation.StandardBoard
 {
     
-    public class Square : IAnimatableItem
+    public class Square : IDrawableItem
     {
 		public Square(bool isSelectable, int x, int y)
 		{

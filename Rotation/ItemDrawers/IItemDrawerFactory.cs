@@ -4,6 +4,6 @@ namespace Rotation.ItemDrawers
 {
     public interface IItemDrawerFactory
     {
-        IItemDrawer Create(IAnimatableItem animatableItem);
+        IItemDrawer Create(IDrawableItem drawableItem);
     }
 }

@@ -12,7 +12,7 @@ namespace Rotation.GameObjects.sTests.DrawingInterfaceSpecs
         public void CanGetAnimatableItemsFromTheBoard()
         {
             var board = default(Board);
-            var result = default(IEnumerable<IAnimatableItem>);
+            var result = default(IEnumerable<IDrawableItem>);
 
             "Given that I have a standard board board".Context(() =>
 
