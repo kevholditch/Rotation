@@ -131,6 +131,7 @@
     <Compile Include="AnimationSpecs\AnimationStoreSpecs.cs" />
     <Compile Include="AnimationSpecs\RotateLeftAnimationSpecs.cs" />
     <Compile Include="AnimationSpecs\RotateRightAnimationSpecs.cs" />
+    <Compile Include="AnimationSpecs\WordFoundAnimationSpecs.cs" />
     <Compile Include="AssertExtensions.cs" />
     <Compile Include="BoardSpecs\BoardCreationSpecs.cs" />
     <Compile Include="BoardSpecs\BoardFillerSpecs.cs" />

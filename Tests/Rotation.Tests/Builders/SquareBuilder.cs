@@ -25,6 +25,12 @@ namespace Rotation.GameObjects.sTests.Builders
             return this;
         }
 
+        public SquareBuilder WithInWord(bool value)
+        {
+            _square.InWord = value;
+            return this;
+        }
+
         public SquareBuilder WithAngle(int value)
         {
             _square.Angle = value;
