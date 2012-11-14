@@ -118,6 +118,8 @@
     <Compile Include="Configuration\InterfaceConventionModule.cs" />
     <Compile Include="Configuration\TypeModule.cs" />
     <Compile Include="Constants\GameConstants.cs" />
+    <Compile Include="Controls\GameController.cs" />
+    <Compile Include="Controls\IGameController.cs" />
     <Compile Include="Drawing\Animations\IAnimation.cs" />
     <Compile Include="Drawing\Animations\IAnimationStore.cs" />
     <Compile Include="Drawing\Animations\IAnimationEngine.cs" />
@@ -160,6 +162,8 @@
     <Compile Include="StandardBoard\BoardExtensionMethods.cs" />
     <Compile Include="StandardBoard\BoardFactory.cs" />
     <Compile Include="StandardBoard\RiggedBoardFiller.cs" />
+    <Compile Include="StandardBoard\Selection\ISquareSelectable.cs" />
+    <Compile Include="StandardBoard\Selection\SquareSelectable.cs" />
     <Compile Include="StandardBoard\StandardBoardFiller.cs" />
     <Compile Include="StandardBoard\IBoard.cs" />
     <Compile Include="StandardBoard\IBoardFactory.cs" />

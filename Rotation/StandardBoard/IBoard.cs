@@ -8,5 +8,6 @@ namespace Rotation.StandardBoard
         List<List<Square>> Rows { get; }
         List<List<Square>> Columns { get; }
         Square this[int x, int y] { get; }
+        BoardCoordinate CentreSquare { get; }
     }
 }

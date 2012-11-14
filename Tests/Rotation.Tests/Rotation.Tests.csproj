@@ -133,10 +133,12 @@
     <Compile Include="AnimationSpecs\RotateRightAnimationSpecs.cs" />
     <Compile Include="AnimationSpecs\WordFoundAnimationSpecs.cs" />
     <Compile Include="AssertExtensions.cs" />
+    <Compile Include="BoardSpecs\BoardCentreSquareSpecs.cs" />
     <Compile Include="BoardSpecs\BoardCreationSpecs.cs" />
     <Compile Include="BoardSpecs\BoardFillerSpecs.cs" />
     <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationEventRaisedSpecs.cs" />
     <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationLetterSpecs.cs" />
+    <Compile Include="BoardSpecs\SelectionSpecs\SquareSelectableSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\MainSelectedSquareSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\SelectingSquareSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\SquareDeSelectionSpecs.cs" />
@@ -154,6 +156,7 @@
     <Compile Include="EventsSpecs\RotatedRightEventHandlerSpecs.cs" />
     <Compile Include="FactorySpecs\ItemDrawerFactorySpecs.cs" />
     <Compile Include="FactorySpecs\TileTextureFactorySpecs.cs" />
+    <Compile Include="GameSpecs\GameControllerSpecs.cs" />
     <Compile Include="SelectorSpecs\SquareColourSelectorSpecs.cs" />
     <Compile Include="TestClasses\ActionEventDispatcher.cs" />
     <Compile Include="TestClasses\AlphabeticalBoardFiller.cs" />

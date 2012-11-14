@@ -2,9 +2,9 @@ namespace Rotation.StandardBoard.Selection
 {
 	public class SquareSelector : ISquareSelector
 	{
-		public void Select(IBoard board, int col, int row)
+	    
+	    public void Select(IBoard board, int col, int row)
 		{
-
 		    DeSelect(board);
 
 			var iteration = 1;

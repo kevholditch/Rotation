@@ -9,13 +9,18 @@ namespace Rotation.StandardBoard
 		{
 			Columns = columns;
 			Rows = rows;
+
+            CentreSquare = new BoardCoordinate((Columns.Count - 1) / 2, (Rows.Count - 1)/2);
 		}
 
         public List<List<Square>> Rows { get; private set; }
         public List<List<Square>> Columns { get; private set; }
 		public Square this[int x, int y] { get { return Columns[x][y]; } }
 
-		public BoardCoordinate GetMainSelectedSquare()
+
+        public BoardCoordinate CentreSquare { get; private set; }
+
+        public BoardCoordinate GetMainSelectedSquare()
 		{			
 			for (int i = 0; i < Columns.Count; i++)
 			{
