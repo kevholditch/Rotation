@@ -9,13 +9,15 @@ namespace Rotation.Controls
         private readonly ISquareSelector _squareSelector;
         private readonly ISelectionRotatator _selectionRotatator;
         private readonly IBoard _board;
+        private readonly ISquareSelectable _squareSelectable;
         public BoardCoordinate CurrentSelectedSquare { get; private set; }
 
-        public GameController(ISquareSelector squareSelector, ISelectionRotatator selectionRotatator, IBoard board)
+        public GameController(ISquareSelector squareSelector, ISelectionRotatator selectionRotatator, ISquareSelectable squareSelectable, IBoard board)
         {
             _squareSelector = squareSelector;
             _selectionRotatator = selectionRotatator;
             _board = board;
+            _squareSelectable = squareSelectable;
         }
 
         public void Initialise()
@@ -25,31 +27,47 @@ namespace Rotation.Controls
 
         public void SelectSquare(int x, int y)
         {
-            _squareSelector.Select(_board, x, y);
+            if (_squareSelectable.CanSelectSquare(_board, x, y))
+            {
+                CurrentSelectedSquare = new BoardCoordinate(x, y);
+                _squareSelector.Select(_board, x, y);
+            }
         }
 
         public void MoveSelectionUp()
         {
-            CurrentSelectedSquare = new BoardCoordinate(CurrentSelectedSquare.X, CurrentSelectedSquare.Y - 1);
-            SelectSquare(CurrentSelectedSquare.X, CurrentSelectedSquare.Y);
+            if (_squareSelectable.CanSelectSquare(_board, CurrentSelectedSquare.X, CurrentSelectedSquare.Y))
+            {
+                CurrentSelectedSquare = new BoardCoordinate(CurrentSelectedSquare.X, CurrentSelectedSquare.Y - 1);
+                _squareSelector.Select(_board, CurrentSelectedSquare.X, CurrentSelectedSquare.Y);
+            }
         }
 
         public void MoveSelectionDown()
         {
-            CurrentSelectedSquare = new BoardCoordinate(CurrentSelectedSquare.X, CurrentSelectedSquare.Y + 1);
-            SelectSquare(CurrentSelectedSquare.X, CurrentSelectedSquare.Y);
+            if (_squareSelectable.CanSelectSquare(_board, CurrentSelectedSquare.X, CurrentSelectedSquare.Y))
+            {
+                CurrentSelectedSquare = new BoardCoordinate(CurrentSelectedSquare.X, CurrentSelectedSquare.Y + 1);
+                _squareSelector.Select(_board, CurrentSelectedSquare.X, CurrentSelectedSquare.Y);
+            }
         }
 
         public void MoveSelectionLeft()
         {
-            CurrentSelectedSquare = new BoardCoordinate(CurrentSelectedSquare.X - 1, CurrentSelectedSquare.Y);
-            SelectSquare(CurrentSelectedSquare.X, CurrentSelectedSquare.Y);
+            if (_squareSelectable.CanSelectSquare(_board, CurrentSelectedSquare.X, CurrentSelectedSquare.Y))
+            {
+                CurrentSelectedSquare = new BoardCoordinate(CurrentSelectedSquare.X - 1, CurrentSelectedSquare.Y);
+                _squareSelector.Select(_board, CurrentSelectedSquare.X, CurrentSelectedSquare.Y);
+            }
         }
 
         public void MoveSelectionRight()
         {
-            CurrentSelectedSquare = new BoardCoordinate(CurrentSelectedSquare.X + 1, CurrentSelectedSquare.Y);
-            SelectSquare(CurrentSelectedSquare.X, CurrentSelectedSquare.Y);
+            if (_squareSelectable.CanSelectSquare(_board, CurrentSelectedSquare.X, CurrentSelectedSquare.Y))
+            {
+                CurrentSelectedSquare = new BoardCoordinate(CurrentSelectedSquare.X + 1, CurrentSelectedSquare.Y);
+                _squareSelector.Select(_board, CurrentSelectedSquare.X, CurrentSelectedSquare.Y);
+            }
         }
 
         public void RotateRight()
