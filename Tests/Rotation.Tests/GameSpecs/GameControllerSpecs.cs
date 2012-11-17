@@ -43,11 +43,10 @@ namespace Rotation.GameObjects.sTests.GameSpecs
         public void CanMoveSelectionUp()
         {
             var gameController = default(GameController);
-            var board = default(IBoard);
 
             "Given I have a standard 9x9 board".Context(() =>
             {
-                board = new BoardFactory().Create();
+                var board = new BoardFactory().Create();
                 var fakeSquareSelectable = A.Fake<ISquareSelectable>();
                 A.CallTo(() => fakeSquareSelectable
                     .CanSelectSquare(A<IBoard>.Ignored, A<int>.Ignored, A<int>.Ignored))
@@ -70,7 +69,6 @@ namespace Rotation.GameObjects.sTests.GameSpecs
         public void CanIgnoreSelectionUpIfItWouldGoOutOfBounds()
         {
             var gameController = default(GameController);
-            var board = default(IBoard);
 
             "Given I have a standard 9x9 board".Context(() =>
             {
@@ -78,7 +76,7 @@ namespace Rotation.GameObjects.sTests.GameSpecs
                 A.CallTo(() => fakeSquareSelectable
                     .CanSelectSquare(A<IBoard>.Ignored, A<int>.Ignored, A<int>.Ignored))
                     .Returns(false);
-                board = new BoardFactory().Create();
+                var board = new BoardFactory().Create();
                 gameController = new GameController(A.Fake<ISquareSelector>(), A.Fake<ISelectionRotatator>(), fakeSquareSelectable, board); 
                 gameController.Initialise();
             });
@@ -97,7 +95,6 @@ namespace Rotation.GameObjects.sTests.GameSpecs
         public void CanMoveSelectionDown()
         {
             var gameController = default(GameController);
-            var board = default(IBoard);
 
             "Given I have a standard 9x9 board".Context(() =>
             {
@@ -105,7 +102,7 @@ namespace Rotation.GameObjects.sTests.GameSpecs
                 A.CallTo(() => fakeSquareSelectable
                     .CanSelectSquare(A<IBoard>.Ignored, A<int>.Ignored, A<int>.Ignored))
                     .Returns(true);
-                board = new BoardFactory().Create();
+                var board = new BoardFactory().Create();
                 gameController = new GameController(A.Fake<ISquareSelector>(), A.Fake<ISelectionRotatator>(), fakeSquareSelectable, board);
                 gameController.Initialise();
             });
@@ -123,7 +120,6 @@ namespace Rotation.GameObjects.sTests.GameSpecs
         public void CanIgnoreSelectionDownIfItWouldGoOutOfBounds()
         {
             var gameController = default(GameController);
-            var board = default(IBoard);
 
             "Given I have a standard 9x9 board".Context(() =>
             {
@@ -131,7 +127,7 @@ namespace Rotation.GameObjects.sTests.GameSpecs
                 A.CallTo(() => fakeSquareSelectable
                     .CanSelectSquare(A<IBoard>.Ignored, A<int>.Ignored, A<int>.Ignored))
                     .Returns(false);
-                board = new BoardFactory().Create();
+                var board = new BoardFactory().Create();
                 gameController = new GameController(A.Fake<ISquareSelector>(), A.Fake<ISelectionRotatator>(), fakeSquareSelectable, board);
                 gameController.Initialise();
             });
@@ -149,7 +145,6 @@ namespace Rotation.GameObjects.sTests.GameSpecs
         public void CanMoveSelectionLeft()
         {
             var gameController = default(GameController);
-            var board = default(IBoard);
 
             "Given I have a standard 9x9 board".Context(() =>
             {
@@ -157,7 +152,7 @@ namespace Rotation.GameObjects.sTests.GameSpecs
                 A.CallTo(() => fakeSquareSelectable
                     .CanSelectSquare(A<IBoard>.Ignored, A<int>.Ignored, A<int>.Ignored))
                     .Returns(true);
-                board = new BoardFactory().Create();
+                var board = new BoardFactory().Create();
                 gameController = new GameController(A.Fake<ISquareSelector>(), A.Fake<ISelectionRotatator>(), fakeSquareSelectable, board);
                 gameController.Initialise();
             });
@@ -176,7 +171,6 @@ namespace Rotation.GameObjects.sTests.GameSpecs
         public void CanIgnoreSelectionLeftIfItWouldGoOutOfBounds()
         {
             var gameController = default(GameController);
-            var board = default(IBoard);
 
             "Given I have a standard 9x9 board".Context(() =>
             {
@@ -184,7 +178,7 @@ namespace Rotation.GameObjects.sTests.GameSpecs
                 A.CallTo(() => fakeSquareSelectable
                     .CanSelectSquare(A<IBoard>.Ignored, A<int>.Ignored, A<int>.Ignored))
                     .Returns(false);
-                board = new BoardFactory().Create();
+                var board = new BoardFactory().Create();
                 gameController = new GameController(A.Fake<ISquareSelector>(), A.Fake<ISelectionRotatator>(), fakeSquareSelectable, board);
                 gameController.Initialise();
             });
@@ -203,7 +197,6 @@ namespace Rotation.GameObjects.sTests.GameSpecs
         public void CanMoveSelectionRight()
         {
             var gameController = default(GameController);
-            var board = default(IBoard);
 
             "Given I have a standard 9x9 board".Context(() =>
             {
@@ -211,7 +204,7 @@ namespace Rotation.GameObjects.sTests.GameSpecs
                 A.CallTo(() => fakeSquareSelectable
                     .CanSelectSquare(A<IBoard>.Ignored, A<int>.Ignored, A<int>.Ignored))
                     .Returns(true);
-                board = new BoardFactory().Create();
+                var board = new BoardFactory().Create();
                 gameController = new GameController(A.Fake<ISquareSelector>(), A.Fake<ISelectionRotatator>(), fakeSquareSelectable, board);
                 gameController.Initialise();
             });
@@ -229,7 +222,6 @@ namespace Rotation.GameObjects.sTests.GameSpecs
         public void CanIgnoreSelectionRightIfItWouldGoOutOfBounds()
         {
             var gameController = default(GameController);
-            var board = default(IBoard);
 
             "Given I have a standard 9x9 board".Context(() =>
             {
@@ -237,7 +229,7 @@ namespace Rotation.GameObjects.sTests.GameSpecs
                 A.CallTo(() => fakeSquareSelectable
                     .CanSelectSquare(A<IBoard>.Ignored, A<int>.Ignored, A<int>.Ignored))
                     .Returns(false);
-                board = new BoardFactory().Create();
+                var board = new BoardFactory().Create();
                 gameController = new GameController(A.Fake<ISquareSelector>(), A.Fake<ISelectionRotatator>(), fakeSquareSelectable, board);
                 gameController.Initialise();
             });
@@ -255,11 +247,10 @@ namespace Rotation.GameObjects.sTests.GameSpecs
         public void CanSelectASquare()
         {
             var gameController = default(GameController);
-            var board = default(IBoard);
 
             "Given I have a standard 9x9 board".Context(() =>
             {
-                board = new BoardFactory().Create();
+                var board = new BoardFactory().Create();
                 var fakeSquareSelectable = A.Fake<ISquareSelectable>();
                 A.CallTo(() => fakeSquareSelectable
                     .CanSelectSquare(A<IBoard>.Ignored, A<int>.Ignored, A<int>.Ignored))
@@ -282,11 +273,10 @@ namespace Rotation.GameObjects.sTests.GameSpecs
         public void CanIgnoreAnOutOfBoundSquareSelection()
         {
             var gameController = default(GameController);
-            var board = default(IBoard);
 
             "Given I have current selected square 4 4".Context(() =>
             {
-                board = new BoardFactory().Create();
+                var board = new BoardFactory().Create();
                 var fakeSquareSelectable = A.Fake<ISquareSelectable>();
                 A.CallTo(() => fakeSquareSelectable
                     .CanSelectSquare(A<IBoard>.Ignored, A<int>.Ignored, A<int>.Ignored))
@@ -303,6 +293,54 @@ namespace Rotation.GameObjects.sTests.GameSpecs
 
             "Then the Y value of the current selected square will still be 4".Observation(() =>
                 gameController.CurrentSelectedSquare.Y.ShouldEqual(4));
+        }
+
+        [Specification]
+        public void CanRotateTheBoardRight()
+        {
+            var gameController = default(GameController);
+            var fakeSelectionRotator = default(ISelectionRotatator);
+            var board = default(IBoard);
+
+            "Given I have a game controller".Context(() =>
+                    {
+                        fakeSelectionRotator = A.Fake<ISelectionRotatator>();
+                        var fakeSquareSelectable = A.Fake<ISquareSelectable>();
+                        board = A.Fake<IBoard>();
+                        A.CallTo(() => fakeSquareSelectable
+                            .CanSelectSquare(A<IBoard>.Ignored, A<int>.Ignored, A<int>.Ignored))
+                            .Returns(true);
+                        gameController = new GameController(A.Fake<ISquareSelector>(), fakeSelectionRotator, fakeSquareSelectable, board);
+                    });
+
+            "When I rotate right".Do(() => gameController.RotateRight());
+
+            "Then the board should be rotated right".Observation(
+                () => A.CallTo(() => fakeSelectionRotator.Right(board)).MustHaveHappened());
+        }
+
+        [Specification]
+        public void CanRotateTheBoardLeft()
+        {
+            var gameController = default(GameController);
+            var fakeSelectionRotator = default(ISelectionRotatator);
+            var board = default(IBoard);
+
+            "Given I have a game controller".Context(() =>
+            {
+                fakeSelectionRotator = A.Fake<ISelectionRotatator>();
+                var fakeSquareSelectable = A.Fake<ISquareSelectable>();
+                board = A.Fake<IBoard>();
+                A.CallTo(() => fakeSquareSelectable
+                    .CanSelectSquare(A<IBoard>.Ignored, A<int>.Ignored, A<int>.Ignored))
+                    .Returns(true);
+                gameController = new GameController(A.Fake<ISquareSelector>(), fakeSelectionRotator, fakeSquareSelectable, board);
+            });
+
+            "When I rotate left".Do(() => gameController.RotateLeft());
+
+            "Then the board should be rotated left".Observation(
+                () => A.CallTo(() => fakeSelectionRotator.Left(board)).MustHaveHappened());
         }
     }
 }
