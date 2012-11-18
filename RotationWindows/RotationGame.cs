@@ -12,6 +12,7 @@ using Rotation.StandardBoard.Rotation;
 using Rotation.StandardBoard.Selection;
 using Rotation.Textures;
 using Rotation.Words;
+using System.Linq;
 
 
 namespace MonoRotation

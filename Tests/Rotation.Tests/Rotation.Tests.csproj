@@ -157,6 +157,7 @@
     <Compile Include="FactorySpecs\ItemDrawerFactorySpecs.cs" />
     <Compile Include="FactorySpecs\TileTextureFactorySpecs.cs" />
     <Compile Include="GameSpecs\GameControllerSpecs.cs" />
+    <Compile Include="GameSpecs\KeyboardInputCollectorSpecs.cs" />
     <Compile Include="SelectorSpecs\SquareColourSelectorSpecs.cs" />
     <Compile Include="TestClasses\ActionEventDispatcher.cs" />
     <Compile Include="TestClasses\AlphabeticalBoardFiller.cs" />

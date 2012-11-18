@@ -120,6 +120,10 @@
     <Compile Include="Constants\GameConstants.cs" />
     <Compile Include="Controls\GameController.cs" />
     <Compile Include="Controls\IGameController.cs" />
+    <Compile Include="Controls\Input\IGameInputCollector.cs" />
+    <Compile Include="Controls\Input\IKeyboardStateCollector.cs" />
+    <Compile Include="Controls\Input\KeyboardInputCollector.cs" />
+    <Compile Include="Controls\Input\KeyboardStateCollector.cs" />
     <Compile Include="Drawing\Animations\IAnimation.cs" />
     <Compile Include="Drawing\Animations\IAnimationStore.cs" />
     <Compile Include="Drawing\Animations\IAnimationEngine.cs" />
