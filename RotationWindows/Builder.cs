@@ -17,6 +17,7 @@ namespace MonoRotation
             containerBuilder.RegisterModule(new TypeModule());
             containerBuilder.RegisterModule(new DrawingModule());
             containerBuilder.RegisterModule(new EventsInstaller(new[]{ typeof(IGameEvent).Assembly}));
+            containerBuilder.RegisterModule(new KeyboardInputModule());
             containerBuilder.Register(c => new BoardFactory().Create())
                         .As<IBoard>()
                         .As<IGetMainSelectedSquare>()

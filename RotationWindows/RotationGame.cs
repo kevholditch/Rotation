@@ -4,6 +4,7 @@ using Autofac;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Rotation.Controls;
 using Rotation.Drawing.Animations;
 using Rotation.Engine;
 using Rotation.Events;
@@ -22,29 +23,24 @@ namespace MonoRotation
     /// </summary>
     public class RotationGame : Game, ITextureLoader
     {
-
-        GraphicsDeviceManager graphics;
+        private GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private IBoard _board;
-        private ISquareSelector _squareSelector;
-        private ISelectionRotatator _selectionRotatator;
-        private Point _currentPos;
-        private KeyboardState _oldKeyboardState;
         private IDrawEngine _drawEngine;
         private readonly IContainer _container;
         private IBoardFiller _boardFiller;
         private readonly IAnimationEngine _animationEngine;
+        private IGameStateController _gameStateController;
 
-        public RotationGame(IContainer container, IBoard board, IBoardFiller boardFiller, ISelectionRotatator selectionRotatator, ISquareSelector squareSelector, IGameEventDispatcher gameEventDispatcher, IAnimationEngine animationEngine)
+        public RotationGame(IContainer container, IBoard board, IBoardFiller boardFiller, IGameEventDispatcher gameEventDispatcher, IAnimationEngine animationEngine, IGameStateController gameStateController)
         {
             _container = container;
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             _board = board;
             _boardFiller = boardFiller;
-            _selectionRotatator = selectionRotatator;
-            _squareSelector = squareSelector;
             _animationEngine = animationEngine;
+            _gameStateController = gameStateController;
             GameEvents.Dispatcher = gameEventDispatcher;
         }
 
@@ -68,16 +64,13 @@ namespace MonoRotation
         protected override void LoadContent()
         {
          
-
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             _boardFiller.Fill(_board);
             _drawEngine = _container.Resolve<IDrawEngine>();
 
-            _currentPos = new Point(4, 4);
-            _squareSelector.Select(_board, _currentPos.X, _currentPos.Y);
+            _gameStateController.Initialise();
 
-            _oldKeyboardState = Keyboard.GetState();
         }
 
         /// <summary>
@@ -96,66 +89,10 @@ namespace MonoRotation
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            var currentKeyBoardState = Keyboard.GetState();
-
-            ReactToKeyPress(Keys.Up, currentKeyBoardState, () =>
-            {
-                _currentPos.Y--;
-                _squareSelector.Select(_board,
-                                        _currentPos.X,
-                                        _currentPos.Y);
-            });
-
-            ReactToKeyPress(Keys.Down, currentKeyBoardState, () =>
-            {
-                _currentPos.Y++;
-                _squareSelector.Select(_board,
-                                       _currentPos.X,
-                                       _currentPos.Y);
-            });
-
-            ReactToKeyPress(Keys.Left, currentKeyBoardState, () =>
-            {
-                _currentPos.X--;
-                _squareSelector.Select(_board,
-                                       _currentPos.X,
-                                       _currentPos.Y);
-            });
-
-            ReactToKeyPress(Keys.Right, currentKeyBoardState, () =>
-            {
-                _currentPos.X++;
-                _squareSelector.Select(_board,
-                                       _currentPos.X,
-                                       _currentPos.Y);
-            });
-
-            ReactToKeyPress(Keys.S, currentKeyBoardState, () =>
-                      _selectionRotatator.Right(_board));
-
-            ReactToKeyPress(Keys.A, currentKeyBoardState, () =>
-                      _selectionRotatator.Left(_board));
-
-
-            ReactToKeyPress(Keys.Escape, currentKeyBoardState, Exit);
-
-            _oldKeyboardState = currentKeyBoardState;
-
-
+            _gameStateController.Update(gameTime);
             base.Update(gameTime);
         }
 
-        private void ReactToKeyPress(Keys key, KeyboardState currentKeyboardState, Action actionToExcute)
-        {
-            if (currentKeyboardState.IsKeyDown(key))
-            {
-                if (!_oldKeyboardState.IsKeyDown(key))
-                {
-                    actionToExcute();
-                }
-
-            }
-        }
 
         /// <summary>
         /// This is called when the game should draw itself.

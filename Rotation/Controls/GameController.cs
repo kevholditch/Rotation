@@ -23,6 +23,7 @@ namespace Rotation.Controls
         public void Initialise()
         {
             CurrentSelectedSquare = _board.CentreSquare;
+            _squareSelector.Select(_board, CurrentSelectedSquare.X, CurrentSelectedSquare.Y);
         }
 
         public void SelectSquare(int x, int y)

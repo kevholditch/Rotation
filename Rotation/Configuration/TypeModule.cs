@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Rotation.Controls;
 using Rotation.Drawing.Animations;
 using Rotation.StandardBoard;
 using Rotation.Tiles;
@@ -20,8 +21,10 @@ namespace Rotation.Configuration
 
             builder.RegisterType<WordListFactory>().As<IWordListFactory>()
                 .WithParameter(new NamedParameter("filename","Words/Words.txt"));
+
+            builder.RegisterType<GameController>().As<GameController>().SingleInstance();
+
+            builder.RegisterType<GameStateController>().As<IGameStateController>().SingleInstance();
         }
     }
-
-    
 }

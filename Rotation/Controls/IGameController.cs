@@ -1,6 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-
-namespace Rotation.Controls
+﻿namespace Rotation.Controls
 {
     public interface IGameController
     {
@@ -14,26 +12,4 @@ namespace Rotation.Controls
         void Initialise();
     }
 
-    public interface IGameControl
-    {
-        void UpdateControl(GameTime gameTime);
-    }
-
-
-    public class KeyboardGameControl : IGameControl
-    {
- 
-        private readonly IGameController _gameController;
-
-        public KeyboardGameControl(IGameController gameController)
-        {
-            _gameController = gameController;
-            
-        }
-
-        public void UpdateControl(GameTime gameTime)
-        {
-            throw new System.NotImplementedException();
-        }
-    }
 }

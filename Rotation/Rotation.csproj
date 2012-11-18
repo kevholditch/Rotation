@@ -116,10 +116,13 @@
     <Compile Include="Configuration\DrawingModule.cs" />
     <Compile Include="Configuration\EventsInstaller.cs" />
     <Compile Include="Configuration\InterfaceConventionModule.cs" />
+    <Compile Include="Configuration\KeyboardInputModule.cs" />
     <Compile Include="Configuration\TypeModule.cs" />
     <Compile Include="Constants\GameConstants.cs" />
     <Compile Include="Controls\GameController.cs" />
+    <Compile Include="Controls\GameStateController.cs" />
     <Compile Include="Controls\IGameController.cs" />
+    <Compile Include="Controls\IGameStateController.cs" />
     <Compile Include="Controls\Input\IGameInputCollector.cs" />
     <Compile Include="Controls\Input\IKeyboardStateCollector.cs" />
     <Compile Include="Controls\Input\KeyboardInputCollector.cs" />

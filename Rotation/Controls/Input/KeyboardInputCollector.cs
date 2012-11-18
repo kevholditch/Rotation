@@ -54,6 +54,7 @@ namespace Rotation.Controls.Input
                 return c => c.RotateRight();
             }
 
+            _oldkeyboardState = currentKeyboardState;
             return null;
         }
     }
