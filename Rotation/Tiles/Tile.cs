@@ -4,11 +4,11 @@ namespace Rotation.Tiles
 {
 	public abstract class Tile 
 	{
-		protected Tile(Letter letter)
+		protected Tile(int colour)
 		{
-			Letter = letter;
+		    Colour = colour;
 		}
 
-		public Letter Letter { get; set; }
+        public int Colour { get; set;  }
 	}
 }

@@ -22,7 +22,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.RotationSpecs
             {
                 GameEvents.Dispatcher = new ActionEventDispatcher(a => result = a as RotatedLeftEvent);
                 board = new BoardFactory().Create();
-                new AlphabeticalBoardFiller().Fill(board);
+                new NumericalBoardFiller().Fill(board);
                 squareSelector.Select(board, 4, 4);
             });
 
@@ -46,7 +46,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.RotationSpecs
             {
                 GameEvents.Dispatcher = new ActionEventDispatcher(a => result = a as RotatedRightEvent);
                 board = new BoardFactory().Create();
-                new AlphabeticalBoardFiller().Fill(board);
+                new NumericalBoardFiller().Fill(board);
                 squareSelector.Select(board, 4, 4);
             });
 

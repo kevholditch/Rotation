@@ -4,7 +4,7 @@ namespace Rotation.Tiles
 {
 	public class StandardTile : Tile
 	{
-		public StandardTile(Letter letter) : base(letter)
+		public StandardTile(int colour) : base(colour)
 		{
 		}
 	}

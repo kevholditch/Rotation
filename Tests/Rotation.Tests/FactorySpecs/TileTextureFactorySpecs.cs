@@ -22,7 +22,7 @@ namespace Rotation.GameObjects.sTests.FactorySpecs
                 new TileTextureFactory(new List<ITileTextureCreator> {new TestTileTextureCreator()}));
 
             "When I call create passing in a test tile".Do(
-                () => result = tileTextureFactory.Create(new TestTile(new Letter(2, 'C'))));
+                () => result = tileTextureFactory.Create(new TestTile(1)));
 
             "Then a TestTileTextureCreator should be returned".Observation(
                 () => result.ShouldBeOfType<TestTileTextureCreator>());
@@ -52,7 +52,7 @@ namespace Rotation.GameObjects.sTests.FactorySpecs
 
         public class TestTile : Tile
         {
-            public TestTile(Letter letter) : base(letter)
+            public TestTile(int colour) : base(colour)
             {
             }
         }

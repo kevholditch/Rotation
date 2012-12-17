@@ -1,19 +1,12 @@
-﻿
-using System;
-using Autofac;
+﻿using Autofac;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using Rotation.Controls;
 using Rotation.Drawing.Animations;
 using Rotation.Engine;
 using Rotation.Events;
 using Rotation.StandardBoard;
-using Rotation.StandardBoard.Rotation;
-using Rotation.StandardBoard.Selection;
 using Rotation.Textures;
-using Rotation.Words;
-using System.Linq;
 
 
 namespace MonoRotation

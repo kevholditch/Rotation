@@ -13,9 +13,9 @@ namespace Rotation.GameObjects.sTests.Builders
             _square = new Square(isSelectable, x, y);
         }
 
-        public SquareBuilder WithLetter(int points, char value)
+        public SquareBuilder WithColour(int value)
         {
-            _square.Tile = new TestTile(new Letter(points, value));
+            _square.Tile = new TestTile(value);
             return this;
         }
 

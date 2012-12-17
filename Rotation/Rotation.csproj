@@ -134,12 +134,10 @@
     <Compile Include="Drawing\Animations\RotateLeftAnimation.cs" />
     <Compile Include="Drawing\Animations\RotateRightAnimation.cs" />
     <Compile Include="Drawing\Animations\SingleAnimationStore.cs" />
-    <Compile Include="Drawing\Animations\WordFoundAnimation.cs" />
     <Compile Include="Drawing\IDrawableItem.cs" />
     <Compile Include="Engine\DrawEngine.cs" />
     <Compile Include="Constants\DrawingConstants.cs" />
     <Compile Include="Engine\IDrawEngine.cs" />
-    <Compile Include="EventHandlers\WordsFoundEventHandler.cs" />
     <Compile Include="Events\BoardChangedEvent.cs" />
     <Compile Include="EventHandlers\BoardChangedEventHandler.cs" />
     <Compile Include="EventHandlers\RotatedLeftEventHandler.cs" />
@@ -153,7 +151,6 @@
     <Compile Include="Events\RotatedLeftEvent.cs" />
     <Compile Include="Events\RotatedRightEvent.cs" />
     <Compile Include="EventHandlers\RotatedRightEventHandler.cs" />
-    <Compile Include="Events\WordsFoundEvent.cs" />
     <Compile Include="ItemDrawers\IItemDrawer.cs" />
     <Compile Include="ItemDrawers\IItemDrawerFactory.cs" />
     <Compile Include="ItemDrawers\ItemDrawerBase.cs" />
@@ -168,7 +165,6 @@
     <Compile Include="StandardBoard\BoardCoordinate.cs" />
     <Compile Include="StandardBoard\BoardExtensionMethods.cs" />
     <Compile Include="StandardBoard\BoardFactory.cs" />
-    <Compile Include="StandardBoard\RiggedBoardFiller.cs" />
     <Compile Include="StandardBoard\Selection\ISquareSelectable.cs" />
     <Compile Include="StandardBoard\Selection\SquareSelectable.cs" />
     <Compile Include="StandardBoard\StandardBoardFiller.cs" />
@@ -202,19 +198,6 @@
     <Compile Include="Tiles\StandardTile.cs" />
     <Compile Include="Tiles\StandardTileFactory.cs" />
     <Compile Include="Tiles\Tile.cs" />
-    <Compile Include="Words\Word.cs" />
-    <Compile Include="Words\IWord.cs" />
-    <Compile Include="Words\IWordChecker.cs" />
-    <Compile Include="Words\IWordList.cs" />
-    <Compile Include="Words\IWordListFactory.cs" />
-    <Compile Include="Words\WordChecker.cs" />
-    <Compile Include="Words\WordList.cs" />
-    <Compile Include="Words\WordListFactory.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Words\Words.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

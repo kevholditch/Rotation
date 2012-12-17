@@ -37,10 +37,7 @@ namespace Rotation.StandardBoard
 
         public bool InWord { get; set; }
 
-		public Letter Letter
-		{
-			get { return Tile.Letter; }
-		}
+        public int Colour { get { return Tile.Colour; } }
 
 	    public float Angle { get; set; }
 

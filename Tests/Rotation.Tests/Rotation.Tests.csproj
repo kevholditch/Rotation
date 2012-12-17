@@ -131,13 +131,12 @@
     <Compile Include="AnimationSpecs\AnimationStoreSpecs.cs" />
     <Compile Include="AnimationSpecs\RotateLeftAnimationSpecs.cs" />
     <Compile Include="AnimationSpecs\RotateRightAnimationSpecs.cs" />
-    <Compile Include="AnimationSpecs\WordFoundAnimationSpecs.cs" />
     <Compile Include="AssertExtensions.cs" />
     <Compile Include="BoardSpecs\BoardCentreSquareSpecs.cs" />
     <Compile Include="BoardSpecs\BoardCreationSpecs.cs" />
     <Compile Include="BoardSpecs\BoardFillerSpecs.cs" />
     <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationEventRaisedSpecs.cs" />
-    <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationLetterSpecs.cs" />
+    <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\SquareSelectableSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\MainSelectedSquareSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\SelectingSquareSpecs.cs" />
@@ -150,7 +149,6 @@
     <Compile Include="DrawingSpecs\SquareDepthCalculatorSpecs.cs" />
     <Compile Include="DrawingSpecs\SquareOriginCalculatorSpecs.cs" />
     <Compile Include="DrawingSpecs\SquarePositionCalculatorSpecs.cs" />
-    <Compile Include="EventsSpecs\BoardChangedEventHandlerSpecs.cs" />
     <Compile Include="EventsSpecs\EventsInstallerSpec.cs" />
     <Compile Include="EventsSpecs\RotatedLefttEventHandlerSpecs.cs" />
     <Compile Include="EventsSpecs\RotatedRightEventHandlerSpecs.cs" />
@@ -160,24 +158,16 @@
     <Compile Include="GameSpecs\KeyboardInputCollectorSpecs.cs" />
     <Compile Include="SelectorSpecs\SquareColourSelectorSpecs.cs" />
     <Compile Include="TestClasses\ActionEventDispatcher.cs" />
-    <Compile Include="TestClasses\AlphabeticalBoardFiller.cs" />
-    <Compile Include="TestClasses\AlphabeticalBoardFillerSpecs.cs" />
+    <Compile Include="TestClasses\NumericalBoardFiller.cs" />
+    <Compile Include="TestClasses\NumericalBoardFillerSpecs.cs" />
     <Compile Include="LetterSpecs\LetterLookupSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestTile.cs" />
     <Compile Include="TileSpecs\TileFactorySpecs.cs" />
     <Compile Include="Extensions\EnumerationExtensions.cs" />
-    <Compile Include="WordSpecs\FoundWordSpecs.cs" />
-    <Compile Include="WordSpecs\WordCheckerSpecs.cs" />
-    <Compile Include="WordSpecs\WordListFactorySpecs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="WordSpecs\TestWordList.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Rotation\Rotation.csproj">

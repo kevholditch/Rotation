@@ -19,7 +19,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs
 			                                                                    	{
 			                                                                    		var fakeTileFactory = A.Fake<ITileFactory>();
 			                                                                    		A.CallTo(() => fakeTileFactory.Create()).
-			                                                                    			Returns(new StandardTile(new Letter(1, 'C')));
+			                                                                    			Returns(new StandardTile(1));
 
 																						boardFiller = new StandardBoardFiller(fakeTileFactory);
 			                                                                    		board = new BoardFactory().Create();

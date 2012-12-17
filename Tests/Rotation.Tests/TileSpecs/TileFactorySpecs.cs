@@ -12,7 +12,7 @@ namespace Rotation.GameObjects.sTests.TileSpecs
 			var standardTileFactory = default(StandardTileFactory);
 			var result = default(Tile);
 
-			"Given that I have a standardTileFactory".Context(() => standardTileFactory = new StandardTileFactory(new LetterLookup()));
+			"Given that I have a standardTileFactory".Context(() => standardTileFactory = new StandardTileFactory());
 
 			"When I create a new tile".Do(() => result = standardTileFactory.Create());
 
