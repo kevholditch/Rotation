@@ -47,7 +47,7 @@ namespace Rotation.GameObjects.sTests.EventsSpecs
             "Given I have a board with 1 block".Context(() =>
                 {
                     var fakeBlockFinder = A.Fake<IBlockFinder>();
-                    A.CallTo(() => fakeBlockFinder.Find(A<IBoard>.Ignored)).Returns(new[]{ new Block(new Square[] { }) });
+                    A.CallTo(() => fakeBlockFinder.Find(A<IBoard>.Ignored)).Returns(new[]{ new Block(new BoardCoordinate[] { }) });
 
                     boardChangedEventHandler = new BoardChangedEventHandler(A.Fake<IBoard>(), fakeBlockFinder);
 
@@ -75,7 +75,7 @@ namespace Rotation.GameObjects.sTests.EventsSpecs
             {
                 var fakeBlockFinder = A.Fake<IBlockFinder>();
                 A.CallTo(() => fakeBlockFinder.Find(A<IBoard>.Ignored))
-                 .Returns(new[] {new Block(new Square[] {}), new Block(new Square[] {})});
+                 .Returns(new[] {new Block(new BoardCoordinate[] {}), new Block(new BoardCoordinate[] {})});
 
                 boardChangedEventHandler = new BoardChangedEventHandler(A.Fake<IBoard>(), fakeBlockFinder);
 

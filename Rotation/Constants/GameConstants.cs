@@ -8,7 +8,7 @@
         public static class Animation
         {
             public const float ANGLE_INCREASE_SPEED = 0.3f;
-            public const double WORD_FOUND_LIGHT_UP_TIME_MILLISECONDS = 1000;
+            public const double BLOCK_FOUND_LIGHT_UP_DURATION = 1000;
         }
     }
 }

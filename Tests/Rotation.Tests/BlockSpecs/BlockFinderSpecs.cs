@@ -29,17 +29,17 @@ namespace Rotation.GameObjects.sTests.BlockSpecs
             "Then 1 block should be returned"
                 .Observation(() => results.Count().ShouldEqual(1));
 
-            "Then 1 square should be at 3, 1"
-                .Observation(() => results.First().Squares.Count(s => s.XPos == 3 && s.YPos == 1).ShouldEqual(1));
+            "Then 1 board coordinate should be at 3, 1"
+                .Observation(() => results.First().BoardCoordinates.Count(s => s.X == 3 && s.Y == 1).ShouldEqual(1));
             
-            "Then 1 square should be at 4, 1"
-               .Observation(() => results.First().Squares.Count(s => s.XPos == 4 && s.YPos == 1).ShouldEqual(1));
+            "Then 1 board coordinate should be at 4, 1"
+               .Observation(() => results.First().BoardCoordinates.Count(s => s.X == 4 && s.Y == 1).ShouldEqual(1));
 
-            "Then 1 square should be at 3, 2"
-               .Observation(() => results.First().Squares.Count(s => s.XPos == 3 && s.YPos == 2).ShouldEqual(1));
+            "Then 1 board coordinate should be at 3, 2"
+               .Observation(() => results.First().BoardCoordinates.Count(s => s.X == 3 && s.Y == 2).ShouldEqual(1));
 
-            "Then 1 square should be at 4, 2"
-               .Observation(() => results.First().Squares.Count(s => s.XPos == 4 && s.YPos == 2).ShouldEqual(1));
+            "Then 1 board coordinate should be at 4, 2"
+               .Observation(() => results.First().BoardCoordinates.Count(s => s.X == 4 && s.Y == 2).ShouldEqual(1));
 
 
         }
@@ -64,29 +64,29 @@ namespace Rotation.GameObjects.sTests.BlockSpecs
             "Then 2 blocks should be returned"
                 .Observation(() => results.Count().ShouldEqual(2));
 
-            "Then 1 square in the first block should be at 3, 1"
-                .Observation(() => results.First().Squares.Count(s => s.XPos == 3 && s.YPos == 1).ShouldEqual(1));
+            "Then 1 board coordinate in the first block should be at 3, 1"
+                .Observation(() => results.First().BoardCoordinates.Count(s => s.X == 3 && s.Y == 1).ShouldEqual(1));
 
-            "Then 1 square in the first block should be at 4, 1"
-               .Observation(() => results.First().Squares.Count(s => s.XPos == 4 && s.YPos == 1).ShouldEqual(1));
+            "Then 1 board coordinate in the first block should be at 4, 1"
+               .Observation(() => results.First().BoardCoordinates.Count(s => s.X == 4 && s.Y == 1).ShouldEqual(1));
 
-            "Then 1 square in the first block should be at 3, 2"
-               .Observation(() => results.First().Squares.Count(s => s.XPos == 3 && s.YPos == 2).ShouldEqual(1));
+            "Then 1 board coordinate in the first block should be at 3, 2"
+               .Observation(() => results.First().BoardCoordinates.Count(s => s.X == 3 && s.Y == 2).ShouldEqual(1));
 
-            "Then 1 square in the first block should be at 4, 2"
-               .Observation(() => results.First().Squares.Count(s => s.XPos == 4 && s.YPos == 2).ShouldEqual(1));
+            "Then 1 board coordinate in the first block should be at 4, 2"
+               .Observation(() => results.First().BoardCoordinates.Count(s => s.X == 4 && s.Y == 2).ShouldEqual(1));
 
-            "Then 1 square in the second block should be at 3, 6"
-               .Observation(() => results.ToList()[1].Squares.Count(s => s.XPos == 3 && s.YPos == 6).ShouldEqual(1));
+            "Then 1 board coordinate in the second block should be at 3, 6"
+               .Observation(() => results.ToList()[1].BoardCoordinates.Count(s => s.X == 3 && s.Y == 6).ShouldEqual(1));
 
-            "Then 1 square in the second block should be at 4, 6"
-               .Observation(() => results.ToList()[1].Squares.Count(s => s.XPos == 4 && s.YPos == 6).ShouldEqual(1));
+            "Then 1 board coordinate in the second block should be at 4, 6"
+               .Observation(() => results.ToList()[1].BoardCoordinates.Count(s => s.X == 4 && s.Y == 6).ShouldEqual(1));
 
-            "Then 1 square in the second block should be at 3, 7"
-               .Observation(() => results.ToList()[1].Squares.Count(s => s.XPos == 3 && s.YPos == 7).ShouldEqual(1));
+            "Then 1 board coordinate in the second block should be at 3, 7"
+               .Observation(() => results.ToList()[1].BoardCoordinates.Count(s => s.X == 3 && s.Y == 7).ShouldEqual(1));
 
-            "Then 1 square in the second block should be at 4, 7"
-               .Observation(() => results.ToList()[1].Squares.Count(s => s.XPos == 4 && s.YPos == 7).ShouldEqual(1));
+            "Then 1 board coordinate in the second block should be at 4, 7"
+               .Observation(() => results.ToList()[1].BoardCoordinates.Count(s => s.X == 4 && s.Y == 7).ShouldEqual(1));
 
             
         }
@@ -112,29 +112,29 @@ namespace Rotation.GameObjects.sTests.BlockSpecs
             "Then 2 blocks should be returned"
                 .Observation(() => results.Count().ShouldEqual(2));
 
-            "Then 1 square in the first block should be at 3, 1"
-                .Observation(() => results.First().Squares.Count(s => s.XPos == 3 && s.YPos == 1).ShouldEqual(1));
+            "Then 1 board coordinate in the first block should be at 3, 1"
+                .Observation(() => results.First().BoardCoordinates.Count(s => s.X == 3 && s.Y == 1).ShouldEqual(1));
 
-            "Then 1 square in the first block should be at 4, 1"
-               .Observation(() => results.First().Squares.Count(s => s.XPos == 4 && s.YPos == 1).ShouldEqual(1));
+            "Then 1 board coordinate in the first block should be at 4, 1"
+               .Observation(() => results.First().BoardCoordinates.Count(s => s.X == 4 && s.Y == 1).ShouldEqual(1));
 
-            "Then 1 square in the first block should be at 3, 2"
-               .Observation(() => results.First().Squares.Count(s => s.XPos == 3 && s.YPos == 2).ShouldEqual(1));
+            "Then 1 board coordinate in the first block should be at 3, 2"
+               .Observation(() => results.First().BoardCoordinates.Count(s => s.X == 3 && s.Y == 2).ShouldEqual(1));
 
-            "Then 1 square in the first block should be at 4, 2"
-               .Observation(() => results.First().Squares.Count(s => s.XPos == 4 && s.YPos == 2).ShouldEqual(1));
+            "Then 1 board coordinate in the first block should be at 4, 2"
+               .Observation(() => results.First().BoardCoordinates.Count(s => s.X == 4 && s.Y == 2).ShouldEqual(1));
 
-            "Then 1 square in the second block should be at 4, 2"
-               .Observation(() => results.ToList()[1].Squares.Count(s => s.XPos == 4 && s.YPos == 2).ShouldEqual(1));
+            "Then 1 board coordinate in the second block should be at 4, 2"
+               .Observation(() => results.ToList()[1].BoardCoordinates.Count(s => s.X == 4 && s.Y == 2).ShouldEqual(1));
 
-            "Then 1 square in the second block should be at 5, 2"
-               .Observation(() => results.ToList()[1].Squares.Count(s => s.XPos == 5 && s.YPos == 2).ShouldEqual(1));
+            "Then 1 board coordinate in the second block should be at 5, 2"
+               .Observation(() => results.ToList()[1].BoardCoordinates.Count(s => s.X == 5 && s.Y == 2).ShouldEqual(1));
 
-            "Then 1 square in the second block should be at 4, 3"
-               .Observation(() => results.ToList()[1].Squares.Count(s => s.XPos == 4 && s.YPos == 3).ShouldEqual(1));
+            "Then 1 board coordinate in the second block should be at 4, 3"
+               .Observation(() => results.ToList()[1].BoardCoordinates.Count(s => s.X == 4 && s.Y == 3).ShouldEqual(1));
 
-            "Then 1 square in the second block should be at 5, 3"
-               .Observation(() => results.ToList()[1].Squares.Count(s => s.XPos == 5 && s.YPos == 3).ShouldEqual(1));
+            "Then 1 board coordinate in the second block should be at 5, 3"
+               .Observation(() => results.ToList()[1].BoardCoordinates.Count(s => s.X == 5 && s.Y == 3).ShouldEqual(1));
 
             
         }

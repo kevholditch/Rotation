@@ -1,32 +1,45 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Rotation.Blocks;
+using Rotation.Constants;
+using Rotation.StandardBoard;
+using System.Linq;
 
 namespace Rotation.Drawing.Animations
 {
     public class BlocksFoundAnimation : IAnimation
     {
 
-        public IEnumerable<Block> Blocks { get; private set; }
+        private double _elapsedTime = 0;
+        private List<BoardCoordinate> _boardCoordinates;
+        private readonly IBoard _board;
 
-        public BlocksFoundAnimation(IEnumerable<Block> blocks)
+        public BlocksFoundAnimation(IEnumerable<Block> blocks, IBoard board)
         {
-            Blocks = blocks;
+            _board = board;
+            _boardCoordinates = new List<BoardCoordinate>();
+
+            foreach (var boardCoordinate in blocks.SelectMany(b => b.BoardCoordinates))
+            {
+                _board[boardCoordinate].IsInBlock = true;
+                _boardCoordinates.Add(boardCoordinate);
+            }
         }
 
         public bool Finished()
         {
-            throw new System.NotImplementedException();
+            return _elapsedTime >= GameConstants.Animation.BLOCK_FOUND_LIGHT_UP_DURATION;
         }
 
         public void Animate(GameTime gameTime)
         {
-            throw new System.NotImplementedException();
+            _elapsedTime += gameTime.ElapsedGameTime.TotalMilliseconds;
         }
 
         public void OnFinished()
         {
-            throw new System.NotImplementedException();
+            foreach (var boardCoordinate in _boardCoordinates)
+                _board[boardCoordinate].IsInBlock = false;
         }
     }
 }

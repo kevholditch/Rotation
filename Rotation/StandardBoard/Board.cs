@@ -17,6 +17,10 @@ namespace Rotation.StandardBoard
         public List<List<Square>> Columns { get; private set; }
 		public Square this[int x, int y] { get { return Columns[x][y]; } }
 
+        public Square this[BoardCoordinate boardCoordinate]
+        {
+            get { return this[boardCoordinate.X, boardCoordinate.Y]; }
+        }
 
         public BoardCoordinate CentreSquare { get; private set; }
 

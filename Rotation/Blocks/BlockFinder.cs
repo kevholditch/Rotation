@@ -19,7 +19,7 @@ namespace Rotation.Blocks
                     var squares = GetSquares(board, i, j);
                     if (IsBlock(squares))
                     {
-                        blocks.Add(new Block(squares));
+                        blocks.Add(new Block(squares.Select(s => new BoardCoordinate(s.XPos, s.YPos))));
                     }
                 }
             }

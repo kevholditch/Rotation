@@ -14,7 +14,8 @@ namespace Rotation.Textures
             if (square.IsMainSelection)
                 return DrawingConstants.SquareColours.MAIN_SQUARE_SELECTED_COLOUR;
 
-
+            if (square.IsInBlock)
+                return DrawingConstants.SquareColours.SQUARE_IN_BLOCK_COLOUR;
 
             Color colour;
             

@@ -23,8 +23,8 @@ namespace Rotation.GameObjects.sTests.EventsSpecs
             "Given I have an empty animation store and a blocks found event handler".Context(() =>
                 {
                     animationStore = new SingleAnimationStore();
-                    eventHandler = new BlocksFoundEventHandler(animationStore);
-                    blocks = new[]{ new Block(new Square[]{}), };
+                    eventHandler = new BlocksFoundEventHandler(animationStore, A.Fake<IBoard>());
+                    blocks = new[]{ new Block(new BoardCoordinate[]{}), };
                 });
 
             "When I handle the blocks found event"
@@ -35,12 +35,6 @@ namespace Rotation.GameObjects.sTests.EventsSpecs
 
             "Then the item in the animation store should be a blocks found animation"
                 .Observation(() => animationStore.GetCurrentAnimations().First().ShouldBeOfType<BlocksFoundAnimation>());
-
-            "Then there should be 1 block on the animation"
-                .Observation(
-                    () =>
-                    ((BlocksFoundAnimation) animationStore.GetCurrentAnimations().First()).Blocks.Count().ShouldEqual(1));
-
 
         }
     }

@@ -5,11 +5,12 @@ namespace Rotation.Blocks
 {
     public class Block
     {
-        public IEnumerable<Square> Squares { get; private set; }
- 
-        public Block(IEnumerable<Square> squares)
+
+        public IEnumerable<BoardCoordinate> BoardCoordinates { get; private set; }
+
+        public Block(IEnumerable<BoardCoordinate> boardCoordinates)
         {
-            Squares = squares;
+            BoardCoordinates = boardCoordinates;
         }
     }
 }
