@@ -113,6 +113,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Blocks\Block.cs" />
+    <Compile Include="Blocks\BlockFinder.cs" />
+    <Compile Include="Blocks\IBlockFinder.cs" />
     <Compile Include="Configuration\DrawingModule.cs" />
     <Compile Include="Configuration\EventsInstaller.cs" />
     <Compile Include="Configuration\InterfaceConventionModule.cs" />
