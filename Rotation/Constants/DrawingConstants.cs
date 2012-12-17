@@ -25,7 +25,8 @@ namespace Rotation.Engine
             public static readonly Color MAIN_SQUARE_SELECTED_COLOUR = Color.Green;
             public static readonly Color SQUARE_NOT_SELECTED_COLOUR = Color.Orange;
             public static readonly Color SQUARE_NOT_SELECTABLE_COLOUR = Color.White;
-            public static readonly Color SQUARE_IN_WORD_COLOUR = Color.SkyBlue;
+            public static readonly Color SQUARE_COLOUR_0 = Color.Yellow;
+            public static readonly Color SQUARE_COLOUR_1 = Color.Red;
         }
 
        

@@ -14,12 +14,23 @@ namespace Rotation.Textures
             if (square.IsMainSelection)
                 return DrawingConstants.SquareColours.MAIN_SQUARE_SELECTED_COLOUR;
 
-            if (square.InWord)
-                return DrawingConstants.SquareColours.SQUARE_IN_WORD_COLOUR;
 
-            return square.IsSelected
-                       ? DrawingConstants.SquareColours.SQUARE_SELECTED_COLOUR
-                       : DrawingConstants.SquareColours.SQUARE_NOT_SELECTED_COLOUR;
+
+            Color colour;
+            
+            if (square.Colour == 0)
+                colour = DrawingConstants.SquareColours.SQUARE_COLOUR_0;
+            else
+                colour = DrawingConstants.SquareColours.SQUARE_COLOUR_1;
+
+            if (square.IsSelected)
+            {
+
+                
+            }
+
+            return colour;
+
 
         }
     }

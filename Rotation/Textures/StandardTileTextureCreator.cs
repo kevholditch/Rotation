@@ -15,7 +15,7 @@ namespace Rotation.Textures
         
         protected override Texture2D CreateImp(Tile tile)
         {
-            return _textureLoader.Load(string.Format("{0}{1}", DrawingConstants.Tiles.STANDARD_TILE, 'A'));
+            return _textureLoader.Load(string.Format("{0}", DrawingConstants.Tiles.BLANK_TILE));
         }
     }
 }

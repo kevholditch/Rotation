@@ -14,7 +14,6 @@ namespace Rotation.StandardBoard
 		    YPos = y;
 		    Angle = 0;
 			IsSelected = false;
-		    InWord = false;
 		}
 
         public int XPos { get; private set; }
@@ -34,8 +33,6 @@ namespace Rotation.StandardBoard
         public bool CanUseInWord { get; set; }
 
 		public Tile Tile { get; set; }
-
-        public bool InWord { get; set; }
 
         public int Colour { get { return Tile.Colour; } }
 
