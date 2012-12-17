@@ -1,5 +1,3 @@
-using Rotation.Letters;
-
 namespace Rotation.Tiles
 {
 	public class StandardTile : Tile

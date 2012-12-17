@@ -149,6 +149,7 @@
     <Compile Include="DrawingSpecs\SquareDepthCalculatorSpecs.cs" />
     <Compile Include="DrawingSpecs\SquareOriginCalculatorSpecs.cs" />
     <Compile Include="DrawingSpecs\SquarePositionCalculatorSpecs.cs" />
+    <Compile Include="EventsSpecs\BoardChangedEventHandlerSpecs.cs" />
     <Compile Include="EventsSpecs\EventsInstallerSpec.cs" />
     <Compile Include="EventsSpecs\RotatedLefttEventHandlerSpecs.cs" />
     <Compile Include="EventsSpecs\RotatedRightEventHandlerSpecs.cs" />
@@ -156,11 +157,9 @@
     <Compile Include="FactorySpecs\TileTextureFactorySpecs.cs" />
     <Compile Include="GameSpecs\GameControllerSpecs.cs" />
     <Compile Include="GameSpecs\KeyboardInputCollectorSpecs.cs" />
-    <Compile Include="SelectorSpecs\SquareColourSelectorSpecs.cs" />
     <Compile Include="TestClasses\ActionEventDispatcher.cs" />
     <Compile Include="TestClasses\NumericalBoardFiller.cs" />
     <Compile Include="TestClasses\NumericalBoardFillerSpecs.cs" />
-    <Compile Include="LetterSpecs\LetterLookupSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestTile.cs" />
     <Compile Include="TileSpecs\TileFactorySpecs.cs" />

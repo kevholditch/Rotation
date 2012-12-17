@@ -1,5 +1,4 @@
 using System.Linq;
-using Rotation.Letters;
 using Rotation.StandardBoard;
 
 namespace Rotation.GameObjects.sTests.TestClasses

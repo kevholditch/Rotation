@@ -1,5 +1,4 @@
 ﻿using FakeItEasy;
-using Rotation.Letters;
 using Rotation.StandardBoard;
 using Rotation.Tiles;
 using SubSpec;

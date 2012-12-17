@@ -1,5 +1,4 @@
 ﻿using Rotation.Drawing;
-using Rotation.Letters;
 using Rotation.Tiles;
 
 namespace Rotation.StandardBoard

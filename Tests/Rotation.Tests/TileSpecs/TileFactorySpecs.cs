@@ -1,5 +1,4 @@
-﻿using Rotation.Letters;
-using Rotation.Tiles;
+﻿using Rotation.Tiles;
 using SubSpec;
 
 namespace Rotation.GameObjects.sTests.TileSpecs

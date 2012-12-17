@@ -1,5 +1,4 @@
-﻿using Rotation.Letters;
-using Rotation.StandardBoard;
+﻿using Rotation.StandardBoard;
 
 namespace Rotation.GameObjects.sTests.Builders
 {

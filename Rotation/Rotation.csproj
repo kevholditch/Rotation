@@ -180,9 +180,6 @@
     <Compile Include="StandardBoard\Sequences\RowIndexSequence.cs" />
     <Compile Include="StandardBoard\Square.cs" />
     <Compile Include="Drawing\IGetDrawableItems.cs" />
-    <Compile Include="Letters\ILetterLookup.cs" />
-    <Compile Include="Letters\Letter.cs" />
-    <Compile Include="Letters\LetterLookup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Textures\BaseTileTextureCreator.cs" />
     <Compile Include="Textures\BlankTileTextureCreator.cs" />

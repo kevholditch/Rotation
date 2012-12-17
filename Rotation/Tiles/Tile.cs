@@ -1,6 +1,4 @@
-﻿using Rotation.Letters;
-
-namespace Rotation.Tiles
+﻿namespace Rotation.Tiles
 {
 	public abstract class Tile 
 	{

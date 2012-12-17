@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using FakeItEasy;
 using Microsoft.Xna.Framework.Graphics;
-using Rotation.Letters;
 using Rotation.Textures;
 using Rotation.Tiles;
 using SubSpec;
