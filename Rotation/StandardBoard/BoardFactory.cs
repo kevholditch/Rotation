@@ -24,7 +24,6 @@ namespace Rotation.StandardBoard
 				for (int j = 0; j < BOARD_SIZE; j++)
 				{
 				    var square = new Square(selectableSquares.Contains(j), i, j);
-				    square.CanUseInWord = square.IsSelectable;
 					currentRow.Add(square);	
 				}
 

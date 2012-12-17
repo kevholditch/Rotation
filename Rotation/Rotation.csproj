@@ -141,6 +141,7 @@
     <Compile Include="Engine\DrawEngine.cs" />
     <Compile Include="Constants\DrawingConstants.cs" />
     <Compile Include="Engine\IDrawEngine.cs" />
+    <Compile Include="Events\BlocksFoundEvent.cs" />
     <Compile Include="Events\BoardChangedEvent.cs" />
     <Compile Include="EventHandlers\BoardChangedEventHandler.cs" />
     <Compile Include="EventHandlers\RotatedLeftEventHandler.cs" />

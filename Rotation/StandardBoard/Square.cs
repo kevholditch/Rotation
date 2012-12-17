@@ -27,9 +27,9 @@ namespace Rotation.StandardBoard
 
 		public bool HasTile { get { return Tile != null; } }
 
-		public bool IsMainSelection { get; set; }
+        public bool IsInBlock { get; set; }
 
-        public bool CanUseInWord { get; set; }
+		public bool IsMainSelection { get; set; }
 
 		public Tile Tile { get; set; }
 
