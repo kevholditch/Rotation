@@ -58,4 +58,16 @@ namespace Rotation.Controls.Input
             return null;
         }
     }
+
+	public class MethodToExecute<T>
+	{
+		public string MethodName { get; private set; }
+		public Action<T> Method { get; private set; }
+
+		public MethodToExecute(Expression<Action<T>> action)
+		{
+			MethodName = ((MethodCallExpression)action.Body).Method.Name;
+			Method = action.Compile();
+		}
+	}
 }
