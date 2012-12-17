@@ -22,12 +22,11 @@ namespace Rotation.Controls
 
         public void Update(GameTime gameTime)
         {
-            var action = _gameInputCollector.Collect();
+            var command = _gameInputCollector.Collect();
 
-            if (action != null)
+            if (command != null)
             {
-                var actionToRun = action.Compile();
-                actionToRun(_gameController);
+               command.Execute();
             }
         }
     }
