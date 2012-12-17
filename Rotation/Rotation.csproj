@@ -130,6 +130,7 @@
     <Compile Include="Controls\Input\IKeyboardStateCollector.cs" />
     <Compile Include="Controls\Input\KeyboardInputCollector.cs" />
     <Compile Include="Controls\Input\KeyboardStateCollector.cs" />
+    <Compile Include="Drawing\Animations\BlocksFoundAnimation.cs" />
     <Compile Include="Drawing\Animations\IAnimation.cs" />
     <Compile Include="Drawing\Animations\IAnimationStore.cs" />
     <Compile Include="Drawing\Animations\IAnimationEngine.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Engine\DrawEngine.cs" />
     <Compile Include="Constants\DrawingConstants.cs" />
     <Compile Include="Engine\IDrawEngine.cs" />
+    <Compile Include="EventHandlers\BlocksFoundEventHandler.cs" />
     <Compile Include="Events\BlocksFoundEvent.cs" />
     <Compile Include="Events\BoardChangedEvent.cs" />
     <Compile Include="EventHandlers\BoardChangedEventHandler.cs" />

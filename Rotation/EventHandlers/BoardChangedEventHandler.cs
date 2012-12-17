@@ -7,7 +7,6 @@ namespace Rotation.EventHandlers
 {
     public class BoardChangedEventHandler : IGameEventHandler<BoardChangedEvent>
     {
-
         private readonly IBoard _board;
         private readonly IBlockFinder _blockFinder;
 

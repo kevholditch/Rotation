@@ -150,9 +150,10 @@
     <Compile Include="DrawingSpecs\SquareDepthCalculatorSpecs.cs" />
     <Compile Include="DrawingSpecs\SquareOriginCalculatorSpecs.cs" />
     <Compile Include="DrawingSpecs\SquarePositionCalculatorSpecs.cs" />
+    <Compile Include="EventsSpecs\BlocksFoundEventHandlerSpecs.cs" />
     <Compile Include="EventsSpecs\BoardChangedEventHandlerSpecs.cs" />
     <Compile Include="EventsSpecs\EventsInstallerSpec.cs" />
-    <Compile Include="EventsSpecs\RotatedLefttEventHandlerSpecs.cs" />
+    <Compile Include="EventsSpecs\RotatedLeftEventHandlerSpecs.cs" />
     <Compile Include="EventsSpecs\RotatedRightEventHandlerSpecs.cs" />
     <Compile Include="FactorySpecs\ItemDrawerFactorySpecs.cs" />
     <Compile Include="FactorySpecs\TileTextureFactorySpecs.cs" />

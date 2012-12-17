@@ -8,7 +8,7 @@ using SubSpec;
 
 namespace Rotation.GameObjects.sTests.EventsSpecs
 {
-    public class RotatedLefttEventHandlerSpecs
+    public class RotatedLeftEventHandlerSpecs
     {
         [Specification]
         public void CorrectAnimationGetsAddedToStore()
