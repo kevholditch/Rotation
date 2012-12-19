@@ -154,6 +154,7 @@
     <Compile Include="EventsSpecs\BlocksFoundEventHandlerSpecs.cs" />
     <Compile Include="EventsSpecs\BoardChangedEventHandlerSpecs.cs" />
     <Compile Include="EventsSpecs\EventsInstallerSpec.cs" />
+    <Compile Include="EventsSpecs\RemoveFoundBlocksEventHandlerSpecs.cs" />
     <Compile Include="EventsSpecs\RotatedLeftEventHandlerSpecs.cs" />
     <Compile Include="EventsSpecs\RotatedRightEventHandlerSpecs.cs" />
     <Compile Include="FactorySpecs\ItemDrawerFactorySpecs.cs" />

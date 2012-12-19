@@ -21,9 +21,7 @@ namespace Rotation.Engine
 
         public static class SquareColours
         {
-            public static readonly Color SQUARE_SELECTED_COLOUR = Color.OrangeRed;
             public static readonly Color MAIN_SQUARE_SELECTED_COLOUR = Color.Green;
-            public static readonly Color SQUARE_NOT_SELECTED_COLOUR = Color.Orange;
             public static readonly Color SQUARE_NOT_SELECTABLE_COLOUR = Color.White;
             public static readonly Color SQUARE_COLOUR_0 = Color.Yellow;
             public static readonly Color SQUARE_COLOUR_1 = Color.Red;

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Rotation.Blocks;
 using Rotation.Constants;
+using Rotation.Events;
 using Rotation.StandardBoard;
 using System.Linq;
 
@@ -19,7 +20,9 @@ namespace Rotation.Drawing.Animations
             _board = board;
             _boardCoordinates = new List<BoardCoordinate>();
 
-            foreach (var boardCoordinate in blocks.SelectMany(b => b.BoardCoordinates))
+            foreach (var boardCoordinate in blocks.SelectMany(b => b.BoardCoordinates)
+                            .GroupBy(x => new {x.X, x.Y})
+                            .Select(k => new BoardCoordinate(k.Key.X, k.Key.Y)))
             {
                 _board[boardCoordinate].IsInBlock = true;
                 _boardCoordinates.Add(boardCoordinate);
@@ -38,8 +41,7 @@ namespace Rotation.Drawing.Animations
 
         public void OnFinished()
         {
-            foreach (var boardCoordinate in _boardCoordinates)
-                _board[boardCoordinate].IsInBlock = false;
+            GameEvents.Raise(new RemoveFoundBlocksEvent(_boardCoordinates));
         }
     }
 }
