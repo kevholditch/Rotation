@@ -1,4 +1,5 @@
-﻿using Rotation.Events;
+﻿using Rotation.Drawing.Animations;
+using Rotation.Events;
 using Rotation.StandardBoard;
 
 namespace Rotation.EventHandlers
@@ -7,10 +8,14 @@ namespace Rotation.EventHandlers
     {
 
         private IBoard _board;
+        private IAnimationStore _animationStore;
+        private IBoardFiller _boardFiller;
 
-        public RemoveFoundBlocksEventHandler(IBoard board)
+        public RemoveFoundBlocksEventHandler(IBoard board, IAnimationStore animationStore, IBoardFiller boardFiller)
         {
             _board = board;
+            _animationStore = animationStore;
+            _boardFiller = boardFiller;
         }
 
         public void Handle(RemoveFoundBlocksEvent gameEvent)
