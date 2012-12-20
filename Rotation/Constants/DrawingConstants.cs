@@ -25,6 +25,7 @@ namespace Rotation.Constants
             public static readonly Color SQUARE_NOT_SELECTABLE_COLOUR = Color.White;
             public static readonly Color SQUARE_COLOUR_0 = Color.Yellow;
             public static readonly Color SQUARE_COLOUR_1 = Color.Red;
+            public static readonly Color SQUARE_COLOUR_2 = Color.DarkSalmon;
             public static readonly Color SQUARE_IN_BLOCK_COLOUR = Color.Blue;
         }
 

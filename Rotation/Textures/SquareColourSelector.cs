@@ -22,8 +22,10 @@ namespace Rotation.Textures
             
             if (square.Colour == 0)
                 colour = DrawingConstants.SquareColours.SQUARE_COLOUR_0;
-            else
+            else if (square.Colour == 1)
                 colour = DrawingConstants.SquareColours.SQUARE_COLOUR_1;
+            else
+                colour = DrawingConstants.SquareColours.SQUARE_COLOUR_2;
 
             if (square.IsSelected)
             {
