@@ -29,8 +29,7 @@ namespace Rotation.ItemDrawers.Squares
             var texture = tileTextureCreator.Create(square.Tile);
             var colour = _squareColourSelector.SelectColour(square);
             var position = _squarePositionCalculator.Calculate();
-        	position.Y -= square.YOffset;
-            var origin = _squareOriginCalculator.Calculate(square.XPos, square.YPos);
+            var origin = _squareOriginCalculator.Calculate(square);
             var layerDepth = _squareDepthCalculator.Calculate(square);
             
             spriteBatch.Draw(texture, position, null, colour, MathHelper.ToRadians(square.Angle), origin,

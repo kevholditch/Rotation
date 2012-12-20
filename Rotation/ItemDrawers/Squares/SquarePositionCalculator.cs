@@ -18,10 +18,10 @@ namespace Rotation.ItemDrawers.Squares
 
         public Vector2 Calculate()
         {
-            var square = _getMainSelectedSquare.GetMainSelectedSquare();
+            var mainSquare = _getMainSelectedSquare.GetMainSelectedSquare();
 
-            var x = ((square.X * DrawingConstants.Tiles.TILE_WIDTH) + (DrawingConstants.Tiles.TILE_WIDTH/2) + DrawingConstants.Board.BOARD_X_MARGIN);
-            var y = ((square.Y * DrawingConstants.Tiles.TILE_HEIGHT) + (DrawingConstants.Tiles.TILE_HEIGHT / 2) + DrawingConstants.Board.BOARD_Y_MARGIN);
+            var x = ((mainSquare.X * DrawingConstants.Tiles.TILE_WIDTH) + (DrawingConstants.Tiles.TILE_WIDTH / 2) + DrawingConstants.Board.BOARD_X_MARGIN);
+            var y = ((mainSquare.Y * DrawingConstants.Tiles.TILE_HEIGHT) + (DrawingConstants.Tiles.TILE_HEIGHT / 2) + DrawingConstants.Board.BOARD_Y_MARGIN);
 
             return new Vector2(x, y);
         }

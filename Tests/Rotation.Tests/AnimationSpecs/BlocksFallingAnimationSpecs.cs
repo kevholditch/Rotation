@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using FakeItEasy;
 using Microsoft.Xna.Framework;
 using Rotation.Constants;
 using Rotation.Drawing.Animations;
+using Rotation.Events;
+using Rotation.GameObjects.sTests.TestClasses;
 using Rotation.StandardBoard;
 using SubSpec;
 
@@ -41,13 +44,46 @@ namespace Rotation.GameObjects.sTests.AnimationSpecs
 
 		}
 
+        [Specification]
 		public void CanTellWhenTheAnimationShouldFinish()
 		{
-			
+            var blocksFallingAnimation = default(BlocksFallingAnimation);
+
+            "Given I have a standard board and a known list of coordinates".Context(() =>
+            {
+                var board = new BoardFactory().Create();
+                var boardCoordinates = new List<BoardCoordinate> { new BoardCoordinate(1, 2), new BoardCoordinate(2, 3) };
+                board[1, 2].YOffset = 0;
+                board[2, 3].YOffset = 0;
+                blocksFallingAnimation = new BlocksFallingAnimation(boardCoordinates, board);
+            });
+
+            "When I call animate when there are no more offsets to update"
+                .Do(() => blocksFallingAnimation.Animate(new GameTime { ElapsedGameTime = TimeSpan.FromMilliseconds(100) }));
+
+		    "Then the animation should be finished"
+		        .Observation(() => blocksFallingAnimation.Finished().ShouldBeTrue());
+
 		}
 
+        [Specification]
 		public void CanRaiseABoardChangedEventWhenAnimationHasFinished()
 		{
+            var blocksFallingAnimation = default(BlocksFallingAnimation);
+		    var result = default(IGameEvent);
+
+            "Given I have a blocks falling animation"
+                .Context(() =>  
+		        {
+		            blocksFallingAnimation = new BlocksFallingAnimation(new List<BoardCoordinate>(), A.Fake<IBoard>());
+                    GameEvents.Dispatcher = new ActionEventDispatcher(e => result = e);
+		        });
+
+            "When I call on finished on the animation"
+                .Do(() => blocksFallingAnimation.OnFinished());
+
+            "Then a game board changed event should be raised"
+                .Observation(() => result.ShouldBeOfType<BoardChangedEvent>());
 			
 		}
 		

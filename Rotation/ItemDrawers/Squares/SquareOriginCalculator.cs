@@ -15,12 +15,12 @@ namespace Rotation.ItemDrawers.Squares
         }
 
 
-        public Vector2 Calculate(int x, int y)
+        public Vector2 Calculate(Square square)
         {
             var mainSelectedSquare = _getMainSelectedSquare.GetMainSelectedSquare();
 
-            var originX = -((x - mainSelectedSquare.X) - 0.5f)*DrawingConstants.Tiles.TILE_WIDTH;
-            var originY = -((y - mainSelectedSquare.Y) - 0.5f)*DrawingConstants.Tiles.TILE_HEIGHT;
+            var originX = -((square.XPos - mainSelectedSquare.X) - 0.5f)*DrawingConstants.Tiles.TILE_WIDTH;
+            var originY = -((square.YPos - mainSelectedSquare.Y) - 0.5f)*DrawingConstants.Tiles.TILE_HEIGHT + square.YOffset;
 
             return new Vector2(originX, originY);
         }
