@@ -25,10 +25,11 @@ namespace Rotation.EventHandlers
         public void Handle(RemoveFoundBlocksEvent gameEvent)
         {
             var columnGroupings = gameEvent.SquaresInBlocks.GroupBy(g => g.X);
+        	
 
             foreach (var column in columnGroupings.OrderBy(c => c.Key))
             {
-                
+                SetOffsets(column, _board);
 
 
             }
@@ -37,15 +38,27 @@ namespace Rotation.EventHandlers
         private void SetOffsets(IEnumerable<BoardCoordinate> column, IBoard board)
         {
             var squaresInColumn = column.OrderBy(c => c.Y).ToList();
-            int currentIndex = 0;
 
-            for (int i = 0; i <= squaresInColumn[squaresInColumn.Count - 1].Y; i++)
-            {
-                board[squaresInColumn[0].X, i].YOffset = (squaresInColumn.Count - currentIndex)*
-                                                         DrawingConstants.Tiles.TILE_HEIGHT;
+			var stack = new Stack<int>(Enumerable.Range(0, squaresInColumn[squaresInColumn.Count - 1].Y)
+									.Where(i => !squaresInColumn.Select(s => s.Y).Contains(i)));
+
+			int currentOffset = 0;
+			if (stack.Count == 0)
+			{
+				currentOffset = squaresInColumn[squaresInColumn.Count - 1].Y;
+			}
+			
+        	for (int i = squaresInColumn[squaresInColumn.Count - 1].Y; i >= 0; i--)
+			{			
+				if (stack.Count > 0)
+				{					
+					currentOffset = i - stack.Pop();
+				}
+
+				board[squaresInColumn.First().X, i].YOffset = currentOffset * DrawingConstants.Tiles.TILE_HEIGHT;
 
 
-            }
+			}
         }
     }
 }

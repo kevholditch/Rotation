@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 
-namespace Rotation.Engine
+namespace Rotation.Constants
 {
     public static class DrawingConstants
     {

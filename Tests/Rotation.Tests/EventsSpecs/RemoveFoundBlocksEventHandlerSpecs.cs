@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using FakeItEasy;
 using Rotation.Constants;
 using Rotation.Drawing.Animations;
-using Rotation.Engine;
 using Rotation.EventHandlers;
 using Rotation.Events;
-using Rotation.GameObjects.sTests.BlockSpecs;
 using Rotation.GameObjects.sTests.TestClasses;
 using Rotation.StandardBoard;
 using Rotation.Tiles;
