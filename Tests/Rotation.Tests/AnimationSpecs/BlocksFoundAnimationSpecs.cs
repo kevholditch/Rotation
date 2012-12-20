@@ -103,6 +103,7 @@ namespace Rotation.GameObjects.sTests.AnimationSpecs
         {
             var blocksFoundAnimation = default(BlocksFoundAnimation);
             var result = default(IGameEvent);
+        	var board = default(IBoard);
 
             "Given I have a blocks found event with a number of blocks found"
                 .Context(() =>
@@ -114,9 +115,12 @@ namespace Rotation.GameObjects.sTests.AnimationSpecs
                                     , new Block(new[] {new BoardCoordinate(5, 5), new BoardCoordinate(3, 4) })
                                 };
 
-                        blocksFoundAnimation = new BlocksFoundAnimation(blocks, A.Fake<IBoard>());
-                        
+                    	board = new BoardFactory().Create();
+                    	var numericalBoardFiller = new NumericalBoardFiller();
+						numericalBoardFiller.Fill(board);
 
+                        blocksFoundAnimation = new BlocksFoundAnimation(blocks, board);
+                        
                         GameEvents.Dispatcher = new ActionEventDispatcher(e => result = e);
                     });
 
@@ -142,6 +146,9 @@ namespace Rotation.GameObjects.sTests.AnimationSpecs
             "Then there should be 1 square with cooardinates 5, 5"
                 .Observation(() => ((RemoveFoundBlocksEvent)result).SquaresInBlocks
                     .Count(c => c.X == 5 && c.Y == 5).ShouldEqual(1));
+
+        	"Then there should be no squares in blocks"
+        		.Observation(() => board.AllSquares().Count(sq => sq.IsInBlock).ShouldEqual(0));
 
 
         }

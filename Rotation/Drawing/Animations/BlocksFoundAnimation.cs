@@ -41,6 +41,10 @@ namespace Rotation.Drawing.Animations
 
         public void OnFinished()
         {
+
+			foreach (var boardCoordinate in _boardCoordinates)
+				_board[boardCoordinate].IsInBlock = false;
+
             GameEvents.Raise(new RemoveFoundBlocksEvent(_boardCoordinates));
         }
     }

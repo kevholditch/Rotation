@@ -36,7 +36,7 @@ namespace Rotation.EventHandlers
 
 			_boardFiller.Fill(_board);
 
-			_animationStore.Add(new BlocksFallingAnimation(blocksToAnimate));        	
+			_animationStore.Add(new BlocksFallingAnimation(blocksToAnimate, _board));        	
         }
 
         private List<BoardCoordinate> SetOffsets(IEnumerable<BoardCoordinate> column, IBoard board)

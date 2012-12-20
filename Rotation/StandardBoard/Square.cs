@@ -21,7 +21,7 @@ namespace Rotation.StandardBoard
 
 	    public int Origin { get; set; }
 
-        public int YOffset { get; set; }
+        public float YOffset { get; set; }
 
 		public bool IsSelected { get; set; }
 
