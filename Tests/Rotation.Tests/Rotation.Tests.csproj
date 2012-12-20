@@ -129,6 +129,7 @@
   <ItemGroup>
     <Compile Include="AnimationSpecs\AnimationEngineSpecs.cs" />
     <Compile Include="AnimationSpecs\AnimationStoreSpecs.cs" />
+    <Compile Include="AnimationSpecs\BlocksFallingAnimationSpecs.cs" />
     <Compile Include="AnimationSpecs\BlocksFoundAnimationSpecs.cs" />
     <Compile Include="AnimationSpecs\RotateLeftAnimationSpecs.cs" />
     <Compile Include="AnimationSpecs\RotateRightAnimationSpecs.cs" />
