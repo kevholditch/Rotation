@@ -25,22 +25,25 @@ namespace Rotation.EventHandlers
         public void Handle(RemoveFoundBlocksEvent gameEvent)
         {
             var columnGroupings = gameEvent.SquaresInBlocks.GroupBy(g => g.X);
-        	
+
+        	var blocksToAnimate = new List<BoardCoordinate>();
 
             foreach (var column in columnGroupings.OrderBy(c => c.Key))
             {
-                SetOffsets(column, _board);
-
-
+                blocksToAnimate.AddRange(SetOffsets(column, _board));
             }
+
+			_animationStore.Add(new BlocksFallingAnimation(blocksToAnimate));        	
         }
 
-        private void SetOffsets(IEnumerable<BoardCoordinate> column, IBoard board)
+        private List<BoardCoordinate> SetOffsets(IEnumerable<BoardCoordinate> column, IBoard board)
         {
             var squaresInColumn = column.OrderBy(c => c.Y).ToList();
 
 			var stack = new Stack<int>(Enumerable.Range(0, squaresInColumn[squaresInColumn.Count - 1].Y)
 									.Where(i => !squaresInColumn.Select(s => s.Y).Contains(i)));
+
+        	var result = new List<BoardCoordinate>();
 
 			int currentOffset = 0;
 			if (stack.Count == 0)
@@ -57,8 +60,10 @@ namespace Rotation.EventHandlers
 
 				board[squaresInColumn.First().X, i].YOffset = currentOffset * DrawingConstants.Tiles.TILE_HEIGHT;
 
-
+				result.Add(new BoardCoordinate(squaresInColumn.First().X, i));
 			}
+
+        	return result;
         }
     }
 }
