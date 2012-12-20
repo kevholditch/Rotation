@@ -33,6 +33,9 @@ namespace Rotation.EventHandlers
                 blocksToAnimate.AddRange(SetOffsets(column, _board));
             }
 
+
+			_boardFiller.Fill(_board);
+
 			_animationStore.Add(new BlocksFallingAnimation(blocksToAnimate));        	
         }
 
@@ -60,8 +63,18 @@ namespace Rotation.EventHandlers
 
 				board[squaresInColumn.First().X, i].YOffset = currentOffset * DrawingConstants.Tiles.TILE_HEIGHT;
 
+				if ((i - currentOffset) < 0)
+				{
+					board[squaresInColumn.First().X, i].Tile = null;
+				}else
+				{
+					board[squaresInColumn.First().X, i].Tile = board[squaresInColumn.First().X, i - currentOffset].Tile;
+				}
+				
+
 				result.Add(new BoardCoordinate(squaresInColumn.First().X, i));
 			}
+
 
         	return result;
         }

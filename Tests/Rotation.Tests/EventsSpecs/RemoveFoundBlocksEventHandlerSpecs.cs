@@ -487,14 +487,14 @@ namespace Rotation.GameObjects.sTests.EventsSpecs
                .Observation(() => ((BlocksFallingAnimation)animationStore.GetCurrentAnimations().First())
                     .SquaresToAnimate.Count(sq => sq.X == 5 && sq.Y == 0).ShouldEqual(1));
 
-            "Then square 5, 3 should contain colour 12"
-                .Observation(() => board[5, 3].Colour.ShouldEqual(12));
+            "Then square 5, 3 should contain colour 2"
+                .Observation(() => board[3, 3].Colour.ShouldEqual(2));
 
             "Then square 5, 2 should contain colour -1"
-                .Observation(() => board[5, 2].Colour.ShouldEqual(-1));
+                .Observation(() => board[3, 2].Colour.ShouldEqual(-1));
 
             "Then square 5, 1 should contain colour -1"
-                .Observation(() => board[5, 1].Colour.ShouldEqual(-1));
+                .Observation(() => board[3, 1].Colour.ShouldEqual(-1));
 
             "Then square 4, 6 should contain colour 21"
                 .Observation(() => board[4, 6].Colour.ShouldEqual(21));
@@ -503,7 +503,7 @@ namespace Rotation.GameObjects.sTests.EventsSpecs
                 .Observation(() => board[4, 5].Colour.ShouldEqual(3));
 
             "Then square 4, 4 should contain colour 1"
-                .Observation(() => board[4, 4].Colour.ShouldEqual(-1));
+                .Observation(() => board[4, 4].Colour.ShouldEqual(1));
 
             "Then square 4, 3 should contain colour -1"
                 .Observation(() => board[4, 3].Colour.ShouldEqual(-1));
@@ -512,10 +512,10 @@ namespace Rotation.GameObjects.sTests.EventsSpecs
                 .Observation(() => board[4, 2].Colour.ShouldEqual(-1));
 
             "Then square 4, 1 should contain colour -1"
-                .Observation(() => board[4, 1].Colour.ShouldEqual(3));
+                .Observation(() => board[4, 1].Colour.ShouldEqual(-1));
 
             "Then square 4, 0 should contain colour -1"
-                .Observation(() => board[4, 0].Colour.ShouldEqual(1));
+                .Observation(() => board[4, 0].Colour.ShouldEqual(-1));
 
             "Then square 5, 6 should contain colour 22"
                 .Observation(() => board[5, 6].Colour.ShouldEqual(22));
@@ -526,8 +526,8 @@ namespace Rotation.GameObjects.sTests.EventsSpecs
             "Then square 5, 4 should contain colour 8"
                 .Observation(() => board[5, 4].Colour.ShouldEqual(8));
 
-            "Then square 5, 3 should contain colour -1"
-                .Observation(() => board[5, 3].Colour.ShouldEqual(-1));
+            "Then square 5, 3 should contain colour 4"
+                .Observation(() => board[5, 3].Colour.ShouldEqual(4));
 
             "Then square 5, 2 should contain colour -1"
                 .Observation(() => board[5, 2].Colour.ShouldEqual(-1));
@@ -535,8 +535,8 @@ namespace Rotation.GameObjects.sTests.EventsSpecs
             "Then square 5, 1 should contain colour -1"
                 .Observation(() => board[5, 1].Colour.ShouldEqual(-1));
 
-            "Then there should be 14 squares with an offset"
-                .Observation(() => board.AllSquares().Count(sq => sq.YOffset > 0).ShouldEqual(14));
+            "Then there should be 18 squares with an offset"
+                .Observation(() => board.AllSquares().Count(sq => sq.YOffset > 0).ShouldEqual(18));
 
             "Then the offset of square 3, 3 should be 2 * tile height"
                 .Observation(() => board[3, 3].YOffset.ShouldEqual(2 * DrawingConstants.Tiles.TILE_HEIGHT));
