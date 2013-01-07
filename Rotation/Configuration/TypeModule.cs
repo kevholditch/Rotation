@@ -2,6 +2,7 @@
 using Rotation.Controls;
 using Rotation.Drawing.Animations;
 using Rotation.StandardBoard;
+using Rotation.StandardBoard.Selection;
 using Rotation.Tiles;
 
 namespace Rotation.Configuration
@@ -20,6 +21,8 @@ namespace Rotation.Configuration
             builder.RegisterType<GameController>().As<IGameController>().SingleInstance();
 
             builder.RegisterType<GameStateController>().As<IGameStateController>().SingleInstance();
+
+            builder.RegisterType<SingleSquareSelector>().As<ISquareSelector>();
         }
     }
 }

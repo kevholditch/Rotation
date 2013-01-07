@@ -9,13 +9,11 @@ namespace Rotation.Configuration
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<BlankTileTextureCreator>().As<ITileTextureCreator>();
-            builder.RegisterType<StandardTileTextureCreator>().As<ITileTextureCreator>();
+            builder.RegisterType<BlankSquareTextureCreator>().As<ISquareTextureCreator>().SingleInstance();
+            builder.RegisterType<StandardSquareTextureCreator>().As<ISquareTextureCreator>().SingleInstance();
+            builder.RegisterType<SelectedSquareTextureCreator>().As<ISquareTextureCreator>().SingleInstance();
 
             builder.RegisterType<SquareDrawer>().As<IItemDrawer>();
-            
-
-
         }
     }
 }

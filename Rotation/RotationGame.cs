@@ -50,6 +50,7 @@ namespace MonoRotation
             base.Initialize();
         }
 
+
         /// <summary>
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
@@ -58,6 +59,7 @@ namespace MonoRotation
         {
          
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            CurrentGraphicsDevice = GraphicsDevice;
 
             _boardFiller.Fill(_board);
             _drawEngine = _container.Resolve<IDrawEngine>();
@@ -65,6 +67,8 @@ namespace MonoRotation
             _gameStateController.Initialise();
 
         }
+
+        public static GraphicsDevice CurrentGraphicsDevice { get; private set; }
 
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload

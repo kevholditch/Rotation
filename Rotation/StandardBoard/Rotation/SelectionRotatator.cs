@@ -12,7 +12,7 @@ namespace Rotation.StandardBoard.Rotation
 			var boardCoordinate = board.GetMainSelectedSquare();
 		    var changedSquareCoordinates = new List<BoardCoordinate>();
 
-			while (board.CanGoAllDirections(boardCoordinate.X, boardCoordinate.Y, numSquares))
+			while (board.IsSelectedAndCanGoInAllDirections(boardCoordinate.X, boardCoordinate.Y, numSquares))
 			{
 				var tile = board[boardCoordinate.X, boardCoordinate.Y - numSquares].Tile;
 
@@ -48,7 +48,7 @@ namespace Rotation.StandardBoard.Rotation
             var changedSquareCoordinates = new List<BoardCoordinate>();
    
 
-			while (board.CanGoAllDirections(boardCoordinate.X, boardCoordinate.Y, numSquares))
+			while (board.IsSelectedAndCanGoInAllDirections(boardCoordinate.X, boardCoordinate.Y, numSquares))
 			{
 				var tile = board[boardCoordinate.X, boardCoordinate.Y - numSquares].Tile;
 

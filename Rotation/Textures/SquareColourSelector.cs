@@ -1,6 +1,5 @@
 using Microsoft.Xna.Framework;
 using Rotation.Constants;
-using Rotation.Engine;
 using Rotation.StandardBoard;
 
 namespace Rotation.Textures
@@ -12,14 +11,11 @@ namespace Rotation.Textures
             if (!square.IsSelectable)
                 return DrawingConstants.SquareColours.SQUARE_NOT_SELECTABLE_COLOUR;
 
-            if (square.IsMainSelection)
-                return DrawingConstants.SquareColours.MAIN_SQUARE_SELECTED_COLOUR;
-
             if (square.IsInBlock)
                 return DrawingConstants.SquareColours.SQUARE_IN_BLOCK_COLOUR;
 
             Color colour;
-            
+
             if (square.Colour == 0)
                 colour = DrawingConstants.SquareColours.SQUARE_COLOUR_0;
             else if (square.Colour == 1)
@@ -27,15 +23,17 @@ namespace Rotation.Textures
             else
                 colour = DrawingConstants.SquareColours.SQUARE_COLOUR_2;
 
-            if (square.IsSelected)
-            {
+            //if (square.IsSelected)
+            //{
 
-                
-            }
+            //    var hslColor = new HSLColor(colour.R, colour.G, colour.B);
+            //    hslColor.Luminosity += 40;
+            //    colour = hslColor;
+            //}
 
             return colour;
 
-
         }
     }
+
 }

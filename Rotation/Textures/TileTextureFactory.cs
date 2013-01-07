@@ -1,20 +1,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using Rotation.ItemDrawers;
+using Rotation.StandardBoard;
 using Rotation.Tiles;
 
 namespace Rotation.Textures
 {
     public class TileTextureFactory : ITileTextureFactory
     {
-        private readonly IEnumerable<ITileTextureCreator> _tileTextureCreators;
+        private readonly IEnumerable<ISquareTextureCreator> _tileTextureCreators; 
 
-        public TileTextureFactory(IEnumerable<ITileTextureCreator> tileTextureCreators)
+        public TileTextureFactory(IEnumerable<ISquareTextureCreator> tileTextureCreators)
         {
             _tileTextureCreators = tileTextureCreators;
         }
 
-        public ITileTextureCreator Create(Tile tile)
+        public ISquareTextureCreator Create(Square tile)
         {
             return _tileTextureCreators.First(t => t.CanCreateTexture(tile));
         }

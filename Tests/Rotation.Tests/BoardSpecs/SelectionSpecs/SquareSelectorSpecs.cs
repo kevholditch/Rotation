@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Rotation.GameObjects.sTests.BoardSpecs.SelectionSpecs
 {
-	public class SelectingSquareSpecs
+	public class SquareSelectorSpecs
 	{
 		[Specification]
 		public void CanSelectTheCentreSquareCorrectly()
@@ -65,6 +65,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.SelectionSpecs
 				() => board.AllSquares().Count(sq => sq.IsSelected).ShouldEqual(17));
 		}
 
+        [Specification]
 		public void CanSelectSquareFourAcrossTwoDownCorrectly()
 		{
 			SquareSelector squareSelector = default(SquareSelector);
@@ -104,6 +105,7 @@ namespace Rotation.GameObjects.sTests.BoardSpecs.SelectionSpecs
 				() => board.AllSquares().Count(sq => sq.IsSelected).ShouldEqual(9));
 		}
 
+        [Specification]
 		public void CanSelectSquareFiveAcrossSixDownCorrectly()
 		{
 			SquareSelector squareSelector = default(SquareSelector);

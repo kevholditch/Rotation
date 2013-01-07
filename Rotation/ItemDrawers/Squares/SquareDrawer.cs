@@ -24,9 +24,9 @@ namespace Rotation.ItemDrawers.Squares
 
         protected override void DrawImp(SpriteBatch spriteBatch, Square square)
         {
-            var tileTextureCreator = _tileTextureFactory.Create(square.Tile);
+            var tileTextureCreator = _tileTextureFactory.Create(square);
 
-            var texture = tileTextureCreator.Create(square.Tile);
+            var texture = tileTextureCreator.Create(square);
             var colour = _squareColourSelector.SelectColour(square);
             var position = _squarePositionCalculator.Calculate();
             var origin = _squareOriginCalculator.Calculate(square);

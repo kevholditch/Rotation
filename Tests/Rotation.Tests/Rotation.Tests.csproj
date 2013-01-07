@@ -140,9 +140,10 @@
     <Compile Include="BoardSpecs\BoardFillerSpecs.cs" />
     <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationEventRaisedSpecs.cs" />
     <Compile Include="BoardSpecs\RotationSpecs\SelectionRotationSpecs.cs" />
+    <Compile Include="BoardSpecs\SelectionSpecs\SingleSquareSelectorSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\SquareSelectableSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\MainSelectedSquareSpecs.cs" />
-    <Compile Include="BoardSpecs\SelectionSpecs\SelectingSquareSpecs.cs" />
+    <Compile Include="BoardSpecs\SelectionSpecs\SquareSelectorSpecs.cs" />
     <Compile Include="BoardSpecs\SelectionSpecs\SquareDeSelectionSpecs.cs" />
     <Compile Include="BoardSpecs\SequenceSpecs.cs" />
     <Compile Include="Builders\BuildA.cs" />
@@ -159,7 +160,7 @@
     <Compile Include="EventsSpecs\RotatedLeftEventHandlerSpecs.cs" />
     <Compile Include="EventsSpecs\RotatedRightEventHandlerSpecs.cs" />
     <Compile Include="FactorySpecs\ItemDrawerFactorySpecs.cs" />
-    <Compile Include="FactorySpecs\TileTextureFactorySpecs.cs" />
+    <Compile Include="FactorySpecs\SquareTextureFactorySpecs.cs" />
     <Compile Include="GameSpecs\GameControllerSpecs.cs" />
     <Compile Include="GameSpecs\KeyboardInputCollectorSpecs.cs" />
     <Compile Include="TestClasses\ActionEventDispatcher.cs" />

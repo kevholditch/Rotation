@@ -13,7 +13,7 @@ namespace Rotation.Tiles
 
 		public Tile Create()
 		{						
-			return new StandardTile(_random.Next(0, 3));
+			return new StandardTile(_random.Next(0, 2));
 		}
 	}
 }
