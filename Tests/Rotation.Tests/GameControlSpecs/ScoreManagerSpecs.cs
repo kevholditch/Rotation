@@ -1,5 +1,4 @@
 ﻿using Rotation.Blocks;
-using Rotation.Constants;
 using Rotation.GameControl;
 using Rotation.StandardBoard;
 using SubSpec;
@@ -18,10 +17,13 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                 .Context(() => progressManager = new ScoreManager());
 
             "When I get the player progress"
-                .Do(() => result = progressManager.GetProgress());
+                .Do(() => result = progressManager.GetScore());
 
             "Then the current score will be 0"
                 .Observation(() => result.CurrentScore.ShouldEqual(0));
+
+            "Then the total squares made this level will be 0"
+                .Observation(() => result.TotalSquaresMade.ShouldEqual(0));
         }
 
       
@@ -36,10 +38,10 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                 .Context(() => progressManager = new ScoreManager());
 
             "When I get the player progress"
-                .Do(() => result = progressManager.GetProgress());
+                .Do(() => result = progressManager.GetScore());
 
             "Then the squares made will be 0"
-                .Observation(() => result.SquaresMade.ShouldEqual(0));
+                .Observation(() => result.TotalSquaresMade.ShouldEqual(0));
 
         }
 
@@ -67,10 +69,11 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                         }));
 
             "Then there should be 4 squares made"
-                .Observation(() => progressManager.GetProgress().SquaresMade.ShouldEqual(4));
+                .Observation(() => progressManager.GetScore().TotalSquaresMade.ShouldEqual(4));
 
             "Then the current score should be 4"
-                .Observation(() => progressManager.GetProgress().CurrentScore.ShouldEqual(4));
+                .Observation(() => progressManager.GetScore().CurrentScore.ShouldEqual(4));
+
 
         }
 
@@ -103,10 +106,10 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                         }));
 
             "Then there should be 8 squares made"
-                .Observation(() => progressManager.GetProgress().SquaresMade.ShouldEqual(8));
+                .Observation(() => progressManager.GetScore().TotalSquaresMade.ShouldEqual(8));
 
             "Then the current score should be 16"
-                .Observation(() => progressManager.GetProgress().CurrentScore.ShouldEqual(16));
+                .Observation(() => progressManager.GetScore().CurrentScore.ShouldEqual(16));
 
 
         }
@@ -147,12 +150,14 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                         }));
 
             "Then there should be 8 squares made"
-                .Observation(() => progressManager.GetProgress().SquaresMade.ShouldEqual(8));
+                .Observation(() => progressManager.GetScore().TotalSquaresMade.ShouldEqual(8));
 
             "Then the current score should be 8"
-                .Observation(() => progressManager.GetProgress().CurrentScore.ShouldEqual(8));
+                .Observation(() => progressManager.GetScore().CurrentScore.ShouldEqual(8));
+
         }
 
-        
+     
+   
     }
 }

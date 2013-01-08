@@ -5,7 +5,7 @@ namespace Rotation.GameControl
 {
     public interface IScoreManager
     {
-        IScore GetProgress();
+        IScore GetScore();
         void FoundBlock(IEnumerable<Block> blocksFound);
     }
 }

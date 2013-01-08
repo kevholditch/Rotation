@@ -14,7 +14,7 @@ namespace Rotation.GameControl
             _score = new Score(0, 0);
         }
 
-        public IScore GetProgress()
+        public IScore GetScore()
         {
             return _score;
         }
@@ -24,8 +24,10 @@ namespace Rotation.GameControl
             var squaresFound = blocksFound.SelectMany(b => b.BoardCoordinates).Count();
 
             _score = new Score(_score.CurrentScore + (squaresFound * blocksFound.Count()),
-                               _score.SquaresMade + squaresFound);
+                               _score.TotalSquaresMade + squaresFound);
 
         }
+
+
     }
 }

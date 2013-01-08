@@ -157,10 +157,15 @@
     <Compile Include="Events\IGameEventDispatcher.cs" />
     <Compile Include="Events\IGameEventHandler.cs" />
     <Compile Include="Events\IGameEventHandlerFactory.cs" />
+    <Compile Include="Events\LevelUpEvent.cs" />
     <Compile Include="Events\RemoveFoundBlocksEvent.cs" />
     <Compile Include="Events\RotatedLeftEvent.cs" />
     <Compile Include="Events\RotatedRightEvent.cs" />
     <Compile Include="EventHandlers\RotatedRightEventHandler.cs" />
+    <Compile Include="GameControl\ILevelManager.cs" />
+    <Compile Include="GameControl\INextLevel.cs" />
+    <Compile Include="GameControl\IScore.cs" />
+    <Compile Include="GameControl\NextLevel.cs" />
     <Compile Include="GameControl\Score.cs" />
     <Compile Include="GameControl\IScoreManager.cs" />
     <Compile Include="GameControl\LevelManager.cs" />
