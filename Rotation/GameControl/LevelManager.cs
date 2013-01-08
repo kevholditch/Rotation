@@ -22,13 +22,13 @@ namespace Rotation.GameControl
 
             if (totalSquaresForLevelUp > score.TotalSquaresMade)
             {
-                Level.SquaresToNextLevel -= score.TotalSquaresMade;
+                Level.SquaresToNextLevel = totalSquaresForLevelUp - score.TotalSquaresMade;
             }
             else
             {
                 var tempTotalSquaresMade = score.TotalSquaresMade;
 
-                while (tempTotalSquaresMade > _nextLevel.AmountOfSquaresForLevelUp)
+                while (tempTotalSquaresMade >= _nextLevel.AmountOfSquaresForLevelUp)
                 {
                     tempTotalSquaresMade -= _nextLevel.AmountOfSquaresForLevelUp;
                     Level.CurrentLevel++;

@@ -3,6 +3,6 @@
     public class NextLevel : INextLevel
     {
 
-        public int AmountOfSquaresForLevelUp { get { return 200; } }
+        public int AmountOfSquaresForLevelUp { get { return 60; } }
     }
 }

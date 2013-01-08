@@ -37,6 +37,69 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
         }
 
         [Specification]
+        public void CanStayOnLevelTwoCorrectly()
+        {
+            var levelManager = default(LevelManager);
+            var fakeScore = default(IScore);
+
+            "Given I have a new LevelManager on level 2 with 20 squares for the next level"
+                .Context(() =>
+                {
+                    var fakeNextLevel = A.Fake<INextLevel>();
+                    A.CallTo(() => fakeNextLevel.AmountOfSquaresForLevelUp).Returns(20);
+                    levelManager = new LevelManager(new Level(2), fakeNextLevel);
+                    fakeScore = A.Fake<IScore>();
+                    A.CallTo(() => fakeScore.TotalSquaresMade).Returns(32);
+                });
+
+            "When I update the progress having made a total of 32 squares"
+                .Do(() => levelManager.UpdateProgress(fakeScore));
+
+            "Then there should be 8 squares to go until the next level"
+                .Observation(() => levelManager.Level.SquaresToNextLevel.ShouldEqual(8));
+
+            "Then the level should still be 2"
+                .Observation(() => levelManager.Level.CurrentLevel.ShouldEqual(2));
+        }
+
+        [Specification]
+        public void CanLevelUpCorrectlyWhenIHaveMadeExactlyTheRightAmountOfSquares()
+        {
+            var levelManager = default(LevelManager);
+            var fakeScore = default(IScore);
+            var result = default(IGameEvent);
+
+            "Given I have a LevelManager with 20 squares to go until the next level"
+                .Context(() =>
+                {
+                    var fakeNextLevel = A.Fake<INextLevel>();
+                    A.CallTo(() => fakeNextLevel.AmountOfSquaresForLevelUp).Returns(20);
+                    levelManager = new LevelManager(new Level(1), fakeNextLevel);
+                    fakeScore = A.Fake<IScore>();
+                    A.CallTo(() => fakeScore.TotalSquaresMade).Returns(20);
+                    GameEvents.Dispatcher = new ActionEventDispatcher(ge => result = ge);
+                });
+
+            "When I update the progress having made 20 squares"
+                .Do(() => levelManager.UpdateProgress(fakeScore));
+
+            "Then there should be 20 squares to go until the next level"
+                .Observation(() => levelManager.Level.SquaresToNextLevel.ShouldEqual(20));
+
+            "Then the level should now be 2"
+                .Observation(() => levelManager.Level.CurrentLevel.ShouldEqual(2));
+
+            "Then the event raised should be a level up event"
+                .Observation(() => result.ShouldBeOfType<LevelUpEvent>());
+
+            "Then the level up event should have an old level of 1"
+                .Observation(() => ((LevelUpEvent)result).OldLevel.ShouldEqual(1));
+
+            "Then the level up event should have a new level of 2"
+                .Observation(() => ((LevelUpEvent)result).NewLevel.ShouldEqual(2));
+        }
+
+        [Specification]
         public void CanRaiseALevelUpEventWhenEnoughSquaresAreMade()
         {
             var levelManager = default(LevelManager);
