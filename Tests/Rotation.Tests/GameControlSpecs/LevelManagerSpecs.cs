@@ -58,10 +58,10 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                 .Do(() => levelManager.UpdateProgress(fakeScore));
 
             "Then there should be 16 squares to go until the next level"
-                .Observation(() => levelManager.SquaresToNextLevel.ShouldEqual(8));
+                .Observation(() => levelManager.SquaresToNextLevel.ShouldEqual(16));
 
             "Then the level should now be 2"
-                .Observation(() => levelManager.Level.ShouldEqual(1));
+                .Observation(() => levelManager.Level.ShouldEqual(2));
 
             "Then the event raised should be a level up event"
                 .Observation(() => result.ShouldBeOfType<LevelUpEvent>());
@@ -100,7 +100,7 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                 .Observation(() => levelManager.SquaresToNextLevel.ShouldEqual(14));
 
             "Then the level should now be 3"
-                .Observation(() => levelManager.Level.ShouldEqual(1));
+                .Observation(() => levelManager.Level.ShouldEqual(3));
 
             "Then there should be 2 level up events raised"
                 .Observation(() => results.OfType<LevelUpEvent>().Count().ShouldEqual(2));

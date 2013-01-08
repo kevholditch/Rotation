@@ -1,4 +1,6 @@
-﻿namespace Rotation.GameControl
+﻿using Rotation.Events;
+
+namespace Rotation.GameControl
 {
     public class LevelManager : ILevelManager
     {
@@ -22,6 +24,19 @@
             if (totalSquaresForLevelUp > score.TotalSquaresMade)
             {
                 SquaresToNextLevel = totalSquaresForLevelUp - score.TotalSquaresMade;
+            }
+            else
+            {
+                var tempTotalSquaresMade = score.TotalSquaresMade;
+
+                while (tempTotalSquaresMade > _nextLevel.AmountOfSquaresForLevelUp)
+                {
+                    tempTotalSquaresMade -= _nextLevel.AmountOfSquaresForLevelUp;
+                    Level++;
+                    GameEvents.Raise(new LevelUpEvent(Level - 1, Level));
+                }
+
+                SquaresToNextLevel = _nextLevel.AmountOfSquaresForLevelUp - tempTotalSquaresMade;
             }
 
         }
