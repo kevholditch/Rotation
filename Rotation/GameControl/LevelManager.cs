@@ -6,24 +6,23 @@ namespace Rotation.GameControl
     {
         
         private readonly INextLevel _nextLevel;
-        public int Level { get; private set; }
-        public int SquaresToNextLevel { get; private set; }
+        public ILevel Level { get; private set; }
 
-        public LevelManager(int level, INextLevel nextLevel)
+        public LevelManager(ILevel level, INextLevel nextLevel)
         {
             Level = level;
             _nextLevel = nextLevel;
-            SquaresToNextLevel = _nextLevel.AmountOfSquaresForLevelUp;
+            Level.SquaresToNextLevel = _nextLevel.AmountOfSquaresForLevelUp;
         }
 
         public void UpdateProgress(IScore score)
         {
-            var totalSquaresForLevelUp = ((Level - 1)*_nextLevel.AmountOfSquaresForLevelUp) 
-                + SquaresToNextLevel;
+            var totalSquaresForLevelUp = ((Level.CurrentLevel - 1)*_nextLevel.AmountOfSquaresForLevelUp) 
+                + Level.SquaresToNextLevel;
 
             if (totalSquaresForLevelUp > score.TotalSquaresMade)
             {
-                SquaresToNextLevel = totalSquaresForLevelUp - score.TotalSquaresMade;
+                Level.SquaresToNextLevel -= score.TotalSquaresMade;
             }
             else
             {
@@ -32,11 +31,11 @@ namespace Rotation.GameControl
                 while (tempTotalSquaresMade > _nextLevel.AmountOfSquaresForLevelUp)
                 {
                     tempTotalSquaresMade -= _nextLevel.AmountOfSquaresForLevelUp;
-                    Level++;
-                    GameEvents.Raise(new LevelUpEvent(Level - 1, Level));
+                    Level.CurrentLevel++;
+                    GameEvents.Raise(new LevelUpEvent(Level.CurrentLevel - 1, Level.CurrentLevel));
                 }
 
-                SquaresToNextLevel = _nextLevel.AmountOfSquaresForLevelUp - tempTotalSquaresMade;
+                Level.SquaresToNextLevel = _nextLevel.AmountOfSquaresForLevelUp - tempTotalSquaresMade;
             }
 
         }

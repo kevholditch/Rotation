@@ -4,6 +4,6 @@ namespace Rotation.Drawing
 {
     public interface IGetDrawableItems
     {
-        IEnumerable<IDrawableItem> GetAnimatables();
+        IEnumerable<IDrawableItem> GetDrawables();
     }
 }

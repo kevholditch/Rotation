@@ -3,7 +3,7 @@ using Rotation.Drawing;
 
 namespace Rotation.StandardBoard
 {
-    public interface IBoard : IGetDrawableItems, IGetMainSelectedSquare
+    public interface IBoard : IGetMainSelectedSquare
     {
         List<List<Square>> Rows { get; }
         List<List<Square>> Columns { get; }

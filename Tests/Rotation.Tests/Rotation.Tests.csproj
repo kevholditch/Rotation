@@ -149,7 +149,7 @@
     <Compile Include="Builders\BuildA.cs" />
     <Compile Include="Builders\SquareBuilder.cs" />
     <Compile Include="ConfigurationSpecs\InterfaceConventionModuleSpecs.cs" />
-    <Compile Include="DrawingInterfaceSpecs\GetAnimatableItemsFromBoardSpecs.cs" />
+    <Compile Include="DrawingSpecs\GetDrawableItemSpecs.cs" />
     <Compile Include="DrawingSpecs\SquareDepthCalculatorSpecs.cs" />
     <Compile Include="DrawingSpecs\SquareOriginCalculatorSpecs.cs" />
     <Compile Include="DrawingSpecs\SquarePositionCalculatorSpecs.cs" />

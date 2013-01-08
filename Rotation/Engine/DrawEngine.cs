@@ -20,13 +20,13 @@ namespace Rotation.Engine
         public void Draw(SpriteBatch spriteBatch)
         {
 
-            foreach (var animatableItemTypes in _getDrawables.GetAnimatables().GroupBy(t => t.GetType()))
+            foreach (var drawableItemTypes in _getDrawables.GetDrawables().GroupBy(t => t.GetType()))
             {
-                var itemDrawer = _itemDrawerFactory.Create(animatableItemTypes.First());
+                var itemDrawer = _itemDrawerFactory.Create(drawableItemTypes.First());
 
-                foreach (var animatableItem in animatableItemTypes)
+                foreach (var drawableItem in drawableItemTypes)
                 { 
-                    itemDrawer.Draw(spriteBatch, animatableItem);
+                    itemDrawer.Draw(spriteBatch, drawableItem);
                 }
                
             }

@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Rotation.Controls;
 using Rotation.Drawing.Animations;
+using Rotation.GameControl;
 using Rotation.StandardBoard;
 using Rotation.StandardBoard.Selection;
 using Rotation.Tiles;
@@ -23,6 +24,13 @@ namespace Rotation.Configuration
             builder.RegisterType<GameStateController>().As<IGameStateController>().SingleInstance();
 
             builder.RegisterType<SingleSquareSelector>().As<ISquareSelector>();
+
+            builder.RegisterType<LevelManager>().As<ILevelManager>().SingleInstance();
+
+            builder.RegisterType<ScoreManager>().As<IScoreManager>().SingleInstance();
+
+            builder.RegisterType<Level>().As<ILevel>().WithParameter("currentLevel", 1).SingleInstance();
+
         }
     }
 }

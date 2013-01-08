@@ -5,6 +5,7 @@ using Rotation.Blocks;
 using Rotation.Drawing.Animations;
 using Rotation.EventHandlers;
 using Rotation.Events;
+using Rotation.GameControl;
 using Rotation.StandardBoard;
 using SubSpec;
 
@@ -18,12 +19,18 @@ namespace Rotation.GameObjects.sTests.EventsSpecs
 
             var animationStore = default(IAnimationStore);
             var eventHandler = default(BlocksFoundEventHandler);
+            var fakeScoreManager = default(IScoreManager);
+            var fakeLevelManger = default(ILevelManager);
             var blocks = default(IEnumerable<Block>);
 
             "Given I have an empty animation store and a blocks found event handler".Context(() =>
                 {
                     animationStore = new SingleAnimationStore();
-                    eventHandler = new BlocksFoundEventHandler(animationStore, A.Fake<IBoard>());
+                    fakeScoreManager = A.Fake<IScoreManager>();
+                    fakeLevelManger = A.Fake<ILevelManager>();
+                    eventHandler = new BlocksFoundEventHandler(animationStore, A.Fake<IBoard>(), fakeScoreManager,
+                                                               fakeLevelManger);
+
                     blocks = new[]{ new Block(new BoardCoordinate[]{}), };
                 });
 
@@ -35,6 +42,12 @@ namespace Rotation.GameObjects.sTests.EventsSpecs
 
             "Then the item in the animation store should be a blocks found animation"
                 .Observation(() => animationStore.GetCurrentAnimations().First().ShouldBeOfType<BlocksFoundAnimation>());
+
+            "Then the update score should be called on the score manager"
+                .Observation(() => A.CallTo(() => fakeScoreManager.GetScore()).MustHaveHappened());
+
+            "Then the update progress level should be called on the level manager"
+                .Observation(() => A.CallTo(() => fakeLevelManger.UpdateProgress(A<IScore>.Ignored)).MustHaveHappened());
 
         }
     }

@@ -2,8 +2,7 @@
 {
     public interface ILevelManager
     {
-        int Level { get; }
-        int SquaresToNextLevel { get; }
+        ILevel Level { get;  }
         void UpdateProgress(IScore score);
     }
 }

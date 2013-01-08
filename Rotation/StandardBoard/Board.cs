@@ -38,9 +38,6 @@ namespace Rotation.StandardBoard
 			return null;
 		}
 
-        public IEnumerable<IDrawableItem> GetAnimatables()
-	    {
-	        return this.AllSquares();
-	    }
+
 	}
 }

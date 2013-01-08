@@ -21,7 +21,7 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                     {
                         var fakeNextLevel = A.Fake<INextLevel>();
                         A.CallTo(() => fakeNextLevel.AmountOfSquaresForLevelUp).Returns(20);
-                        levelManager = new LevelManager(1, fakeNextLevel);
+                        levelManager = new LevelManager(new Level(1), fakeNextLevel);
                         fakeScore = A.Fake<IScore>();
                         A.CallTo(() => fakeScore.TotalSquaresMade).Returns(12);
                     });
@@ -30,10 +30,10 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                 .Do(() => levelManager.UpdateProgress(fakeScore));
 
             "Then there should be 8 squares to go until the next level"
-                .Observation(() => levelManager.SquaresToNextLevel.ShouldEqual(8));
+                .Observation(() => levelManager.Level.SquaresToNextLevel.ShouldEqual(8));
 
             "Then the level should still be 1"
-                .Observation(() => levelManager.Level.ShouldEqual(1));
+                .Observation(() => levelManager.Level.CurrentLevel.ShouldEqual(1));
         }
 
         [Specification]
@@ -48,7 +48,7 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                 {
                     var fakeNextLevel = A.Fake<INextLevel>();
                     A.CallTo(() => fakeNextLevel.AmountOfSquaresForLevelUp).Returns(20);
-                    levelManager = new LevelManager(1, fakeNextLevel);
+                    levelManager = new LevelManager(new Level(1), fakeNextLevel);
                     fakeScore = A.Fake<IScore>();
                     A.CallTo(() => fakeScore.TotalSquaresMade).Returns(24);
                     GameEvents.Dispatcher = new ActionEventDispatcher(ge => result = ge);
@@ -58,10 +58,10 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                 .Do(() => levelManager.UpdateProgress(fakeScore));
 
             "Then there should be 16 squares to go until the next level"
-                .Observation(() => levelManager.SquaresToNextLevel.ShouldEqual(16));
+                .Observation(() => levelManager.Level.SquaresToNextLevel.ShouldEqual(16));
 
             "Then the level should now be 2"
-                .Observation(() => levelManager.Level.ShouldEqual(2));
+                .Observation(() => levelManager.Level.CurrentLevel.ShouldEqual(2));
 
             "Then the event raised should be a level up event"
                 .Observation(() => result.ShouldBeOfType<LevelUpEvent>());
@@ -86,7 +86,7 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                 {
                     var fakeNextLevel = A.Fake<INextLevel>();
                     A.CallTo(() => fakeNextLevel.AmountOfSquaresForLevelUp).Returns(20);
-                    levelManager = new LevelManager(1, fakeNextLevel);
+                    levelManager = new LevelManager(new Level(1), fakeNextLevel);
                     fakeScore = A.Fake<IScore>();
                     A.CallTo(() => fakeScore.TotalSquaresMade).Returns(46);
                     results = new List<IGameEvent>();
@@ -97,10 +97,10 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                 .Do(() => levelManager.UpdateProgress(fakeScore));
 
             "Then there should be 14 squares to go until the next level"
-                .Observation(() => levelManager.SquaresToNextLevel.ShouldEqual(14));
+                .Observation(() => levelManager.Level.SquaresToNextLevel.ShouldEqual(14));
 
             "Then the level should now be 3"
-                .Observation(() => levelManager.Level.ShouldEqual(3));
+                .Observation(() => levelManager.Level.CurrentLevel.ShouldEqual(3));
 
             "Then there should be 2 level up events raised"
                 .Observation(() => results.OfType<LevelUpEvent>().Count().ShouldEqual(2));

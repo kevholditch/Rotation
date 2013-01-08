@@ -113,5 +113,10 @@ namespace MonoRotation
         {
             return Content.Load<Texture2D>(assetName);
         }
+
+        public SpriteFont LoadFont()
+        {
+            return _font;
+        }
     }
 }

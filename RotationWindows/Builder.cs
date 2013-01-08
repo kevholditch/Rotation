@@ -21,7 +21,6 @@ namespace MonoRotation
             containerBuilder.Register(c => new BoardFactory().Create())
                         .As<IBoard>()
                         .As<IGetMainSelectedSquare>()
-                        .As<IGetDrawableItems>()
                         .SingleInstance();
 
             containerBuilder.RegisterType<RotationGame>().AsSelf().As<ITextureLoader>().SingleInstance();

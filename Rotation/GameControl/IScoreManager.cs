@@ -8,4 +8,5 @@ namespace Rotation.GameControl
         IScore GetScore();
         void FoundBlock(IEnumerable<Block> blocksFound);
     }
+
 }
