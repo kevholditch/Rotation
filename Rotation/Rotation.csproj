@@ -161,6 +161,10 @@
     <Compile Include="Events\RotatedLeftEvent.cs" />
     <Compile Include="Events\RotatedRightEvent.cs" />
     <Compile Include="EventHandlers\RotatedRightEventHandler.cs" />
+    <Compile Include="GameControl\Score.cs" />
+    <Compile Include="GameControl\IScoreManager.cs" />
+    <Compile Include="GameControl\LevelManager.cs" />
+    <Compile Include="GameControl\ScoreManager.cs" />
     <Compile Include="ItemDrawers\IItemDrawer.cs" />
     <Compile Include="ItemDrawers\IItemDrawerFactory.cs" />
     <Compile Include="ItemDrawers\ItemDrawerBase.cs" />
