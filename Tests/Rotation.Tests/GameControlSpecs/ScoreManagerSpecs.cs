@@ -57,7 +57,7 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
 
             "When I have found a block with 4 squares"
                 .Do(
-                    () => progressManager.FoundBlock(new[]
+                    () => progressManager.BlocksFound(new[]
                         {
                             new Block(new[]
                                 {
@@ -87,7 +87,7 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
 
             "When I have found 2 blocks with 4 squares each"
                 .Do(
-                    () => progressManager.FoundBlock(new[]
+                    () => progressManager.BlocksFound(new[]
                         {
                             new Block(new[]
                                 {
@@ -123,7 +123,7 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                 .Context(() => 
                 { 
                     progressManager = new ScoreManager();
-                    progressManager.FoundBlock(new[]
+                    progressManager.BlocksFound(new[]
                         {
                             new Block(new[]
                                 {
@@ -138,7 +138,7 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
 
             "When I have found 1 more blocks with 4 squares"
                 .Do(
-                    () => progressManager.FoundBlock(new[]
+                    () => progressManager.BlocksFound(new[]
                         {
                             new Block(new[]
                                 {
@@ -157,7 +157,5 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
 
         }
 
-     
-   
     }
 }

@@ -8,5 +8,10 @@
             public const double BLOCK_FOUND_LIGHT_UP_DURATION = 200;
         	public const double BLOCK_FALL_SPEED = 0.2f;
         }
+
+        public static class GamePlay
+        {
+            public const int START_ROTATIONS = 50;
+        }
     }
 }

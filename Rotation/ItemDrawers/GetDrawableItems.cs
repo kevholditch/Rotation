@@ -8,15 +8,17 @@ namespace Rotation.ItemDrawers
 {
     public class GetDrawableItems : IGetDrawableItems
     {
-        private IBoard _board;
-        private IScoreManager _scoreManager;
-        private ILevelManager _levelManager;
+        private readonly IBoard _board;
+        private readonly IScoreManager _scoreManager;
+        private readonly ILevelManager _levelManager;
+        private readonly IRotationManager _rotationManager;
 
-        public GetDrawableItems(IBoard board, IScoreManager scoreManager, ILevelManager levelManager)
+        public GetDrawableItems(IBoard board, IScoreManager scoreManager, ILevelManager levelManager, IRotationManager rotationManager)
         {
             _board = board;
             _scoreManager = scoreManager;
             _levelManager = levelManager;
+            _rotationManager = rotationManager;
         }
 
         public IEnumerable<IDrawableItem> GetDrawables()
@@ -27,6 +29,8 @@ namespace Rotation.ItemDrawers
             yield return _scoreManager.GetScore();
 
             yield return _levelManager.Level;
+
+            yield return _rotationManager.GetRotationInformation();
         }
     }
 }

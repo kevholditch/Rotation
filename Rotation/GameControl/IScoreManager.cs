@@ -6,7 +6,7 @@ namespace Rotation.GameControl
     public interface IScoreManager
     {
         IScore GetScore();
-        void FoundBlock(IEnumerable<Block> blocksFound);
+        void BlocksFound(IEnumerable<Block> blocksFound);
     }
 
 }

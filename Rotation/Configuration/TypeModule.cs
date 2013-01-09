@@ -29,7 +29,9 @@ namespace Rotation.Configuration
 
             builder.RegisterType<ScoreManager>().As<IScoreManager>().SingleInstance();
 
-            builder.RegisterType<Level>().As<ILevel>().WithParameter("currentLevel", 1).SingleInstance();
+            builder.RegisterType<Level>().As<ILevel>().SingleInstance();
+
+            builder.RegisterType<RotationManager>().As<IRotationManager>().SingleInstance();
 
         }
     }

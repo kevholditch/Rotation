@@ -21,7 +21,7 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                     {
                         var fakeNextLevel = A.Fake<INextLevel>();
                         A.CallTo(() => fakeNextLevel.AmountOfSquaresForLevelUp).Returns(20);
-                        levelManager = new LevelManager(new Level(1), fakeNextLevel);
+                        levelManager = new LevelManager(new Level(new TestGameStartConditions{StartLevel = 1}), fakeNextLevel);
                         fakeScore = A.Fake<IScore>();
                         A.CallTo(() => fakeScore.TotalSquaresMade).Returns(12);
                     });
@@ -47,7 +47,7 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                 {
                     var fakeNextLevel = A.Fake<INextLevel>();
                     A.CallTo(() => fakeNextLevel.AmountOfSquaresForLevelUp).Returns(20);
-                    levelManager = new LevelManager(new Level(2), fakeNextLevel);
+                    levelManager = new LevelManager(new Level(new TestGameStartConditions{StartLevel = 2}), fakeNextLevel);
                     fakeScore = A.Fake<IScore>();
                     A.CallTo(() => fakeScore.TotalSquaresMade).Returns(32);
                 });
@@ -74,7 +74,7 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                 {
                     var fakeNextLevel = A.Fake<INextLevel>();
                     A.CallTo(() => fakeNextLevel.AmountOfSquaresForLevelUp).Returns(20);
-                    levelManager = new LevelManager(new Level(1), fakeNextLevel);
+                    levelManager = new LevelManager(new Level(new TestGameStartConditions{StartLevel = 1}), fakeNextLevel);
                     fakeScore = A.Fake<IScore>();
                     A.CallTo(() => fakeScore.TotalSquaresMade).Returns(20);
                     GameEvents.Dispatcher = new ActionEventDispatcher(ge => result = ge);
@@ -111,7 +111,7 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                 {
                     var fakeNextLevel = A.Fake<INextLevel>();
                     A.CallTo(() => fakeNextLevel.AmountOfSquaresForLevelUp).Returns(20);
-                    levelManager = new LevelManager(new Level(1), fakeNextLevel);
+                    levelManager = new LevelManager(new Level(new TestGameStartConditions{StartLevel = 1}), fakeNextLevel);
                     fakeScore = A.Fake<IScore>();
                     A.CallTo(() => fakeScore.TotalSquaresMade).Returns(24);
                     GameEvents.Dispatcher = new ActionEventDispatcher(ge => result = ge);
@@ -149,7 +149,7 @@ namespace Rotation.GameObjects.sTests.GameControlSpecs
                 {
                     var fakeNextLevel = A.Fake<INextLevel>();
                     A.CallTo(() => fakeNextLevel.AmountOfSquaresForLevelUp).Returns(20);
-                    levelManager = new LevelManager(new Level(1), fakeNextLevel);
+                    levelManager = new LevelManager(new Level(new TestGameStartConditions{StartLevel = 1}), fakeNextLevel);
                     fakeScore = A.Fake<IScore>();
                     A.CallTo(() => fakeScore.TotalSquaresMade).Returns(46);
                     results = new List<IGameEvent>();

@@ -19,17 +19,15 @@ namespace Rotation.GameObjects.sTests.EventsSpecs
 
             var animationStore = default(IAnimationStore);
             var eventHandler = default(BlocksFoundEventHandler);
-            var fakeScoreManager = default(IScoreManager);
-            var fakeLevelManger = default(ILevelManager);
+            var fakeGameManager = default(IGameManager);
             var blocks = default(IEnumerable<Block>);
 
             "Given I have an empty animation store and a blocks found event handler".Context(() =>
                 {
                     animationStore = new SingleAnimationStore();
-                    fakeScoreManager = A.Fake<IScoreManager>();
-                    fakeLevelManger = A.Fake<ILevelManager>();
-                    eventHandler = new BlocksFoundEventHandler(animationStore, A.Fake<IBoard>(), fakeScoreManager,
-                                                               fakeLevelManger);
+             
+                    fakeGameManager = A.Fake<IGameManager>();
+                    eventHandler = new BlocksFoundEventHandler(animationStore, A.Fake<IBoard>(), fakeGameManager);
 
                     blocks = new[]{ new Block(new BoardCoordinate[]{}), };
                 });
@@ -43,11 +41,9 @@ namespace Rotation.GameObjects.sTests.EventsSpecs
             "Then the item in the animation store should be a blocks found animation"
                 .Observation(() => animationStore.GetCurrentAnimations().First().ShouldBeOfType<BlocksFoundAnimation>());
 
-            "Then the update score should be called on the score manager"
-                .Observation(() => A.CallTo(() => fakeScoreManager.GetScore()).MustHaveHappened());
+            "Then the blocks found method should be called on the game manager"
+                .Observation(() => A.CallTo(() => fakeGameManager.BlockFound(A<IEnumerable<Block>>.Ignored)).MustHaveHappened());
 
-            "Then the update progress level should be called on the level manager"
-                .Observation(() => A.CallTo(() => fakeLevelManger.UpdateProgress(A<IScore>.Ignored)).MustHaveHappened());
 
         }
     }

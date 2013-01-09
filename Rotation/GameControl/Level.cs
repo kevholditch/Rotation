@@ -5,9 +5,9 @@
         public int CurrentLevel { get;  set; }
         public int SquaresToNextLevel { get; set; }
 
-        public Level(int currentLevel)
+        public Level(IGameStartConditions gameStartConditions)
         {
-            CurrentLevel = currentLevel;
+            CurrentLevel = gameStartConditions.StartLevel;
         }
     }
 }

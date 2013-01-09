@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Rotation.ItemDrawers;
 using Rotation.ItemDrawers.Levels;
+using Rotation.ItemDrawers.Rotations;
 using Rotation.ItemDrawers.Scoring;
 using Rotation.ItemDrawers.Squares;
 using Rotation.Textures;
@@ -18,6 +19,7 @@ namespace Rotation.Configuration
             builder.RegisterType<SquareDrawer>().As<IItemDrawer>();
             builder.RegisterType<ScoreDrawer>().As<IItemDrawer>();
             builder.RegisterType<LevelDrawer>().As<IItemDrawer>();
+            builder.RegisterType<RotationInformationDrawer>().As<IItemDrawer>();
         }
     }
 }

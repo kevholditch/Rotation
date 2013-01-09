@@ -27,14 +27,17 @@ namespace Rotation.GameObjects.sTests.DrawingSpecs
                         A.CallTo(() => fakeScoreManager.GetScore()).Returns(A.Fake<IScore>());
                         var fakeLevelManager = A.Fake<ILevelManager>();
                         A.CallTo(() => fakeLevelManager.Level).Returns(A.Fake<ILevel>());
-                        getDrawableItems = new GetDrawableItems(fakeBoard, fakeScoreManager, fakeLevelManager);
+                        var fakeRotationManager = A.Fake<IRotationManager>();
+                        A.CallTo(() => fakeRotationManager.GetRotationInformation())
+                         .Returns(A.Fake<IRotationInformation>());
+                        getDrawableItems = new GetDrawableItems(fakeBoard, fakeScoreManager, fakeLevelManager, fakeRotationManager);
                     });
 
             "When I get all of the drawable items"
                 .Do(() => results = getDrawableItems.GetDrawables());
 
-            "Then 3 items should be returned"
-                .Observation(() => results.Count().ShouldEqual(3));
+            "Then 4 items should be returned"
+                .Observation(() => results.Count().ShouldEqual(4));
 
             "Then there should be 1 square"
                 .Observation(() => results.OfType<Square>().Count().ShouldEqual(1));
@@ -44,6 +47,9 @@ namespace Rotation.GameObjects.sTests.DrawingSpecs
 
             "Then there should be 1 level"
                 .Observation(() => results.OfType<ILevel>().Count().ShouldEqual(1));
+
+            "Then there should be 1 rotation information"
+                .Observation(() => results.OfType<IRotationInformation>().Count().ShouldEqual(1));
         }
     }
 }

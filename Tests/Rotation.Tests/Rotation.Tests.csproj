@@ -162,7 +162,9 @@
     <Compile Include="FactorySpecs\ItemDrawerFactorySpecs.cs" />
     <Compile Include="FactorySpecs\SquareTextureFactorySpecs.cs" />
     <Compile Include="GameControlSpecs\LevelManagerSpecs.cs" />
+    <Compile Include="GameControlSpecs\RotationManagerSpecs.cs" />
     <Compile Include="GameControlSpecs\ScoreManagerSpecs.cs" />
+    <Compile Include="GameControlSpecs\TestGameStartConditions.cs" />
     <Compile Include="GameSpecs\GameControllerSpecs.cs" />
     <Compile Include="GameSpecs\KeyboardInputCollectorSpecs.cs" />
     <Compile Include="TestClasses\ActionEventDispatcher.cs" />

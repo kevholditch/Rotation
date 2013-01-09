@@ -19,7 +19,7 @@ namespace Rotation.GameControl
             return _score;
         }
 
-        public void FoundBlock(IEnumerable<Block> blocksFound)
+        public void BlocksFound(IEnumerable<Block> blocksFound)
         {
             var squaresFound = blocksFound.SelectMany(b => b.BoardCoordinates).Count();
 
