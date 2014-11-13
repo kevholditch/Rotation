@@ -12,6 +12,9 @@
     <AssemblyName>Rotation.GameObjects.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>f5f19de5</NuGetPackageImportStamp>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -161,12 +164,14 @@
     <Compile Include="EventsSpecs\RotatedRightEventHandlerSpecs.cs" />
     <Compile Include="FactorySpecs\ItemDrawerFactorySpecs.cs" />
     <Compile Include="FactorySpecs\SquareTextureFactorySpecs.cs" />
+    <Compile Include="Game1.cs" />
     <Compile Include="GameControlSpecs\LevelManagerSpecs.cs" />
     <Compile Include="GameControlSpecs\RotationManagerSpecs.cs" />
     <Compile Include="GameControlSpecs\ScoreManagerSpecs.cs" />
     <Compile Include="GameControlSpecs\TestGameStartConditions.cs" />
     <Compile Include="GameSpecs\GameControllerSpecs.cs" />
     <Compile Include="GameSpecs\KeyboardInputCollectorSpecs.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="TestClasses\ActionEventDispatcher.cs" />
     <Compile Include="TestClasses\NumericalBoardFiller.cs" />
     <Compile Include="TestClasses\NumericalBoardFillerSpecs.cs" />
@@ -184,7 +189,19 @@
       <Name>Rotation</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="SDL.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\MonoGame.Binaries.3.2.0\build\net40\MonoGame.Binaries.targets" Condition="Exists('..\..\packages\MonoGame.Binaries.3.2.0\build\net40\MonoGame.Binaries.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\MonoGame.Binaries.3.2.0\build\net40\MonoGame.Binaries.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\MonoGame.Binaries.3.2.0\build\net40\MonoGame.Binaries.targets'))" />
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

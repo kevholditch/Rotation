@@ -11,3 +11,4 @@ obj/
 *.suo
 _NCrunch_Rotation/
 Rotation.suo
+packages/
